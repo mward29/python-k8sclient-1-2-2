@@ -1,6 +1,10 @@
 ## Requirements.
 Python 2.7 and later.
 
+## v1.json
+
+Pulled from https://raw.githubusercontent.com/kubernetes/kubernetes/master/api/swagger-spec/v1.json for Kubernetes v1.2.2
+
 ## Setuptools
 You can install the bindings via [Setuptools](http://pypi.python.org/pypi/setuptools).
 
