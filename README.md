@@ -1,5 +1,7 @@
 ## Requirements.
 Python 2.7 and later.
+swagger-codegen (if you intend to generate your own client)
+
 
 ## v1.json
 
@@ -32,9 +34,9 @@ Then, to use the bindings, import the package:
 import path.to.swagger_client
 ```
 
-## Getting Started
+## To Generate your own swagger_client
+`swagger-codegen generate -i v1.json -l python -o swagger_client`
 
-TODO
 
 ## Documentation
 
