@@ -38,768 +38,768 @@ TODO
 
 ## Documentation
 
---
-connect_delete_namespaced_pod_proxy(namespace, name)
-connect DELETE requests to proxy of Pod
---
-connect_delete_namespaced_pod_proxy_1(namespace, name, path2)
-connect DELETE requests to proxy of Pod
---
-connect_delete_namespaced_service_proxy(namespace, name)
-connect DELETE requests to proxy of Service
---
-connect_delete_namespaced_service_proxy_2(namespace, name, path2)
-connect DELETE requests to proxy of Service
---
-connect_delete_node_proxy(name)
-connect DELETE requests to proxy of Node
---
-connect_delete_node_proxy_3(name, path2)
-connect DELETE requests to proxy of Node
---
-connect_get_namespaced_pod_attach(namespace, name)
-connect GET requests to attach of Pod
---
-connect_get_namespaced_pod_exec(namespace, name)
-connect GET requests to exec of Pod
---
-connect_get_namespaced_pod_portforward(namespace, name)
-connect GET requests to portforward of Pod
---
-connect_get_namespaced_pod_proxy(namespace, name)
-connect GET requests to proxy of Pod
---
-connect_get_namespaced_pod_proxy_4(namespace, name, path2)
-connect GET requests to proxy of Pod
---
-connect_get_namespaced_service_proxy(namespace, name)
-connect GET requests to proxy of Service
---
-connect_get_namespaced_service_proxy_5(namespace, name, path2)
-connect GET requests to proxy of Service
---
-connect_get_node_proxy(name)
-connect GET requests to proxy of Node
---
-connect_get_node_proxy_6(name, path2)
-connect GET requests to proxy of Node
---
-connect_head_namespaced_pod_proxy(namespace, name)
-connect HEAD requests to proxy of Pod
---
-connect_head_namespaced_pod_proxy_7(namespace, name, path2)
-connect HEAD requests to proxy of Pod
---
-connect_head_namespaced_service_proxy(namespace, name)
-connect HEAD requests to proxy of Service
---
-connect_head_namespaced_service_proxy_8(namespace, name, path2)
-connect HEAD requests to proxy of Service
---
-connect_head_node_proxy(name)
-connect HEAD requests to proxy of Node
---
-connect_head_node_proxy_9(name, path2)
-connect HEAD requests to proxy of Node
---
-connect_options_namespaced_pod_proxy(namespace, name)
-connect OPTIONS requests to proxy of Pod
---
-connect_options_namespaced_pod_proxy_10(namespace, name, path2)
-connect OPTIONS requests to proxy of Pod
---
-connect_options_namespaced_service_proxy(namespace, name)
-connect OPTIONS requests to proxy of Service
---
-connect_options_namespaced_service_proxy_11(namespace, name, path2)
-connect OPTIONS requests to proxy of Service
---
-connect_options_node_proxy(name)
-connect OPTIONS requests to proxy of Node
---
-connect_options_node_proxy_12(name, path2)
-connect OPTIONS requests to proxy of Node
---
-connect_post_namespaced_pod_attach(namespace, name)
-connect POST requests to attach of Pod
---
-connect_post_namespaced_pod_exec(namespace, name)
-connect POST requests to exec of Pod
---
-connect_post_namespaced_pod_portforward(namespace, name)
-connect POST requests to portforward of Pod
---
-connect_post_namespaced_pod_proxy(namespace, name)
-connect POST requests to proxy of Pod
---
-connect_post_namespaced_pod_proxy_13(namespace, name, path2)
-connect POST requests to proxy of Pod
---
-connect_post_namespaced_service_proxy(namespace, name)
-connect POST requests to proxy of Service
---
-connect_post_namespaced_service_proxy_14(namespace, name, path2)
-connect POST requests to proxy of Service
---
-connect_post_node_proxy(name)
-connect POST requests to proxy of Node
---
-connect_post_node_proxy_15(name, path2)
-connect POST requests to proxy of Node
---
-connect_put_namespaced_pod_proxy(namespace, name)
-connect PUT requests to proxy of Pod
---
-connect_put_namespaced_pod_proxy_16(namespace, name, path2)
-connect PUT requests to proxy of Pod
---
-connect_put_namespaced_service_proxy(namespace, name)
-connect PUT requests to proxy of Service
---
-connect_put_namespaced_service_proxy_17(namespace, name, path2)
-connect PUT requests to proxy of Service
---
-connect_put_node_proxy(name)
-connect PUT requests to proxy of Node
---
-connect_put_node_proxy_18(name, path2)
-connect PUT requests to proxy of Node
---
-create_namespace(body)
-create a Namespace
---
-create_namespaced_binding(body, namespace)
-create a Binding
---
-create_namespaced_binding_binding(body, namespace, name)
-create binding of a Binding
---
-create_namespaced_config_map(body, namespace)
-create a ConfigMap
---
-create_namespaced_endpoints(body, namespace)
-create a Endpoints
---
-create_namespaced_event(body, namespace)
-create a Event
---
-create_namespaced_limit_range(body, namespace)
-create a LimitRange
---
-create_namespaced_persistent_volume_claim(body, namespace)
-create a PersistentVolumeClaim
---
-create_namespaced_pod(body, namespace)
-create a Pod
---
-create_namespaced_pod_template(body, namespace)
-create a PodTemplate
---
-create_namespaced_replication_controller(body, namespace)
-create a ReplicationController
---
-create_namespaced_resource_quota(body, namespace)
-create a ResourceQuota
---
-create_namespaced_secret(body, namespace)
-create a Secret
---
-create_namespaced_service(body, namespace)
-create a Service
---
-create_namespaced_service_account(body, namespace)
-create a ServiceAccount
---
-create_node(body)
-create a Node
---
-create_persistent_volume(body)
-create a PersistentVolume
---
-delete_namespace(body, name)
-delete a Namespace
---
-delete_namespaced_config_map(body, namespace, name)
-delete a ConfigMap
---
-delete_namespaced_endpoints(body, namespace, name)
-delete a Endpoints
---
-delete_namespaced_event(body, namespace, name)
-delete a Event
---
-delete_namespaced_limit_range(body, namespace, name)
-delete a LimitRange
---
-delete_namespaced_persistent_volume_claim(body, namespace, name)
-delete a PersistentVolumeClaim
---
-delete_namespaced_pod(body, namespace, name)
-delete a Pod
---
-delete_namespaced_pod_template(body, namespace, name)
-delete a PodTemplate
---
-delete_namespaced_replication_controller(body, namespace, name)
-delete a ReplicationController
---
-delete_namespaced_resource_quota(body, namespace, name)
-delete a ResourceQuota
---
-delete_namespaced_secret(body, namespace, name)
-delete a Secret
---
-delete_namespaced_service(namespace, name)
-delete a Service
---
-delete_namespaced_service_account(body, namespace, name)
-delete a ServiceAccount
---
-delete_node(body, name)
-delete a Node
---
-delete_persistent_volume(body, name)
-delete a PersistentVolume
---
-deletecollection_namespace()
-delete collection of Namespace
---
-deletecollection_namespaced_config_map(namespace)
-delete collection of ConfigMap
---
-deletecollection_namespaced_endpoints(namespace)
-delete collection of Endpoints
---
-deletecollection_namespaced_event(namespace)
-delete collection of Event
---
-deletecollection_namespaced_limit_range(namespace)
-delete collection of LimitRange
---
-deletecollection_namespaced_persistent_volume_claim(namespace)
-delete collection of PersistentVolumeClaim
---
-deletecollection_namespaced_pod(namespace)
-delete collection of Pod
---
-deletecollection_namespaced_pod_template(namespace)
-delete collection of PodTemplate
---
-deletecollection_namespaced_replication_controller(namespace)
-delete collection of ReplicationController
---
-deletecollection_namespaced_resource_quota(namespace)
-delete collection of ResourceQuota
---
-deletecollection_namespaced_secret(namespace)
-delete collection of Secret
---
-deletecollection_namespaced_service_account(namespace)
-delete collection of ServiceAccount
---
-deletecollection_node()
-delete collection of Node
---
-deletecollection_persistent_volume()
-delete collection of PersistentVolume
---
-get_api_resources()
-get available resources
---
-list_component_status()
-list objects of kind ComponentStatus
---
-list_namespace()
-list or watch objects of kind Namespace
---
-list_namespaced_config_map()
-list or watch objects of kind ConfigMap
---
-list_namespaced_config_map_19(namespace)
-list or watch objects of kind ConfigMap
---
-list_namespaced_endpoints()
-list or watch objects of kind Endpoints
---
-list_namespaced_endpoints_20(namespace)
-list or watch objects of kind Endpoints
---
-list_namespaced_event()
-list or watch objects of kind Event
---
-list_namespaced_event_21(namespace)
-list or watch objects of kind Event
---
-list_namespaced_limit_range()
-list or watch objects of kind LimitRange
---
-list_namespaced_limit_range_22(namespace)
-list or watch objects of kind LimitRange
---
-list_namespaced_persistent_volume_claim(namespace)
-list or watch objects of kind PersistentVolumeClaim
---
-list_namespaced_persistent_volume_claim_23()
-list or watch objects of kind PersistentVolumeClaim
---
-list_namespaced_pod(namespace)
-list or watch objects of kind Pod
---
-list_namespaced_pod_24()
-list or watch objects of kind Pod
---
-list_namespaced_pod_template(namespace)
-list or watch objects of kind PodTemplate
---
-list_namespaced_pod_template_25()
-list or watch objects of kind PodTemplate
---
-list_namespaced_replication_controller(namespace)
-list or watch objects of kind ReplicationController
---
-list_namespaced_replication_controller_26()
-list or watch objects of kind ReplicationController
---
-list_namespaced_resource_quota(namespace)
-list or watch objects of kind ResourceQuota
---
-list_namespaced_resource_quota_27()
-list or watch objects of kind ResourceQuota
---
-list_namespaced_secret(namespace)
-list or watch objects of kind Secret
---
-list_namespaced_secret_28()
-list or watch objects of kind Secret
---
-list_namespaced_service(namespace)
-list or watch objects of kind Service
---
-list_namespaced_service_29()
-list or watch objects of kind Service
---
-list_namespaced_service_account(namespace)
-list or watch objects of kind ServiceAccount
---
-list_namespaced_service_account_30()
-list or watch objects of kind ServiceAccount
---
-list_node()
-list or watch objects of kind Node
---
-list_persistent_volume()
-list or watch objects of kind PersistentVolume
---
-patch_namespace(body, name)
-partially update the specified Namespace
---
-patch_namespaced_config_map(body, namespace, name)
-partially update the specified ConfigMap
---
-patch_namespaced_endpoints(body, namespace, name)
-partially update the specified Endpoints
---
-patch_namespaced_event(body, namespace, name)
-partially update the specified Event
---
-patch_namespaced_limit_range(body, namespace, name)
-partially update the specified LimitRange
---
-patch_namespaced_persistent_volume_claim(body, namespace, name)
-partially update the specified PersistentVolumeClaim
---
-patch_namespaced_pod(body, namespace, name)
-partially update the specified Pod
---
-patch_namespaced_pod_template(body, namespace, name)
-partially update the specified PodTemplate
---
-patch_namespaced_replication_controller(body, namespace, name)
-partially update the specified ReplicationController
---
-patch_namespaced_resource_quota(body, namespace, name)
-partially update the specified ResourceQuota
---
-patch_namespaced_scale_scale(body, namespace, name)
-partially update scale of the specified Scale
---
-patch_namespaced_secret(body, namespace, name)
-partially update the specified Secret
---
-patch_namespaced_service(body, namespace, name)
-partially update the specified Service
---
-patch_namespaced_service_account(body, namespace, name)
-partially update the specified ServiceAccount
---
-patch_node(body, name)
-partially update the specified Node
---
-patch_persistent_volume(body, name)
-partially update the specified PersistentVolume
---
-proxy_delete_namespaced_pod(namespace, name)
-proxy DELETE requests to Pod
---
-proxy_delete_namespaced_pod_31(namespace, name, path)
-proxy DELETE requests to Pod
---
-proxy_delete_namespaced_service(namespace, name)
-proxy DELETE requests to Service
---
-proxy_delete_namespaced_service_32(namespace, name, path)
-proxy DELETE requests to Service
---
-proxy_delete_node(name)
-proxy DELETE requests to Node
---
-proxy_delete_node_33(name, path)
-proxy DELETE requests to Node
---
-proxy_get_namespaced_pod(namespace, name)
-proxy GET requests to Pod
---
-proxy_get_namespaced_pod_34(namespace, name, path)
-proxy GET requests to Pod
---
-proxy_get_namespaced_service(namespace, name)
-proxy GET requests to Service
---
-proxy_get_namespaced_service_35(namespace, name, path)
-proxy GET requests to Service
---
-proxy_get_node(name)
-proxy GET requests to Node
---
-proxy_get_node_36(name, path)
-proxy GET requests to Node
---
-proxy_head_namespaced_pod(namespace, name)
-proxy HEAD requests to Pod
---
-proxy_head_namespaced_pod_37(namespace, name, path)
-proxy HEAD requests to Pod
---
-proxy_head_namespaced_service(namespace, name)
-proxy HEAD requests to Service
---
-proxy_head_namespaced_service_38(namespace, name, path)
-proxy HEAD requests to Service
---
-proxy_head_node(name)
-proxy HEAD requests to Node
---
-proxy_head_node_39(name, path)
-proxy HEAD requests to Node
---
-proxy_options_namespaced_pod(namespace, name)
-proxy OPTIONS requests to Pod
---
-proxy_options_namespaced_pod_40(namespace, name, path)
-proxy OPTIONS requests to Pod
---
-proxy_options_namespaced_service(namespace, name)
-proxy OPTIONS requests to Service
---
-proxy_options_namespaced_service_41(namespace, name, path)
-proxy OPTIONS requests to Service
---
-proxy_options_node(name)
-proxy OPTIONS requests to Node
---
-proxy_options_node_42(name, path)
-proxy OPTIONS requests to Node
---
-proxy_post_namespaced_pod(namespace, name)
-proxy POST requests to Pod
---
-proxy_post_namespaced_pod_43(namespace, name, path)
-proxy POST requests to Pod
---
-proxy_post_namespaced_service(namespace, name)
-proxy POST requests to Service
---
-proxy_post_namespaced_service_44(namespace, name, path)
-proxy POST requests to Service
---
-proxy_post_node(name)
-proxy POST requests to Node
---
-proxy_post_node_45(name, path)
-proxy POST requests to Node
---
-proxy_put_namespaced_pod(namespace, name)
-proxy PUT requests to Pod
---
-proxy_put_namespaced_pod_46(namespace, name, path)
-proxy PUT requests to Pod
---
-proxy_put_namespaced_service(namespace, name)
-proxy PUT requests to Service
---
-proxy_put_namespaced_service_47(namespace, name, path)
-proxy PUT requests to Service
---
-proxy_put_node(name)
-proxy PUT requests to Node
---
-proxy_put_node_48(name, path)
-proxy PUT requests to Node
---
-read_component_status(name)
-read the specified ComponentStatus
---
-read_namespace(name)
-read the specified Namespace
---
-read_namespaced_config_map(namespace, name)
-read the specified ConfigMap
---
-read_namespaced_endpoints(namespace, name)
-read the specified Endpoints
---
-read_namespaced_event(namespace, name)
-read the specified Event
---
-read_namespaced_limit_range(namespace, name)
-read the specified LimitRange
---
-read_namespaced_persistent_volume_claim(namespace, name)
-read the specified PersistentVolumeClaim
---
-read_namespaced_pod(namespace, name)
-read the specified Pod
---
-read_namespaced_pod_log(namespace, name)
-read log of the specified Pod
---
-read_namespaced_pod_template(namespace, name)
-read the specified PodTemplate
---
-read_namespaced_replication_controller(namespace, name)
-read the specified ReplicationController
---
-read_namespaced_resource_quota(namespace, name)
-read the specified ResourceQuota
---
-read_namespaced_scale_scale(namespace, name)
-read scale of the specified Scale
---
-read_namespaced_secret(namespace, name)
-read the specified Secret
---
-read_namespaced_service(namespace, name)
-read the specified Service
---
-read_namespaced_service_account(namespace, name)
-read the specified ServiceAccount
---
-read_node(name)
-read the specified Node
---
-read_persistent_volume(name)
-read the specified PersistentVolume
---
-replace_namespace(body, name)
-replace the specified Namespace
---
-replace_namespace_finalize(body, name)
-replace finalize of the specified Namespace
---
-replace_namespace_status(body, name)
-replace status of the specified Namespace
---
-replace_namespaced_config_map(body, namespace, name)
-replace the specified ConfigMap
---
-replace_namespaced_endpoints(body, namespace, name)
-replace the specified Endpoints
---
-replace_namespaced_event(body, namespace, name)
-replace the specified Event
---
-replace_namespaced_limit_range(body, namespace, name)
-replace the specified LimitRange
---
-replace_namespaced_persistent_volume_claim(body, namespace, name)
-replace the specified PersistentVolumeClaim
---
-replace_namespaced_persistent_volume_claim_status(body, namespace, name)
-replace status of the specified PersistentVolumeClaim
---
-replace_namespaced_pod(body, namespace, name)
-replace the specified Pod
---
-replace_namespaced_pod_status(body, namespace, name)
-replace status of the specified Pod
---
-replace_namespaced_pod_template(body, namespace, name)
-replace the specified PodTemplate
---
-replace_namespaced_replication_controller(body, namespace, name)
-replace the specified ReplicationController
---
-replace_namespaced_replication_controller_status(body, namespace, name)
-replace status of the specified ReplicationController
---
-replace_namespaced_resource_quota(body, namespace, name)
-replace the specified ResourceQuota
---
-replace_namespaced_resource_quota_status(body, namespace, name)
-replace status of the specified ResourceQuota
---
-replace_namespaced_scale_scale(body, namespace, name)
-replace scale of the specified Scale
---
-replace_namespaced_secret(body, namespace, name)
-replace the specified Secret
---
-replace_namespaced_service(body, namespace, name)
-replace the specified Service
---
-replace_namespaced_service_account(body, namespace, name)
-replace the specified ServiceAccount
---
-replace_namespaced_service_status(body, namespace, name)
-replace status of the specified Service
---
-replace_node(body, name)
-replace the specified Node
---
-replace_node_status(body, name)
-replace status of the specified Node
---
-replace_persistent_volume(body, name)
-replace the specified PersistentVolume
---
-replace_persistent_volume_status(body, name)
-replace status of the specified PersistentVolume
---
-watch_namespace(name)
-watch changes to an object of kind Namespace
---
-watch_namespace_list()
-watch individual changes to a list of Namespace
---
-watch_namespaced_config_map(namespace, name)
-watch changes to an object of kind ConfigMap
---
-watch_namespaced_config_map_list()
-watch individual changes to a list of ConfigMap
---
-watch_namespaced_config_map_list_49(namespace)
-watch individual changes to a list of ConfigMap
---
-watch_namespaced_endpoints(namespace, name)
-watch changes to an object of kind Endpoints
---
-watch_namespaced_endpoints_list()
-watch individual changes to a list of Endpoints
---
-watch_namespaced_endpoints_list_50(namespace)
-watch individual changes to a list of Endpoints
---
-watch_namespaced_event(namespace, name)
-watch changes to an object of kind Event
---
-watch_namespaced_event_list()
-watch individual changes to a list of Event
---
-watch_namespaced_event_list_51(namespace)
-watch individual changes to a list of Event
---
-watch_namespaced_limit_range(namespace, name)
-watch changes to an object of kind LimitRange
---
-watch_namespaced_limit_range_list()
-watch individual changes to a list of LimitRange
---
-watch_namespaced_limit_range_list_52(namespace)
-watch individual changes to a list of LimitRange
---
-watch_namespaced_persistent_volume_claim(namespace, name)
-watch changes to an object of kind PersistentVolumeClaim
---
-watch_namespaced_persistent_volume_claim_list(namespace)
-watch individual changes to a list of PersistentVolumeClaim
---
-watch_namespaced_persistent_volume_claim_list_53()
-watch individual changes to a list of PersistentVolumeClaim
---
-watch_namespaced_pod(namespace, name)
-watch changes to an object of kind Pod
---
-watch_namespaced_pod_list(namespace)
-watch individual changes to a list of Pod
---
-watch_namespaced_pod_list_54()
-watch individual changes to a list of Pod
---
-watch_namespaced_pod_template(namespace, name)
-watch changes to an object of kind PodTemplate
---
-watch_namespaced_pod_template_list(namespace)
-watch individual changes to a list of PodTemplate
---
-watch_namespaced_pod_template_list_55()
-watch individual changes to a list of PodTemplate
---
-watch_namespaced_replication_controller(namespace, name)
-watch changes to an object of kind ReplicationController
---
-watch_namespaced_replication_controller_list(namespace)
-watch individual changes to a list of ReplicationController
---
-watch_namespaced_replication_controller_list_56()
-watch individual changes to a list of ReplicationController
---
-watch_namespaced_resource_quota(namespace, name)
-watch changes to an object of kind ResourceQuota
---
-watch_namespaced_resource_quota_list(namespace)
-watch individual changes to a list of ResourceQuota
---
-watch_namespaced_resource_quota_list_57()
-watch individual changes to a list of ResourceQuota
---
-watch_namespaced_secret(namespace, name)
-watch changes to an object of kind Secret
---
-watch_namespaced_secret_list(namespace)
-watch individual changes to a list of Secret
---
-watch_namespaced_secret_list_58()
-watch individual changes to a list of Secret
---
-watch_namespaced_service(namespace, name)
-watch changes to an object of kind Service
---
-watch_namespaced_service_account(namespace, name)
-watch changes to an object of kind ServiceAccount
---
-watch_namespaced_service_account_list(namespace)
-watch individual changes to a list of ServiceAccount
---
-watch_namespaced_service_account_list_59()
-watch individual changes to a list of ServiceAccount
---
-watch_namespaced_service_list(namespace)
-watch individual changes to a list of Service
---
-watch_namespaced_service_list_60()
-watch individual changes to a list of Service
---
-watch_node(name)
-watch changes to an object of kind Node
---
-watch_node_list()
-watch individual changes to a list of Node
---
-watch_persistent_volume(name)
-watch changes to an object of kind PersistentVolume
---
-watch_persistent_volume_list()
-watch individual changes to a list of PersistentVolume
+`--`
+`connect_delete_namespaced_pod_proxy(self,namespace,name,)`
+`connectDELETErequeststoproxyofPod`
+`--`
+`connect_delete_namespaced_pod_proxy_1(self,namespace,name,path2,)`
+`connectDELETErequeststoproxyofPod`
+`--`
+`connect_delete_namespaced_service_proxy(self,namespace,name,)`
+`connectDELETErequeststoproxyofService`
+`--`
+`connect_delete_namespaced_service_proxy_2(self,namespace,name,path2,)`
+`connectDELETErequeststoproxyofService`
+`--`
+`connect_delete_node_proxy(self,name,)`
+`connectDELETErequeststoproxyofNode`
+`--`
+`connect_delete_node_proxy_3(self,name,path2,)`
+`connectDELETErequeststoproxyofNode`
+`--`
+`connect_get_namespaced_pod_attach(self,namespace,name,)`
+`connectGETrequeststoattachofPod`
+`--`
+`connect_get_namespaced_pod_exec(self,namespace,name,)`
+`connectGETrequeststoexecofPod`
+`--`
+`connect_get_namespaced_pod_portforward(self,namespace,name,)`
+`connectGETrequeststoportforwardofPod`
+`--`
+`connect_get_namespaced_pod_proxy(self,namespace,name,)`
+`connectGETrequeststoproxyofPod`
+`--`
+`connect_get_namespaced_pod_proxy_4(self,namespace,name,path2,)`
+`connectGETrequeststoproxyofPod`
+`--`
+`connect_get_namespaced_service_proxy(self,namespace,name,)`
+`connectGETrequeststoproxyofService`
+`--`
+`connect_get_namespaced_service_proxy_5(self,namespace,name,path2,)`
+`connectGETrequeststoproxyofService`
+`--`
+`connect_get_node_proxy(self,name,)`
+`connectGETrequeststoproxyofNode`
+`--`
+`connect_get_node_proxy_6(self,name,path2,)`
+`connectGETrequeststoproxyofNode`
+`--`
+`connect_head_namespaced_pod_proxy(self,namespace,name,)`
+`connectHEADrequeststoproxyofPod`
+`--`
+`connect_head_namespaced_pod_proxy_7(self,namespace,name,path2,)`
+`connectHEADrequeststoproxyofPod`
+`--`
+`connect_head_namespaced_service_proxy(self,namespace,name,)`
+`connectHEADrequeststoproxyofService`
+`--`
+`connect_head_namespaced_service_proxy_8(self,namespace,name,path2,)`
+`connectHEADrequeststoproxyofService`
+`--`
+`connect_head_node_proxy(self,name,)`
+`connectHEADrequeststoproxyofNode`
+`--`
+`connect_head_node_proxy_9(self,name,path2,)`
+`connectHEADrequeststoproxyofNode`
+`--`
+`connect_options_namespaced_pod_proxy(self,namespace,name,)`
+`connectOPTIONSrequeststoproxyofPod`
+`--`
+`connect_options_namespaced_pod_proxy_10(self,namespace,name,path2,)`
+`connectOPTIONSrequeststoproxyofPod`
+`--`
+`connect_options_namespaced_service_proxy(self,namespace,name,)`
+`connectOPTIONSrequeststoproxyofService`
+`--`
+`connect_options_namespaced_service_proxy_11(self,namespace,name,path2,)`
+`connectOPTIONSrequeststoproxyofService`
+`--`
+`connect_options_node_proxy(self,name,)`
+`connectOPTIONSrequeststoproxyofNode`
+`--`
+`connect_options_node_proxy_12(self,name,path2,)`
+`connectOPTIONSrequeststoproxyofNode`
+`--`
+`connect_post_namespaced_pod_attach(self,namespace,name,)`
+`connectPOSTrequeststoattachofPod`
+`--`
+`connect_post_namespaced_pod_exec(self,namespace,name,)`
+`connectPOSTrequeststoexecofPod`
+`--`
+`connect_post_namespaced_pod_portforward(self,namespace,name,)`
+`connectPOSTrequeststoportforwardofPod`
+`--`
+`connect_post_namespaced_pod_proxy(self,namespace,name,)`
+`connectPOSTrequeststoproxyofPod`
+`--`
+`connect_post_namespaced_pod_proxy_13(self,namespace,name,path2,)`
+`connectPOSTrequeststoproxyofPod`
+`--`
+`connect_post_namespaced_service_proxy(self,namespace,name,)`
+`connectPOSTrequeststoproxyofService`
+`--`
+`connect_post_namespaced_service_proxy_14(self,namespace,name,path2,)`
+`connectPOSTrequeststoproxyofService`
+`--`
+`connect_post_node_proxy(self,name,)`
+`connectPOSTrequeststoproxyofNode`
+`--`
+`connect_post_node_proxy_15(self,name,path2,)`
+`connectPOSTrequeststoproxyofNode`
+`--`
+`connect_put_namespaced_pod_proxy(self,namespace,name,)`
+`connectPUTrequeststoproxyofPod`
+`--`
+`connect_put_namespaced_pod_proxy_16(self,namespace,name,path2,)`
+`connectPUTrequeststoproxyofPod`
+`--`
+`connect_put_namespaced_service_proxy(self,namespace,name,)`
+`connectPUTrequeststoproxyofService`
+`--`
+`connect_put_namespaced_service_proxy_17(self,namespace,name,path2,)`
+`connectPUTrequeststoproxyofService`
+`--`
+`connect_put_node_proxy(self,name,)`
+`connectPUTrequeststoproxyofNode`
+`--`
+`connect_put_node_proxy_18(self,name,path2,)`
+`connectPUTrequeststoproxyofNode`
+`--`
+`create_namespace(self,body,)`
+`createaNamespace`
+`--`
+`create_namespaced_binding(self,body,namespace,)`
+`createaBinding`
+`--`
+`create_namespaced_binding_binding(self,body,namespace,name,)`
+`createbindingofaBinding`
+`--`
+`create_namespaced_config_map(self,body,namespace,)`
+`createaConfigMap`
+`--`
+`create_namespaced_endpoints(self,body,namespace,)`
+`createaEndpoints`
+`--`
+`create_namespaced_event(self,body,namespace,)`
+`createaEvent`
+`--`
+`create_namespaced_limit_range(self,body,namespace,)`
+`createaLimitRange`
+`--`
+`create_namespaced_persistent_volume_claim(self,body,namespace,)`
+`createaPersistentVolumeClaim`
+`--`
+`create_namespaced_pod(self,body,namespace,)`
+`createaPod`
+`--`
+`create_namespaced_pod_template(self,body,namespace,)`
+`createaPodTemplate`
+`--`
+`create_namespaced_replication_controller(self,body,namespace,)`
+`createaReplicationController`
+`--`
+`create_namespaced_resource_quota(self,body,namespace,)`
+`createaResourceQuota`
+`--`
+`create_namespaced_secret(self,body,namespace,)`
+`createaSecret`
+`--`
+`create_namespaced_service(self,body,namespace,)`
+`createaService`
+`--`
+`create_namespaced_service_account(self,body,namespace,)`
+`createaServiceAccount`
+`--`
+`create_node(self,body,)`
+`createaNode`
+`--`
+`create_persistent_volume(self,body,)`
+`createaPersistentVolume`
+`--`
+`delete_namespace(self,body,name,)`
+`deleteaNamespace`
+`--`
+`delete_namespaced_config_map(self,body,namespace,name,)`
+`deleteaConfigMap`
+`--`
+`delete_namespaced_endpoints(self,body,namespace,name,)`
+`deleteaEndpoints`
+`--`
+`delete_namespaced_event(self,body,namespace,name,)`
+`deleteaEvent`
+`--`
+`delete_namespaced_limit_range(self,body,namespace,name,)`
+`deleteaLimitRange`
+`--`
+`delete_namespaced_persistent_volume_claim(self,body,namespace,name,)`
+`deleteaPersistentVolumeClaim`
+`--`
+`delete_namespaced_pod(self,body,namespace,name,)`
+`deleteaPod`
+`--`
+`delete_namespaced_pod_template(self,body,namespace,name,)`
+`deleteaPodTemplate`
+`--`
+`delete_namespaced_replication_controller(self,body,namespace,name,)`
+`deleteaReplicationController`
+`--`
+`delete_namespaced_resource_quota(self,body,namespace,name,)`
+`deleteaResourceQuota`
+`--`
+`delete_namespaced_secret(self,body,namespace,name,)`
+`deleteaSecret`
+`--`
+`delete_namespaced_service(self,namespace,name,)`
+`deleteaService`
+`--`
+`delete_namespaced_service_account(self,body,namespace,name,)`
+`deleteaServiceAccount`
+`--`
+`delete_node(self,body,name,)`
+`deleteaNode`
+`--`
+`delete_persistent_volume(self,body,name,)`
+`deleteaPersistentVolume`
+`--`
+`deletecollection_namespace(self,)`
+`deletecollectionofNamespace`
+`--`
+`deletecollection_namespaced_config_map(self,namespace,)`
+`deletecollectionofConfigMap`
+`--`
+`deletecollection_namespaced_endpoints(self,namespace,)`
+`deletecollectionofEndpoints`
+`--`
+`deletecollection_namespaced_event(self,namespace,)`
+`deletecollectionofEvent`
+`--`
+`deletecollection_namespaced_limit_range(self,namespace,)`
+`deletecollectionofLimitRange`
+`--`
+`deletecollection_namespaced_persistent_volume_claim(self,namespace,)`
+`deletecollectionofPersistentVolumeClaim`
+`--`
+`deletecollection_namespaced_pod(self,namespace,)`
+`deletecollectionofPod`
+`--`
+`deletecollection_namespaced_pod_template(self,namespace,)`
+`deletecollectionofPodTemplate`
+`--`
+`deletecollection_namespaced_replication_controller(self,namespace,)`
+`deletecollectionofReplicationController`
+`--`
+`deletecollection_namespaced_resource_quota(self,namespace,)`
+`deletecollectionofResourceQuota`
+`--`
+`deletecollection_namespaced_secret(self,namespace,)`
+`deletecollectionofSecret`
+`--`
+`deletecollection_namespaced_service_account(self,namespace,)`
+`deletecollectionofServiceAccount`
+`--`
+`deletecollection_node(self,)`
+`deletecollectionofNode`
+`--`
+`deletecollection_persistent_volume(self,)`
+`deletecollectionofPersistentVolume`
+`--`
+`get_api_resources(self,)`
+`getavailableresources`
+`--`
+`list_component_status(self,)`
+`listobjectsofkindComponentStatus`
+`--`
+`list_namespace(self,)`
+`listorwatchobjectsofkindNamespace`
+`--`
+`list_namespaced_config_map(self,)`
+`listorwatchobjectsofkindConfigMap`
+`--`
+`list_namespaced_config_map_19(self,namespace,)`
+`listorwatchobjectsofkindConfigMap`
+`--`
+`list_namespaced_endpoints(self,)`
+`listorwatchobjectsofkindEndpoints`
+`--`
+`list_namespaced_endpoints_20(self,namespace,)`
+`listorwatchobjectsofkindEndpoints`
+`--`
+`list_namespaced_event(self,)`
+`listorwatchobjectsofkindEvent`
+`--`
+`list_namespaced_event_21(self,namespace,)`
+`listorwatchobjectsofkindEvent`
+`--`
+`list_namespaced_limit_range(self,)`
+`listorwatchobjectsofkindLimitRange`
+`--`
+`list_namespaced_limit_range_22(self,namespace,)`
+`listorwatchobjectsofkindLimitRange`
+`--`
+`list_namespaced_persistent_volume_claim(self,namespace,)`
+`listorwatchobjectsofkindPersistentVolumeClaim`
+`--`
+`list_namespaced_persistent_volume_claim_23(self,)`
+`listorwatchobjectsofkindPersistentVolumeClaim`
+`--`
+`list_namespaced_pod(self,namespace,)`
+`listorwatchobjectsofkindPod`
+`--`
+`list_namespaced_pod_24(self,)`
+`listorwatchobjectsofkindPod`
+`--`
+`list_namespaced_pod_template(self,namespace,)`
+`listorwatchobjectsofkindPodTemplate`
+`--`
+`list_namespaced_pod_template_25(self,)`
+`listorwatchobjectsofkindPodTemplate`
+`--`
+`list_namespaced_replication_controller(self,namespace,)`
+`listorwatchobjectsofkindReplicationController`
+`--`
+`list_namespaced_replication_controller_26(self,)`
+`listorwatchobjectsofkindReplicationController`
+`--`
+`list_namespaced_resource_quota(self,namespace,)`
+`listorwatchobjectsofkindResourceQuota`
+`--`
+`list_namespaced_resource_quota_27(self,)`
+`listorwatchobjectsofkindResourceQuota`
+`--`
+`list_namespaced_secret(self,namespace,)`
+`listorwatchobjectsofkindSecret`
+`--`
+`list_namespaced_secret_28(self,)`
+`listorwatchobjectsofkindSecret`
+`--`
+`list_namespaced_service(self,namespace,)`
+`listorwatchobjectsofkindService`
+`--`
+`list_namespaced_service_29(self,)`
+`listorwatchobjectsofkindService`
+`--`
+`list_namespaced_service_account(self,namespace,)`
+`listorwatchobjectsofkindServiceAccount`
+`--`
+`list_namespaced_service_account_30(self,)`
+`listorwatchobjectsofkindServiceAccount`
+`--`
+`list_node(self,)`
+`listorwatchobjectsofkindNode`
+`--`
+`list_persistent_volume(self,)`
+`listorwatchobjectsofkindPersistentVolume`
+`--`
+`patch_namespace(self,body,name,)`
+`partiallyupdatethespecifiedNamespace`
+`--`
+`patch_namespaced_config_map(self,body,namespace,name,)`
+`partiallyupdatethespecifiedConfigMap`
+`--`
+`patch_namespaced_endpoints(self,body,namespace,name,)`
+`partiallyupdatethespecifiedEndpoints`
+`--`
+`patch_namespaced_event(self,body,namespace,name,)`
+`partiallyupdatethespecifiedEvent`
+`--`
+`patch_namespaced_limit_range(self,body,namespace,name,)`
+`partiallyupdatethespecifiedLimitRange`
+`--`
+`patch_namespaced_persistent_volume_claim(self,body,namespace,name,)`
+`partiallyupdatethespecifiedPersistentVolumeClaim`
+`--`
+`patch_namespaced_pod(self,body,namespace,name,)`
+`partiallyupdatethespecifiedPod`
+`--`
+`patch_namespaced_pod_template(self,body,namespace,name,)`
+`partiallyupdatethespecifiedPodTemplate`
+`--`
+`patch_namespaced_replication_controller(self,body,namespace,name,)`
+`partiallyupdatethespecifiedReplicationController`
+`--`
+`patch_namespaced_resource_quota(self,body,namespace,name,)`
+`partiallyupdatethespecifiedResourceQuota`
+`--`
+`patch_namespaced_scale_scale(self,body,namespace,name,)`
+`partiallyupdatescaleofthespecifiedScale`
+`--`
+`patch_namespaced_secret(self,body,namespace,name,)`
+`partiallyupdatethespecifiedSecret`
+`--`
+`patch_namespaced_service(self,body,namespace,name,)`
+`partiallyupdatethespecifiedService`
+`--`
+`patch_namespaced_service_account(self,body,namespace,name,)`
+`partiallyupdatethespecifiedServiceAccount`
+`--`
+`patch_node(self,body,name,)`
+`partiallyupdatethespecifiedNode`
+`--`
+`patch_persistent_volume(self,body,name,)`
+`partiallyupdatethespecifiedPersistentVolume`
+`--`
+`proxy_delete_namespaced_pod(self,namespace,name,)`
+`proxyDELETErequeststoPod`
+`--`
+`proxy_delete_namespaced_pod_31(self,namespace,name,path,)`
+`proxyDELETErequeststoPod`
+`--`
+`proxy_delete_namespaced_service(self,namespace,name,)`
+`proxyDELETErequeststoService`
+`--`
+`proxy_delete_namespaced_service_32(self,namespace,name,path,)`
+`proxyDELETErequeststoService`
+`--`
+`proxy_delete_node(self,name,)`
+`proxyDELETErequeststoNode`
+`--`
+`proxy_delete_node_33(self,name,path,)`
+`proxyDELETErequeststoNode`
+`--`
+`proxy_get_namespaced_pod(self,namespace,name,)`
+`proxyGETrequeststoPod`
+`--`
+`proxy_get_namespaced_pod_34(self,namespace,name,path,)`
+`proxyGETrequeststoPod`
+`--`
+`proxy_get_namespaced_service(self,namespace,name,)`
+`proxyGETrequeststoService`
+`--`
+`proxy_get_namespaced_service_35(self,namespace,name,path,)`
+`proxyGETrequeststoService`
+`--`
+`proxy_get_node(self,name,)`
+`proxyGETrequeststoNode`
+`--`
+`proxy_get_node_36(self,name,path,)`
+`proxyGETrequeststoNode`
+`--`
+`proxy_head_namespaced_pod(self,namespace,name,)`
+`proxyHEADrequeststoPod`
+`--`
+`proxy_head_namespaced_pod_37(self,namespace,name,path,)`
+`proxyHEADrequeststoPod`
+`--`
+`proxy_head_namespaced_service(self,namespace,name,)`
+`proxyHEADrequeststoService`
+`--`
+`proxy_head_namespaced_service_38(self,namespace,name,path,)`
+`proxyHEADrequeststoService`
+`--`
+`proxy_head_node(self,name,)`
+`proxyHEADrequeststoNode`
+`--`
+`proxy_head_node_39(self,name,path,)`
+`proxyHEADrequeststoNode`
+`--`
+`proxy_options_namespaced_pod(self,namespace,name,)`
+`proxyOPTIONSrequeststoPod`
+`--`
+`proxy_options_namespaced_pod_40(self,namespace,name,path,)`
+`proxyOPTIONSrequeststoPod`
+`--`
+`proxy_options_namespaced_service(self,namespace,name,)`
+`proxyOPTIONSrequeststoService`
+`--`
+`proxy_options_namespaced_service_41(self,namespace,name,path,)`
+`proxyOPTIONSrequeststoService`
+`--`
+`proxy_options_node(self,name,)`
+`proxyOPTIONSrequeststoNode`
+`--`
+`proxy_options_node_42(self,name,path,)`
+`proxyOPTIONSrequeststoNode`
+`--`
+`proxy_post_namespaced_pod(self,namespace,name,)`
+`proxyPOSTrequeststoPod`
+`--`
+`proxy_post_namespaced_pod_43(self,namespace,name,path,)`
+`proxyPOSTrequeststoPod`
+`--`
+`proxy_post_namespaced_service(self,namespace,name,)`
+`proxyPOSTrequeststoService`
+`--`
+`proxy_post_namespaced_service_44(self,namespace,name,path,)`
+`proxyPOSTrequeststoService`
+`--`
+`proxy_post_node(self,name,)`
+`proxyPOSTrequeststoNode`
+`--`
+`proxy_post_node_45(self,name,path,)`
+`proxyPOSTrequeststoNode`
+`--`
+`proxy_put_namespaced_pod(self,namespace,name,)`
+`proxyPUTrequeststoPod`
+`--`
+`proxy_put_namespaced_pod_46(self,namespace,name,path,)`
+`proxyPUTrequeststoPod`
+`--`
+`proxy_put_namespaced_service(self,namespace,name,)`
+`proxyPUTrequeststoService`
+`--`
+`proxy_put_namespaced_service_47(self,namespace,name,path,)`
+`proxyPUTrequeststoService`
+`--`
+`proxy_put_node(self,name,)`
+`proxyPUTrequeststoNode`
+`--`
+`proxy_put_node_48(self,name,path,)`
+`proxyPUTrequeststoNode`
+`--`
+`read_component_status(self,name,)`
+`readthespecifiedComponentStatus`
+`--`
+`read_namespace(self,name,)`
+`readthespecifiedNamespace`
+`--`
+`read_namespaced_config_map(self,namespace,name,)`
+`readthespecifiedConfigMap`
+`--`
+`read_namespaced_endpoints(self,namespace,name,)`
+`readthespecifiedEndpoints`
+`--`
+`read_namespaced_event(self,namespace,name,)`
+`readthespecifiedEvent`
+`--`
+`read_namespaced_limit_range(self,namespace,name,)`
+`readthespecifiedLimitRange`
+`--`
+`read_namespaced_persistent_volume_claim(self,namespace,name,)`
+`readthespecifiedPersistentVolumeClaim`
+`--`
+`read_namespaced_pod(self,namespace,name,)`
+`readthespecifiedPod`
+`--`
+`read_namespaced_pod_log(self,namespace,name,)`
+`readlogofthespecifiedPod`
+`--`
+`read_namespaced_pod_template(self,namespace,name,)`
+`readthespecifiedPodTemplate`
+`--`
+`read_namespaced_replication_controller(self,namespace,name,)`
+`readthespecifiedReplicationController`
+`--`
+`read_namespaced_resource_quota(self,namespace,name,)`
+`readthespecifiedResourceQuota`
+`--`
+`read_namespaced_scale_scale(self,namespace,name,)`
+`readscaleofthespecifiedScale`
+`--`
+`read_namespaced_secret(self,namespace,name,)`
+`readthespecifiedSecret`
+`--`
+`read_namespaced_service(self,namespace,name,)`
+`readthespecifiedService`
+`--`
+`read_namespaced_service_account(self,namespace,name,)`
+`readthespecifiedServiceAccount`
+`--`
+`read_node(self,name,)`
+`readthespecifiedNode`
+`--`
+`read_persistent_volume(self,name,)`
+`readthespecifiedPersistentVolume`
+`--`
+`replace_namespace(self,body,name,)`
+`replacethespecifiedNamespace`
+`--`
+`replace_namespace_finalize(self,body,name,)`
+`replacefinalizeofthespecifiedNamespace`
+`--`
+`replace_namespace_status(self,body,name,)`
+`replacestatusofthespecifiedNamespace`
+`--`
+`replace_namespaced_config_map(self,body,namespace,name,)`
+`replacethespecifiedConfigMap`
+`--`
+`replace_namespaced_endpoints(self,body,namespace,name,)`
+`replacethespecifiedEndpoints`
+`--`
+`replace_namespaced_event(self,body,namespace,name,)`
+`replacethespecifiedEvent`
+`--`
+`replace_namespaced_limit_range(self,body,namespace,name,)`
+`replacethespecifiedLimitRange`
+`--`
+`replace_namespaced_persistent_volume_claim(self,body,namespace,name,)`
+`replacethespecifiedPersistentVolumeClaim`
+`--`
+`replace_namespaced_persistent_volume_claim_status(self,body,namespace,name,)`
+`replacestatusofthespecifiedPersistentVolumeClaim`
+`--`
+`replace_namespaced_pod(self,body,namespace,name,)`
+`replacethespecifiedPod`
+`--`
+`replace_namespaced_pod_status(self,body,namespace,name,)`
+`replacestatusofthespecifiedPod`
+`--`
+`replace_namespaced_pod_template(self,body,namespace,name,)`
+`replacethespecifiedPodTemplate`
+`--`
+`replace_namespaced_replication_controller(self,body,namespace,name,)`
+`replacethespecifiedReplicationController`
+`--`
+`replace_namespaced_replication_controller_status(self,body,namespace,name,)`
+`replacestatusofthespecifiedReplicationController`
+`--`
+`replace_namespaced_resource_quota(self,body,namespace,name,)`
+`replacethespecifiedResourceQuota`
+`--`
+`replace_namespaced_resource_quota_status(self,body,namespace,name,)`
+`replacestatusofthespecifiedResourceQuota`
+`--`
+`replace_namespaced_scale_scale(self,body,namespace,name,)`
+`replacescaleofthespecifiedScale`
+`--`
+`replace_namespaced_secret(self,body,namespace,name,)`
+`replacethespecifiedSecret`
+`--`
+`replace_namespaced_service(self,body,namespace,name,)`
+`replacethespecifiedService`
+`--`
+`replace_namespaced_service_account(self,body,namespace,name,)`
+`replacethespecifiedServiceAccount`
+`--`
+`replace_namespaced_service_status(self,body,namespace,name,)`
+`replacestatusofthespecifiedService`
+`--`
+`replace_node(self,body,name,)`
+`replacethespecifiedNode`
+`--`
+`replace_node_status(self,body,name,)`
+`replacestatusofthespecifiedNode`
+`--`
+`replace_persistent_volume(self,body,name,)`
+`replacethespecifiedPersistentVolume`
+`--`
+`replace_persistent_volume_status(self,body,name,)`
+`replacestatusofthespecifiedPersistentVolume`
+`--`
+`watch_namespace(self,name,)`
+`watchchangestoanobjectofkindNamespace`
+`--`
+`watch_namespace_list(self,)`
+`watchindividualchangestoalistofNamespace`
+`--`
+`watch_namespaced_config_map(self,namespace,name,)`
+`watchchangestoanobjectofkindConfigMap`
+`--`
+`watch_namespaced_config_map_list(self,)`
+`watchindividualchangestoalistofConfigMap`
+`--`
+`watch_namespaced_config_map_list_49(self,namespace,)`
+`watchindividualchangestoalistofConfigMap`
+`--`
+`watch_namespaced_endpoints(self,namespace,name,)`
+`watchchangestoanobjectofkindEndpoints`
+`--`
+`watch_namespaced_endpoints_list(self,)`
+`watchindividualchangestoalistofEndpoints`
+`--`
+`watch_namespaced_endpoints_list_50(self,namespace,)`
+`watchindividualchangestoalistofEndpoints`
+`--`
+`watch_namespaced_event(self,namespace,name,)`
+`watchchangestoanobjectofkindEvent`
+`--`
+`watch_namespaced_event_list(self,)`
+`watchindividualchangestoalistofEvent`
+`--`
+`watch_namespaced_event_list_51(self,namespace,)`
+`watchindividualchangestoalistofEvent`
+`--`
+`watch_namespaced_limit_range(self,namespace,name,)`
+`watchchangestoanobjectofkindLimitRange`
+`--`
+`watch_namespaced_limit_range_list(self,)`
+`watchindividualchangestoalistofLimitRange`
+`--`
+`watch_namespaced_limit_range_list_52(self,namespace,)`
+`watchindividualchangestoalistofLimitRange`
+`--`
+`watch_namespaced_persistent_volume_claim(self,namespace,name,)`
+`watchchangestoanobjectofkindPersistentVolumeClaim`
+`--`
+`watch_namespaced_persistent_volume_claim_list(self,namespace,)`
+`watchindividualchangestoalistofPersistentVolumeClaim`
+`--`
+`watch_namespaced_persistent_volume_claim_list_53(self,)`
+`watchindividualchangestoalistofPersistentVolumeClaim`
+`--`
+`watch_namespaced_pod(self,namespace,name,)`
+`watchchangestoanobjectofkindPod`
+`--`
+`watch_namespaced_pod_list(self,namespace,)`
+`watchindividualchangestoalistofPod`
+`--`
+`watch_namespaced_pod_list_54(self,)`
+`watchindividualchangestoalistofPod`
+`--`
+`watch_namespaced_pod_template(self,namespace,name,)`
+`watchchangestoanobjectofkindPodTemplate`
+`--`
+`watch_namespaced_pod_template_list(self,namespace,)`
+`watchindividualchangestoalistofPodTemplate`
+`--`
+`watch_namespaced_pod_template_list_55(self,)`
+`watchindividualchangestoalistofPodTemplate`
+`--`
+`watch_namespaced_replication_controller(self,namespace,name,)`
+`watchchangestoanobjectofkindReplicationController`
+`--`
+`watch_namespaced_replication_controller_list(self,namespace,)`
+`watchindividualchangestoalistofReplicationController`
+`--`
+`watch_namespaced_replication_controller_list_56(self,)`
+`watchindividualchangestoalistofReplicationController`
+`--`
+`watch_namespaced_resource_quota(self,namespace,name,)`
+`watchchangestoanobjectofkindResourceQuota`
+`--`
+`watch_namespaced_resource_quota_list(self,namespace,)`
+`watchindividualchangestoalistofResourceQuota`
+`--`
+`watch_namespaced_resource_quota_list_57(self,)`
+`watchindividualchangestoalistofResourceQuota`
+`--`
+`watch_namespaced_secret(self,namespace,name,)`
+`watchchangestoanobjectofkindSecret`
+`--`
+`watch_namespaced_secret_list(self,namespace,)`
+`watchindividualchangestoalistofSecret`
+`--`
+`watch_namespaced_secret_list_58(self,)`
+`watchindividualchangestoalistofSecret`
+`--`
+`watch_namespaced_service(self,namespace,name,)`
+`watchchangestoanobjectofkindService`
+`--`
+`watch_namespaced_service_account(self,namespace,name,)`
+`watchchangestoanobjectofkindServiceAccount`
+`--`
+`watch_namespaced_service_account_list(self,namespace,)`
+`watchindividualchangestoalistofServiceAccount`
+`--`
+`watch_namespaced_service_account_list_59(self,)`
+`watchindividualchangestoalistofServiceAccount`
+`--`
+`watch_namespaced_service_list(self,namespace,)`
+`watchindividualchangestoalistofService`
+`--`
+`watch_namespaced_service_list_60(self,)`
+`watchindividualchangestoalistofService`
+`--`
+`watch_node(self,name,)`
+`watchchangestoanobjectofkindNode`
+`--`
+`watch_node_list(self,)`
+`watchindividualchangestoalistofNode`
+`--`
+`watch_persistent_volume(self,name,)`
+`watchchangestoanobjectofkindPersistentVolume`
+`--`
+`watch_persistent_volume_list(self,)`
+`watchindividualchangestoalistofPersistentVolume`
 
 ## Tests
 
