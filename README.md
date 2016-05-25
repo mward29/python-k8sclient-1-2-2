@@ -1,6 +1,6 @@
 ## Requirements.
 Python 2.7 and later.
-swagger-codegen (if you intend to generate your own client)
+swagger-codegen (if you intend to generate your own client) - Built with Codegen 2.1.6
 
 
 ## v1.json
