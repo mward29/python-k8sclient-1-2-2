@@ -1,9 +1,8 @@
 from __future__ import absolute_import
 
 # import models into sdk package
-from .models.types_uid import TypesUID
-from .models.unversioned_api_resource import UnversionedAPIResource
-from .models.unversioned_api_resource_list import UnversionedAPIResourceList
+from .models.integer import Integer
+from .models.json_watch_event import JsonWatchEvent
 from .models.unversioned_list_meta import UnversionedListMeta
 from .models.unversioned_patch import UnversionedPatch
 from .models.unversioned_status import UnversionedStatus
@@ -84,7 +83,6 @@ from .models.v1_node_system_info import V1NodeSystemInfo
 from .models.v1_object_field_selector import V1ObjectFieldSelector
 from .models.v1_object_meta import V1ObjectMeta
 from .models.v1_object_reference import V1ObjectReference
-from .models.v1_owner_reference import V1OwnerReference
 from .models.v1_persistent_volume import V1PersistentVolume
 from .models.v1_persistent_volume_access_mode import V1PersistentVolumeAccessMode
 from .models.v1_persistent_volume_claim import V1PersistentVolumeClaim
@@ -104,7 +102,6 @@ from .models.v1_pod_status import V1PodStatus
 from .models.v1_pod_template import V1PodTemplate
 from .models.v1_pod_template_list import V1PodTemplateList
 from .models.v1_pod_template_spec import V1PodTemplateSpec
-from .models.v1_preconditions import V1Preconditions
 from .models.v1_probe import V1Probe
 from .models.v1_rbd_volume_source import V1RBDVolumeSource
 from .models.v1_replication_controller import V1ReplicationController
@@ -136,8 +133,6 @@ from .models.v1_service_status import V1ServiceStatus
 from .models.v1_tcp_socket_action import V1TCPSocketAction
 from .models.v1_volume import V1Volume
 from .models.v1_volume_mount import V1VolumeMount
-from .models.v1_vsphere_virtual_disk_volume_source import V1VsphereVirtualDiskVolumeSource
-from .models.versioned_event import VersionedEvent
 
 # import apis into sdk package
 from .apis.apiv_api import ApivApi

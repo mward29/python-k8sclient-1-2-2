@@ -56,7 +56,7 @@ class V1NFSVolumeSource(object):
     def server(self):
         """
         Gets the server of this V1NFSVolumeSource.
-        Server is the hostname or IP address of the NFS server. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#nfs
+        Server is the hostname or IP address of the NFS server. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#nfs
 
         :return: The server of this V1NFSVolumeSource.
         :rtype: str
@@ -67,7 +67,7 @@ class V1NFSVolumeSource(object):
     def server(self, server):
         """
         Sets the server of this V1NFSVolumeSource.
-        Server is the hostname or IP address of the NFS server. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#nfs
+        Server is the hostname or IP address of the NFS server. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#nfs
 
         :param server: The server of this V1NFSVolumeSource.
         :type: str
@@ -78,7 +78,7 @@ class V1NFSVolumeSource(object):
     def path(self):
         """
         Gets the path of this V1NFSVolumeSource.
-        Path that is exported by the NFS server. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#nfs
+        Path that is exported by the NFS server. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#nfs
 
         :return: The path of this V1NFSVolumeSource.
         :rtype: str
@@ -89,7 +89,7 @@ class V1NFSVolumeSource(object):
     def path(self, path):
         """
         Sets the path of this V1NFSVolumeSource.
-        Path that is exported by the NFS server. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#nfs
+        Path that is exported by the NFS server. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#nfs
 
         :param path: The path of this V1NFSVolumeSource.
         :type: str
@@ -100,7 +100,7 @@ class V1NFSVolumeSource(object):
     def read_only(self):
         """
         Gets the read_only of this V1NFSVolumeSource.
-        ReadOnly here will force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#nfs
+        ReadOnly here will force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#nfs
 
         :return: The read_only of this V1NFSVolumeSource.
         :rtype: bool
@@ -111,7 +111,7 @@ class V1NFSVolumeSource(object):
     def read_only(self, read_only):
         """
         Sets the read_only of this V1NFSVolumeSource.
-        ReadOnly here will force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#nfs
+        ReadOnly here will force the NFS export to be mounted with read-only permissions. Defaults to false. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#nfs
 
         :param read_only: The read_only of this V1NFSVolumeSource.
         :type: bool

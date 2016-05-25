@@ -50,7 +50,7 @@ class V1HostPathVolumeSource(object):
     def path(self):
         """
         Gets the path of this V1HostPathVolumeSource.
-        Path of the directory on the host. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#hostpath
+        Path of the directory on the host. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#hostpath
 
         :return: The path of this V1HostPathVolumeSource.
         :rtype: str
@@ -61,7 +61,7 @@ class V1HostPathVolumeSource(object):
     def path(self, path):
         """
         Sets the path of this V1HostPathVolumeSource.
-        Path of the directory on the host. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#hostpath
+        Path of the directory on the host. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#hostpath
 
         :param path: The path of this V1HostPathVolumeSource.
         :type: str

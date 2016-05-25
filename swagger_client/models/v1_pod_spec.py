@@ -43,7 +43,7 @@ class V1PodSpec(object):
             'termination_grace_period_seconds': 'int',
             'active_deadline_seconds': 'int',
             'dns_policy': 'str',
-            'node_selector': 'object',
+            'node_selector': 'Any',
             'service_account_name': 'str',
             'service_account': 'str',
             'node_name': 'str',
@@ -51,9 +51,7 @@ class V1PodSpec(object):
             'host_pid': 'bool',
             'host_ipc': 'bool',
             'security_context': 'V1PodSecurityContext',
-            'image_pull_secrets': 'list[V1LocalObjectReference]',
-            'hostname': 'str',
-            'subdomain': 'str'
+            'image_pull_secrets': 'list[V1LocalObjectReference]'
         }
 
         self.attribute_map = {
@@ -71,9 +69,7 @@ class V1PodSpec(object):
             'host_pid': 'hostPID',
             'host_ipc': 'hostIPC',
             'security_context': 'securityContext',
-            'image_pull_secrets': 'imagePullSecrets',
-            'hostname': 'hostname',
-            'subdomain': 'subdomain'
+            'image_pull_secrets': 'imagePullSecrets'
         }
 
         self._volumes = None
@@ -91,14 +87,12 @@ class V1PodSpec(object):
         self._host_ipc = None
         self._security_context = None
         self._image_pull_secrets = None
-        self._hostname = None
-        self._subdomain = None
 
     @property
     def volumes(self):
         """
         Gets the volumes of this V1PodSpec.
-        List of volumes that can be mounted by containers belonging to the pod. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md
+        List of volumes that can be mounted by containers belonging to the pod. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md
 
         :return: The volumes of this V1PodSpec.
         :rtype: list[V1Volume]
@@ -109,7 +103,7 @@ class V1PodSpec(object):
     def volumes(self, volumes):
         """
         Sets the volumes of this V1PodSpec.
-        List of volumes that can be mounted by containers belonging to the pod. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md
+        List of volumes that can be mounted by containers belonging to the pod. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md
 
         :param volumes: The volumes of this V1PodSpec.
         :type: list[V1Volume]
@@ -120,7 +114,7 @@ class V1PodSpec(object):
     def containers(self):
         """
         Gets the containers of this V1PodSpec.
-        List of containers belonging to the pod. Containers cannot currently be added or removed. There must be at least one container in a Pod. Cannot be updated. More info: http://releases.k8s.io/HEAD/docs/user-guide/containers.md
+        List of containers belonging to the pod. Containers cannot currently be added or removed. There must be at least one container in a Pod. Cannot be updated. More info: http://releases.k8s.io/release-1.2/docs/user-guide/containers.md
 
         :return: The containers of this V1PodSpec.
         :rtype: list[V1Container]
@@ -131,7 +125,7 @@ class V1PodSpec(object):
     def containers(self, containers):
         """
         Sets the containers of this V1PodSpec.
-        List of containers belonging to the pod. Containers cannot currently be added or removed. There must be at least one container in a Pod. Cannot be updated. More info: http://releases.k8s.io/HEAD/docs/user-guide/containers.md
+        List of containers belonging to the pod. Containers cannot currently be added or removed. There must be at least one container in a Pod. Cannot be updated. More info: http://releases.k8s.io/release-1.2/docs/user-guide/containers.md
 
         :param containers: The containers of this V1PodSpec.
         :type: list[V1Container]
@@ -142,7 +136,7 @@ class V1PodSpec(object):
     def restart_policy(self):
         """
         Gets the restart_policy of this V1PodSpec.
-        Restart policy for all containers within the pod. One of Always, OnFailure, Never. Default to Always. More info: http://releases.k8s.io/HEAD/docs/user-guide/pod-states.md#restartpolicy
+        Restart policy for all containers within the pod. One of Always, OnFailure, Never. Default to Always. More info: http://releases.k8s.io/release-1.2/docs/user-guide/pod-states.md#restartpolicy
 
         :return: The restart_policy of this V1PodSpec.
         :rtype: str
@@ -153,7 +147,7 @@ class V1PodSpec(object):
     def restart_policy(self, restart_policy):
         """
         Sets the restart_policy of this V1PodSpec.
-        Restart policy for all containers within the pod. One of Always, OnFailure, Never. Default to Always. More info: http://releases.k8s.io/HEAD/docs/user-guide/pod-states.md#restartpolicy
+        Restart policy for all containers within the pod. One of Always, OnFailure, Never. Default to Always. More info: http://releases.k8s.io/release-1.2/docs/user-guide/pod-states.md#restartpolicy
 
         :param restart_policy: The restart_policy of this V1PodSpec.
         :type: str
@@ -230,10 +224,10 @@ class V1PodSpec(object):
     def node_selector(self):
         """
         Gets the node_selector of this V1PodSpec.
-        NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: http://releases.k8s.io/HEAD/docs/user-guide/node-selection/README.md
+        NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: http://releases.k8s.io/release-1.2/docs/user-guide/node-selection/README.md
 
         :return: The node_selector of this V1PodSpec.
-        :rtype: object
+        :rtype: Any
         """
         return self._node_selector
 
@@ -241,10 +235,10 @@ class V1PodSpec(object):
     def node_selector(self, node_selector):
         """
         Sets the node_selector of this V1PodSpec.
-        NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: http://releases.k8s.io/HEAD/docs/user-guide/node-selection/README.md
+        NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: http://releases.k8s.io/release-1.2/docs/user-guide/node-selection/README.md
 
         :param node_selector: The node_selector of this V1PodSpec.
-        :type: object
+        :type: Any
         """
         self._node_selector = node_selector
 
@@ -252,7 +246,7 @@ class V1PodSpec(object):
     def service_account_name(self):
         """
         Gets the service_account_name of this V1PodSpec.
-        ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md
+        ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/release-1.2/docs/design/service_accounts.md
 
         :return: The service_account_name of this V1PodSpec.
         :rtype: str
@@ -263,7 +257,7 @@ class V1PodSpec(object):
     def service_account_name(self, service_account_name):
         """
         Sets the service_account_name of this V1PodSpec.
-        ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/HEAD/docs/design/service_accounts.md
+        ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: http://releases.k8s.io/release-1.2/docs/design/service_accounts.md
 
         :param service_account_name: The service_account_name of this V1PodSpec.
         :type: str
@@ -406,7 +400,7 @@ class V1PodSpec(object):
     def image_pull_secrets(self):
         """
         Gets the image_pull_secrets of this V1PodSpec.
-        ImagePullSecrets is an optional list of references to secrets in the same namespace to use for pulling any of the images used by this PodSpec. If specified, these secrets will be passed to individual puller implementations for them to use. For example, in the case of docker, only DockerConfig type secrets are honored. More info: http://releases.k8s.io/HEAD/docs/user-guide/images.md#specifying-imagepullsecrets-on-a-pod
+        ImagePullSecrets is an optional list of references to secrets in the same namespace to use for pulling any of the images used by this PodSpec. If specified, these secrets will be passed to individual puller implementations for them to use. For example, in the case of docker, only DockerConfig type secrets are honored. More info: http://releases.k8s.io/release-1.2/docs/user-guide/images.md#specifying-imagepullsecrets-on-a-pod
 
         :return: The image_pull_secrets of this V1PodSpec.
         :rtype: list[V1LocalObjectReference]
@@ -417,56 +411,12 @@ class V1PodSpec(object):
     def image_pull_secrets(self, image_pull_secrets):
         """
         Sets the image_pull_secrets of this V1PodSpec.
-        ImagePullSecrets is an optional list of references to secrets in the same namespace to use for pulling any of the images used by this PodSpec. If specified, these secrets will be passed to individual puller implementations for them to use. For example, in the case of docker, only DockerConfig type secrets are honored. More info: http://releases.k8s.io/HEAD/docs/user-guide/images.md#specifying-imagepullsecrets-on-a-pod
+        ImagePullSecrets is an optional list of references to secrets in the same namespace to use for pulling any of the images used by this PodSpec. If specified, these secrets will be passed to individual puller implementations for them to use. For example, in the case of docker, only DockerConfig type secrets are honored. More info: http://releases.k8s.io/release-1.2/docs/user-guide/images.md#specifying-imagepullsecrets-on-a-pod
 
         :param image_pull_secrets: The image_pull_secrets of this V1PodSpec.
         :type: list[V1LocalObjectReference]
         """
         self._image_pull_secrets = image_pull_secrets
-
-    @property
-    def hostname(self):
-        """
-        Gets the hostname of this V1PodSpec.
-        Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.
-
-        :return: The hostname of this V1PodSpec.
-        :rtype: str
-        """
-        return self._hostname
-
-    @hostname.setter
-    def hostname(self, hostname):
-        """
-        Sets the hostname of this V1PodSpec.
-        Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.
-
-        :param hostname: The hostname of this V1PodSpec.
-        :type: str
-        """
-        self._hostname = hostname
-
-    @property
-    def subdomain(self):
-        """
-        Gets the subdomain of this V1PodSpec.
-        If specified, the fully qualified Pod hostname will be \"<hostname>.<subdomain>.<pod namespace>.svc.<cluster domain>\". If not specified, the pod will not have a domainname at all.
-
-        :return: The subdomain of this V1PodSpec.
-        :rtype: str
-        """
-        return self._subdomain
-
-    @subdomain.setter
-    def subdomain(self, subdomain):
-        """
-        Sets the subdomain of this V1PodSpec.
-        If specified, the fully qualified Pod hostname will be \"<hostname>.<subdomain>.<pod namespace>.svc.<cluster domain>\". If not specified, the pod will not have a domainname at all.
-
-        :param subdomain: The subdomain of this V1PodSpec.
-        :type: str
-        """
-        self._subdomain = subdomain
 
     def to_dict(self):
         """

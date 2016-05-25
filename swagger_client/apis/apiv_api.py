@@ -45,6 +45,172 @@ class ApivApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def connect_delete_namespaced_node_proxy(self, name, **kwargs):
+        """
+        connect DELETE requests to proxy of Node
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.connect_delete_namespaced_node_proxy(name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str name: name of the Node (required)
+        :param str path: Path is the URL path to use for the current proxy request to node.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'path']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method connect_delete_namespaced_node_proxy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `connect_delete_namespaced_node_proxy`")
+
+        resource_path = '/api/v1/nodes/{name}/proxy'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'path' in params:
+            query_params['path'] = params['path']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['*/*'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='str',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def connect_delete_namespaced_node_proxy_1(self, name, path2, **kwargs):
+        """
+        connect DELETE requests to proxy of Node
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.connect_delete_namespaced_node_proxy_1(name, path2, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str name: name of the Node (required)
+        :param str path2: path to the resource (required)
+        :param str path: Path is the URL path to use for the current proxy request to node.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'path2', 'path']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method connect_delete_namespaced_node_proxy_1" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `connect_delete_namespaced_node_proxy_1`")
+        # verify the required parameter 'path2' is set
+        if ('path2' not in params) or (params['path2'] is None):
+            raise ValueError("Missing the required parameter `path2` when calling `connect_delete_namespaced_node_proxy_1`")
+
+        resource_path = '/api/v1/nodes/{name}/proxy/{path}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+        if 'path2' in params:
+            path_params['path'] = params['path2']
+
+        query_params = {}
+        if 'path' in params:
+            query_params['path'] = params['path']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['*/*'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='str',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def connect_delete_namespaced_pod_proxy(self, namespace, name, **kwargs):
         """
         connect DELETE requests to proxy of Pod
@@ -131,7 +297,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_delete_namespaced_pod_proxy_1(self, namespace, name, path2, **kwargs):
+    def connect_delete_namespaced_pod_proxy_2(self, namespace, name, path2, **kwargs):
         """
         connect DELETE requests to proxy of Pod
         
@@ -142,7 +308,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_delete_namespaced_pod_proxy_1(namespace, name, path2, callback=callback_function)
+        >>> thread = api.connect_delete_namespaced_pod_proxy_2(namespace, name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -163,20 +329,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_delete_namespaced_pod_proxy_1" % key
+                    " to method connect_delete_namespaced_pod_proxy_2" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `connect_delete_namespaced_pod_proxy_1`")
+            raise ValueError("Missing the required parameter `namespace` when calling `connect_delete_namespaced_pod_proxy_2`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_delete_namespaced_pod_proxy_1`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_delete_namespaced_pod_proxy_2`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_delete_namespaced_pod_proxy_1`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_delete_namespaced_pod_proxy_2`")
 
         resource_path = '/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -309,7 +475,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_delete_namespaced_service_proxy_2(self, namespace, name, path2, **kwargs):
+    def connect_delete_namespaced_service_proxy_3(self, namespace, name, path2, **kwargs):
         """
         connect DELETE requests to proxy of Service
         
@@ -320,7 +486,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_delete_namespaced_service_proxy_2(namespace, name, path2, callback=callback_function)
+        >>> thread = api.connect_delete_namespaced_service_proxy_3(namespace, name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -341,20 +507,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_delete_namespaced_service_proxy_2" % key
+                    " to method connect_delete_namespaced_service_proxy_3" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `connect_delete_namespaced_service_proxy_2`")
+            raise ValueError("Missing the required parameter `namespace` when calling `connect_delete_namespaced_service_proxy_3`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_delete_namespaced_service_proxy_2`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_delete_namespaced_service_proxy_3`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_delete_namespaced_service_proxy_2`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_delete_namespaced_service_proxy_3`")
 
         resource_path = '/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -401,9 +567,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_delete_node_proxy(self, name, **kwargs):
+    def connect_get_namespaced_node_proxy(self, name, **kwargs):
         """
-        connect DELETE requests to proxy of Node
+        connect GET requests to proxy of Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -412,7 +578,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_delete_node_proxy(name, callback=callback_function)
+        >>> thread = api.connect_get_namespaced_node_proxy(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -431,14 +597,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_delete_node_proxy" % key
+                    " to method connect_get_namespaced_node_proxy" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_delete_node_proxy`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_get_namespaced_node_proxy`")
 
         resource_path = '/api/v1/nodes/{name}/proxy'.replace('{format}', 'json')
         path_params = {}
@@ -469,7 +635,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'DELETE',
+        response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -481,9 +647,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_delete_node_proxy_3(self, name, path2, **kwargs):
+    def connect_get_namespaced_node_proxy_4(self, name, path2, **kwargs):
         """
-        connect DELETE requests to proxy of Node
+        connect GET requests to proxy of Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -492,7 +658,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_delete_node_proxy_3(name, path2, callback=callback_function)
+        >>> thread = api.connect_get_namespaced_node_proxy_4(name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -512,17 +678,17 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_delete_node_proxy_3" % key
+                    " to method connect_get_namespaced_node_proxy_4" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_delete_node_proxy_3`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_get_namespaced_node_proxy_4`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_delete_node_proxy_3`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_get_namespaced_node_proxy_4`")
 
         resource_path = '/api/v1/nodes/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -555,7 +721,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'DELETE',
+        response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -935,7 +1101,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_get_namespaced_pod_proxy_4(self, namespace, name, path2, **kwargs):
+    def connect_get_namespaced_pod_proxy_5(self, namespace, name, path2, **kwargs):
         """
         connect GET requests to proxy of Pod
         
@@ -946,7 +1112,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_get_namespaced_pod_proxy_4(namespace, name, path2, callback=callback_function)
+        >>> thread = api.connect_get_namespaced_pod_proxy_5(namespace, name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -967,20 +1133,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_get_namespaced_pod_proxy_4" % key
+                    " to method connect_get_namespaced_pod_proxy_5" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `connect_get_namespaced_pod_proxy_4`")
+            raise ValueError("Missing the required parameter `namespace` when calling `connect_get_namespaced_pod_proxy_5`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_get_namespaced_pod_proxy_4`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_get_namespaced_pod_proxy_5`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_get_namespaced_pod_proxy_4`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_get_namespaced_pod_proxy_5`")
 
         resource_path = '/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -1113,7 +1279,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_get_namespaced_service_proxy_5(self, namespace, name, path2, **kwargs):
+    def connect_get_namespaced_service_proxy_6(self, namespace, name, path2, **kwargs):
         """
         connect GET requests to proxy of Service
         
@@ -1124,7 +1290,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_get_namespaced_service_proxy_5(namespace, name, path2, callback=callback_function)
+        >>> thread = api.connect_get_namespaced_service_proxy_6(namespace, name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -1145,20 +1311,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_get_namespaced_service_proxy_5" % key
+                    " to method connect_get_namespaced_service_proxy_6" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `connect_get_namespaced_service_proxy_5`")
+            raise ValueError("Missing the required parameter `namespace` when calling `connect_get_namespaced_service_proxy_6`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_get_namespaced_service_proxy_5`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_get_namespaced_service_proxy_6`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_get_namespaced_service_proxy_5`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_get_namespaced_service_proxy_6`")
 
         resource_path = '/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -1205,9 +1371,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_get_node_proxy(self, name, **kwargs):
+    def connect_head_namespaced_node_proxy(self, name, **kwargs):
         """
-        connect GET requests to proxy of Node
+        connect HEAD requests to proxy of Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1216,7 +1382,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_get_node_proxy(name, callback=callback_function)
+        >>> thread = api.connect_head_namespaced_node_proxy(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -1235,14 +1401,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_get_node_proxy" % key
+                    " to method connect_head_namespaced_node_proxy" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_get_node_proxy`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_head_namespaced_node_proxy`")
 
         resource_path = '/api/v1/nodes/{name}/proxy'.replace('{format}', 'json')
         path_params = {}
@@ -1273,7 +1439,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'GET',
+        response = self.api_client.call_api(resource_path, 'HEAD',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -1285,9 +1451,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_get_node_proxy_6(self, name, path2, **kwargs):
+    def connect_head_namespaced_node_proxy_7(self, name, path2, **kwargs):
         """
-        connect GET requests to proxy of Node
+        connect HEAD requests to proxy of Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1296,7 +1462,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_get_node_proxy_6(name, path2, callback=callback_function)
+        >>> thread = api.connect_head_namespaced_node_proxy_7(name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -1316,17 +1482,17 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_get_node_proxy_6" % key
+                    " to method connect_head_namespaced_node_proxy_7" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_get_node_proxy_6`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_head_namespaced_node_proxy_7`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_get_node_proxy_6`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_head_namespaced_node_proxy_7`")
 
         resource_path = '/api/v1/nodes/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -1359,7 +1525,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'GET',
+        response = self.api_client.call_api(resource_path, 'HEAD',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -1457,7 +1623,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_head_namespaced_pod_proxy_7(self, namespace, name, path2, **kwargs):
+    def connect_head_namespaced_pod_proxy_8(self, namespace, name, path2, **kwargs):
         """
         connect HEAD requests to proxy of Pod
         
@@ -1468,7 +1634,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_head_namespaced_pod_proxy_7(namespace, name, path2, callback=callback_function)
+        >>> thread = api.connect_head_namespaced_pod_proxy_8(namespace, name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -1489,20 +1655,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_head_namespaced_pod_proxy_7" % key
+                    " to method connect_head_namespaced_pod_proxy_8" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `connect_head_namespaced_pod_proxy_7`")
+            raise ValueError("Missing the required parameter `namespace` when calling `connect_head_namespaced_pod_proxy_8`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_head_namespaced_pod_proxy_7`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_head_namespaced_pod_proxy_8`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_head_namespaced_pod_proxy_7`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_head_namespaced_pod_proxy_8`")
 
         resource_path = '/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -1635,7 +1801,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_head_namespaced_service_proxy_8(self, namespace, name, path2, **kwargs):
+    def connect_head_namespaced_service_proxy_9(self, namespace, name, path2, **kwargs):
         """
         connect HEAD requests to proxy of Service
         
@@ -1646,7 +1812,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_head_namespaced_service_proxy_8(namespace, name, path2, callback=callback_function)
+        >>> thread = api.connect_head_namespaced_service_proxy_9(namespace, name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -1667,20 +1833,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_head_namespaced_service_proxy_8" % key
+                    " to method connect_head_namespaced_service_proxy_9" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `connect_head_namespaced_service_proxy_8`")
+            raise ValueError("Missing the required parameter `namespace` when calling `connect_head_namespaced_service_proxy_9`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_head_namespaced_service_proxy_8`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_head_namespaced_service_proxy_9`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_head_namespaced_service_proxy_8`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_head_namespaced_service_proxy_9`")
 
         resource_path = '/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -1727,9 +1893,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_head_node_proxy(self, name, **kwargs):
+    def connect_options_namespaced_node_proxy(self, name, **kwargs):
         """
-        connect HEAD requests to proxy of Node
+        connect OPTIONS requests to proxy of Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1738,7 +1904,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_head_node_proxy(name, callback=callback_function)
+        >>> thread = api.connect_options_namespaced_node_proxy(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -1757,14 +1923,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_head_node_proxy" % key
+                    " to method connect_options_namespaced_node_proxy" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_head_node_proxy`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_options_namespaced_node_proxy`")
 
         resource_path = '/api/v1/nodes/{name}/proxy'.replace('{format}', 'json')
         path_params = {}
@@ -1795,7 +1961,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'HEAD',
+        response = self.api_client.call_api(resource_path, 'OPTIONS',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -1807,9 +1973,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_head_node_proxy_9(self, name, path2, **kwargs):
+    def connect_options_namespaced_node_proxy_10(self, name, path2, **kwargs):
         """
-        connect HEAD requests to proxy of Node
+        connect OPTIONS requests to proxy of Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1818,7 +1984,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_head_node_proxy_9(name, path2, callback=callback_function)
+        >>> thread = api.connect_options_namespaced_node_proxy_10(name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -1838,17 +2004,17 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_head_node_proxy_9" % key
+                    " to method connect_options_namespaced_node_proxy_10" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_head_node_proxy_9`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_options_namespaced_node_proxy_10`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_head_node_proxy_9`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_options_namespaced_node_proxy_10`")
 
         resource_path = '/api/v1/nodes/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -1881,7 +2047,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'HEAD',
+        response = self.api_client.call_api(resource_path, 'OPTIONS',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -1979,7 +2145,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_options_namespaced_pod_proxy_10(self, namespace, name, path2, **kwargs):
+    def connect_options_namespaced_pod_proxy_11(self, namespace, name, path2, **kwargs):
         """
         connect OPTIONS requests to proxy of Pod
         
@@ -1990,7 +2156,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_options_namespaced_pod_proxy_10(namespace, name, path2, callback=callback_function)
+        >>> thread = api.connect_options_namespaced_pod_proxy_11(namespace, name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -2011,20 +2177,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_options_namespaced_pod_proxy_10" % key
+                    " to method connect_options_namespaced_pod_proxy_11" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `connect_options_namespaced_pod_proxy_10`")
+            raise ValueError("Missing the required parameter `namespace` when calling `connect_options_namespaced_pod_proxy_11`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_options_namespaced_pod_proxy_10`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_options_namespaced_pod_proxy_11`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_options_namespaced_pod_proxy_10`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_options_namespaced_pod_proxy_11`")
 
         resource_path = '/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -2157,7 +2323,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_options_namespaced_service_proxy_11(self, namespace, name, path2, **kwargs):
+    def connect_options_namespaced_service_proxy_12(self, namespace, name, path2, **kwargs):
         """
         connect OPTIONS requests to proxy of Service
         
@@ -2168,7 +2334,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_options_namespaced_service_proxy_11(namespace, name, path2, callback=callback_function)
+        >>> thread = api.connect_options_namespaced_service_proxy_12(namespace, name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -2189,20 +2355,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_options_namespaced_service_proxy_11" % key
+                    " to method connect_options_namespaced_service_proxy_12" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `connect_options_namespaced_service_proxy_11`")
+            raise ValueError("Missing the required parameter `namespace` when calling `connect_options_namespaced_service_proxy_12`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_options_namespaced_service_proxy_11`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_options_namespaced_service_proxy_12`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_options_namespaced_service_proxy_11`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_options_namespaced_service_proxy_12`")
 
         resource_path = '/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -2249,9 +2415,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_options_node_proxy(self, name, **kwargs):
+    def connect_post_namespaced_node_proxy(self, name, **kwargs):
         """
-        connect OPTIONS requests to proxy of Node
+        connect POST requests to proxy of Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2260,7 +2426,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_options_node_proxy(name, callback=callback_function)
+        >>> thread = api.connect_post_namespaced_node_proxy(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -2279,14 +2445,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_options_node_proxy" % key
+                    " to method connect_post_namespaced_node_proxy" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_options_node_proxy`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_post_namespaced_node_proxy`")
 
         resource_path = '/api/v1/nodes/{name}/proxy'.replace('{format}', 'json')
         path_params = {}
@@ -2317,7 +2483,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'OPTIONS',
+        response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -2329,9 +2495,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_options_node_proxy_12(self, name, path2, **kwargs):
+    def connect_post_namespaced_node_proxy_13(self, name, path2, **kwargs):
         """
-        connect OPTIONS requests to proxy of Node
+        connect POST requests to proxy of Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2340,7 +2506,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_options_node_proxy_12(name, path2, callback=callback_function)
+        >>> thread = api.connect_post_namespaced_node_proxy_13(name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -2360,17 +2526,17 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_options_node_proxy_12" % key
+                    " to method connect_post_namespaced_node_proxy_13" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_options_node_proxy_12`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_post_namespaced_node_proxy_13`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_options_node_proxy_12`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_post_namespaced_node_proxy_13`")
 
         resource_path = '/api/v1/nodes/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -2403,7 +2569,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'OPTIONS',
+        response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -2783,7 +2949,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_post_namespaced_pod_proxy_13(self, namespace, name, path2, **kwargs):
+    def connect_post_namespaced_pod_proxy_14(self, namespace, name, path2, **kwargs):
         """
         connect POST requests to proxy of Pod
         
@@ -2794,7 +2960,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_post_namespaced_pod_proxy_13(namespace, name, path2, callback=callback_function)
+        >>> thread = api.connect_post_namespaced_pod_proxy_14(namespace, name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -2815,20 +2981,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_post_namespaced_pod_proxy_13" % key
+                    " to method connect_post_namespaced_pod_proxy_14" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `connect_post_namespaced_pod_proxy_13`")
+            raise ValueError("Missing the required parameter `namespace` when calling `connect_post_namespaced_pod_proxy_14`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_post_namespaced_pod_proxy_13`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_post_namespaced_pod_proxy_14`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_post_namespaced_pod_proxy_13`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_post_namespaced_pod_proxy_14`")
 
         resource_path = '/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -2961,7 +3127,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_post_namespaced_service_proxy_14(self, namespace, name, path2, **kwargs):
+    def connect_post_namespaced_service_proxy_15(self, namespace, name, path2, **kwargs):
         """
         connect POST requests to proxy of Service
         
@@ -2972,7 +3138,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_post_namespaced_service_proxy_14(namespace, name, path2, callback=callback_function)
+        >>> thread = api.connect_post_namespaced_service_proxy_15(namespace, name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -2993,20 +3159,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_post_namespaced_service_proxy_14" % key
+                    " to method connect_post_namespaced_service_proxy_15" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `connect_post_namespaced_service_proxy_14`")
+            raise ValueError("Missing the required parameter `namespace` when calling `connect_post_namespaced_service_proxy_15`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_post_namespaced_service_proxy_14`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_post_namespaced_service_proxy_15`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_post_namespaced_service_proxy_14`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_post_namespaced_service_proxy_15`")
 
         resource_path = '/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -3053,9 +3219,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_post_node_proxy(self, name, **kwargs):
+    def connect_put_namespaced_node_proxy(self, name, **kwargs):
         """
-        connect POST requests to proxy of Node
+        connect PUT requests to proxy of Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3064,7 +3230,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_post_node_proxy(name, callback=callback_function)
+        >>> thread = api.connect_put_namespaced_node_proxy(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -3083,14 +3249,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_post_node_proxy" % key
+                    " to method connect_put_namespaced_node_proxy" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_post_node_proxy`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_put_namespaced_node_proxy`")
 
         resource_path = '/api/v1/nodes/{name}/proxy'.replace('{format}', 'json')
         path_params = {}
@@ -3121,7 +3287,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'POST',
+        response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -3133,9 +3299,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_post_node_proxy_15(self, name, path2, **kwargs):
+    def connect_put_namespaced_node_proxy_16(self, name, path2, **kwargs):
         """
-        connect POST requests to proxy of Node
+        connect PUT requests to proxy of Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3144,7 +3310,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_post_node_proxy_15(name, path2, callback=callback_function)
+        >>> thread = api.connect_put_namespaced_node_proxy_16(name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -3164,17 +3330,17 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_post_node_proxy_15" % key
+                    " to method connect_put_namespaced_node_proxy_16" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_post_node_proxy_15`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_put_namespaced_node_proxy_16`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_post_node_proxy_15`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_put_namespaced_node_proxy_16`")
 
         resource_path = '/api/v1/nodes/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -3207,7 +3373,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'POST',
+        response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -3305,7 +3471,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_put_namespaced_pod_proxy_16(self, namespace, name, path2, **kwargs):
+    def connect_put_namespaced_pod_proxy_17(self, namespace, name, path2, **kwargs):
         """
         connect PUT requests to proxy of Pod
         
@@ -3316,7 +3482,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_put_namespaced_pod_proxy_16(namespace, name, path2, callback=callback_function)
+        >>> thread = api.connect_put_namespaced_pod_proxy_17(namespace, name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -3337,20 +3503,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_put_namespaced_pod_proxy_16" % key
+                    " to method connect_put_namespaced_pod_proxy_17" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `connect_put_namespaced_pod_proxy_16`")
+            raise ValueError("Missing the required parameter `namespace` when calling `connect_put_namespaced_pod_proxy_17`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_put_namespaced_pod_proxy_16`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_put_namespaced_pod_proxy_17`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_put_namespaced_pod_proxy_16`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_put_namespaced_pod_proxy_17`")
 
         resource_path = '/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -3483,7 +3649,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def connect_put_namespaced_service_proxy_17(self, namespace, name, path2, **kwargs):
+    def connect_put_namespaced_service_proxy_18(self, namespace, name, path2, **kwargs):
         """
         connect PUT requests to proxy of Service
         
@@ -3494,7 +3660,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.connect_put_namespaced_service_proxy_17(namespace, name, path2, callback=callback_function)
+        >>> thread = api.connect_put_namespaced_service_proxy_18(namespace, name, path2, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -3515,20 +3681,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method connect_put_namespaced_service_proxy_17" % key
+                    " to method connect_put_namespaced_service_proxy_18" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `connect_put_namespaced_service_proxy_17`")
+            raise ValueError("Missing the required parameter `namespace` when calling `connect_put_namespaced_service_proxy_18`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_put_namespaced_service_proxy_17`")
+            raise ValueError("Missing the required parameter `name` when calling `connect_put_namespaced_service_proxy_18`")
         # verify the required parameter 'path2' is set
         if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_put_namespaced_service_proxy_17`")
+            raise ValueError("Missing the required parameter `path2` when calling `connect_put_namespaced_service_proxy_18`")
 
         resource_path = '/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -3571,252 +3737,6 @@ class ApivApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='str',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def connect_put_node_proxy(self, name, **kwargs):
-        """
-        connect PUT requests to proxy of Node
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.connect_put_node_proxy(name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'path']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method connect_put_node_proxy" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_put_node_proxy`")
-
-        resource_path = '/api/v1/nodes/{name}/proxy'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'path' in params:
-            query_params['path'] = params['path']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['*/*'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='str',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def connect_put_node_proxy_18(self, name, path2, **kwargs):
-        """
-        connect PUT requests to proxy of Node
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.connect_put_node_proxy_18(name, path2, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str name: name of the Node (required)
-        :param str path2: path to the resource (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'path2', 'path']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method connect_put_node_proxy_18" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `connect_put_node_proxy_18`")
-        # verify the required parameter 'path2' is set
-        if ('path2' not in params) or (params['path2'] is None):
-            raise ValueError("Missing the required parameter `path2` when calling `connect_put_node_proxy_18`")
-
-        resource_path = '/api/v1/nodes/{name}/proxy/{path}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-        if 'path2' in params:
-            path_params['path'] = params['path2']
-
-        query_params = {}
-        if 'path' in params:
-            query_params['path'] = params['path']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['*/*'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='str',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def create_namespace(self, body, **kwargs):
-        """
-        create a Namespace
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.create_namespace(body, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param V1Namespace body:  (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: V1Namespace
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_namespace" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_namespace`")
-
-        resource_path = '/api/v1/namespaces'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1Namespace',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3884,7 +3804,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -3976,7 +3896,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -4062,7 +3982,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -4148,7 +4068,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -4234,7 +4154,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -4320,7 +4240,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -4339,6 +4259,246 @@ class ApivApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='V1LimitRange',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def create_namespaced_namespace(self, body, **kwargs):
+        """
+        create a Namespace
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.create_namespaced_namespace(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1Namespace body:  (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1Namespace
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_namespaced_namespace" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_namespaced_namespace`")
+
+        resource_path = '/api/v1/namespaces'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1Namespace',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def create_namespaced_node(self, body, **kwargs):
+        """
+        create a Node
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.create_namespaced_node(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1Node body:  (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1Node
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_namespaced_node" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_namespaced_node`")
+
+        resource_path = '/api/v1/nodes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1Node',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def create_namespaced_persistent_volume(self, body, **kwargs):
+        """
+        create a PersistentVolume
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.create_namespaced_persistent_volume(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1PersistentVolume body:  (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1PersistentVolume
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_namespaced_persistent_volume" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_namespaced_persistent_volume`")
+
+        resource_path = '/api/v1/persistentvolumes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1PersistentVolume',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4406,7 +4566,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -4492,7 +4652,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -4578,7 +4738,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -4664,7 +4824,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -4750,7 +4910,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -4836,7 +4996,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -4922,7 +5082,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -5008,7 +5168,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -5027,252 +5187,6 @@ class ApivApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='V1ServiceAccount',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def create_node(self, body, **kwargs):
-        """
-        create a Node
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.create_node(body, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param V1Node body:  (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: V1Node
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_node" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_node`")
-
-        resource_path = '/api/v1/nodes'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1Node',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def create_persistent_volume(self, body, **kwargs):
-        """
-        create a PersistentVolume
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.create_persistent_volume(body, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param V1PersistentVolume body:  (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: V1PersistentVolume
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_persistent_volume" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_persistent_volume`")
-
-        resource_path = '/api/v1/persistentvolumes'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1PersistentVolume',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_namespace(self, body, name, **kwargs):
-        """
-        delete a Namespace
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_namespace(body, name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param V1DeleteOptions body:  (required)
-        :param str name: name of the Namespace (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: UnversionedStatus
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'name', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_namespace" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `delete_namespace`")
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `delete_namespace`")
-
-        resource_path = '/api/v1/namespaces/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='UnversionedStatus',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5346,7 +5260,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -5438,7 +5352,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -5530,7 +5444,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -5622,7 +5536,265 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnversionedStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_namespaced_namespace(self, body, name, **kwargs):
+        """
+        delete a Namespace
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_namespaced_namespace(body, name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1DeleteOptions body:  (required)
+        :param str name: name of the Namespace (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: UnversionedStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'name', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_namespaced_namespace" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `delete_namespaced_namespace`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `delete_namespaced_namespace`")
+
+        resource_path = '/api/v1/namespaces/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnversionedStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_namespaced_node(self, body, name, **kwargs):
+        """
+        delete a Node
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_namespaced_node(body, name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1DeleteOptions body:  (required)
+        :param str name: name of the Node (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: UnversionedStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'name', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_namespaced_node" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `delete_namespaced_node`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `delete_namespaced_node`")
+
+        resource_path = '/api/v1/nodes/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnversionedStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_namespaced_persistent_volume(self, body, name, **kwargs):
+        """
+        delete a PersistentVolume
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_namespaced_persistent_volume(body, name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1DeleteOptions body:  (required)
+        :param str name: name of the PersistentVolume (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: UnversionedStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'name', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_namespaced_persistent_volume" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `delete_namespaced_persistent_volume`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `delete_namespaced_persistent_volume`")
+
+        resource_path = '/api/v1/persistentvolumes/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -5714,7 +5886,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -5806,7 +5978,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -5898,7 +6070,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -5990,7 +6162,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -6082,7 +6254,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -6174,7 +6346,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -6260,7 +6432,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -6352,268 +6524,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='UnversionedStatus',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_node(self, body, name, **kwargs):
-        """
-        delete a Node
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_node(body, name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param V1DeleteOptions body:  (required)
-        :param str name: name of the Node (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: UnversionedStatus
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'name', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_node" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `delete_node`")
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `delete_node`")
-
-        resource_path = '/api/v1/nodes/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='UnversionedStatus',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_persistent_volume(self, body, name, **kwargs):
-        """
-        delete a PersistentVolume
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_persistent_volume(body, name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param V1DeleteOptions body:  (required)
-        :param str name: name of the PersistentVolume (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: UnversionedStatus
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'name', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_persistent_volume" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `delete_persistent_volume`")
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `delete_persistent_volume`")
-
-        resource_path = '/api/v1/persistentvolumes/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='UnversionedStatus',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def deletecollection_namespace(self, **kwargs):
-        """
-        delete collection of Namespace
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.deletecollection_namespace(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: UnversionedStatus
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method deletecollection_namespace" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/namespaces'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -6708,7 +6619,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -6803,7 +6714,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -6898,7 +6809,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -6993,7 +6904,274 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnversionedStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def deletecollection_namespaced_namespace(self, **kwargs):
+        """
+        delete collection of Namespace
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.deletecollection_namespaced_namespace(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: UnversionedStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method deletecollection_namespaced_namespace" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/namespaces'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnversionedStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def deletecollection_namespaced_node(self, **kwargs):
+        """
+        delete collection of Node
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.deletecollection_namespaced_node(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: UnversionedStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method deletecollection_namespaced_node" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/nodes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnversionedStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def deletecollection_namespaced_persistent_volume(self, **kwargs):
+        """
+        delete collection of PersistentVolume
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.deletecollection_namespaced_persistent_volume(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: UnversionedStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method deletecollection_namespaced_persistent_volume" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/persistentvolumes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -7088,7 +7266,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -7183,7 +7361,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -7278,7 +7456,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -7373,7 +7551,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -7468,7 +7646,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -7563,7 +7741,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -7658,185 +7836,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='UnversionedStatus',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def deletecollection_node(self, **kwargs):
-        """
-        delete collection of Node
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.deletecollection_node(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: UnversionedStatus
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method deletecollection_node" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/nodes'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='UnversionedStatus',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def deletecollection_persistent_volume(self, **kwargs):
-        """
-        delete collection of PersistentVolume
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.deletecollection_persistent_volume(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: UnversionedStatus
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method deletecollection_persistent_volume" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/persistentvolumes'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -7874,7 +7874,7 @@ class ApivApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: UnversionedAPIResourceList
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -7907,13 +7907,13 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_content_type(['application/json', 'application/yaml'])
 
         # Authentication setting
         auth_settings = []
@@ -7925,190 +7925,12 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='UnversionedAPIResourceList',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def list_component_status(self, **kwargs):
-        """
-        list objects of kind ComponentStatus
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_component_status(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1ComponentStatusList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_component_status" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/componentstatuses'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1ComponentStatusList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_namespace(self, **kwargs):
-        """
-        list or watch objects of kind Namespace
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_namespace(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1NamespaceList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_namespace" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/namespaces'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1NamespaceList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_namespaced_config_map(self, **kwargs):
+    def list_config_map(self, **kwargs):
         """
         list or watch objects of kind ConfigMap
         
@@ -8119,7 +7941,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_config_map(callback=callback_function)
+        >>> thread = api.list_config_map(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -8142,7 +7964,7 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_config_map" % key
+                    " to method list_config_map" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -8174,7 +7996,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -8197,102 +8019,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def list_namespaced_config_map_19(self, namespace, **kwargs):
-        """
-        list or watch objects of kind ConfigMap
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_namespaced_config_map_19(namespace, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1ConfigMapList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['namespace', 'pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_config_map_19" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'namespace' is set
-        if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_config_map_19`")
-
-        resource_path = '/api/v1/namespaces/{namespace}/configmaps'.replace('{format}', 'json')
-        path_params = {}
-        if 'namespace' in params:
-            path_params['namespace'] = params['namespace']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1ConfigMapList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_namespaced_endpoints(self, **kwargs):
+    def list_endpoints(self, **kwargs):
         """
         list or watch objects of kind Endpoints
         
@@ -8303,7 +8030,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_endpoints(callback=callback_function)
+        >>> thread = api.list_endpoints(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -8326,7 +8053,7 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_endpoints" % key
+                    " to method list_endpoints" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -8358,7 +8085,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -8381,102 +8108,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def list_namespaced_endpoints_20(self, namespace, **kwargs):
-        """
-        list or watch objects of kind Endpoints
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_namespaced_endpoints_20(namespace, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1EndpointsList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['namespace', 'pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_endpoints_20" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'namespace' is set
-        if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_endpoints_20`")
-
-        resource_path = '/api/v1/namespaces/{namespace}/endpoints'.replace('{format}', 'json')
-        path_params = {}
-        if 'namespace' in params:
-            path_params['namespace'] = params['namespace']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1EndpointsList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_namespaced_event(self, **kwargs):
+    def list_event(self, **kwargs):
         """
         list or watch objects of kind Event
         
@@ -8487,7 +8119,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_event(callback=callback_function)
+        >>> thread = api.list_event(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -8510,7 +8142,7 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_event" % key
+                    " to method list_event" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -8542,7 +8174,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -8565,102 +8197,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def list_namespaced_event_21(self, namespace, **kwargs):
-        """
-        list or watch objects of kind Event
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_namespaced_event_21(namespace, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1EventList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['namespace', 'pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_event_21" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'namespace' is set
-        if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_event_21`")
-
-        resource_path = '/api/v1/namespaces/{namespace}/events'.replace('{format}', 'json')
-        path_params = {}
-        if 'namespace' in params:
-            path_params['namespace'] = params['namespace']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1EventList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_namespaced_limit_range(self, **kwargs):
+    def list_limit_range(self, **kwargs):
         """
         list or watch objects of kind LimitRange
         
@@ -8671,7 +8208,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_limit_range(callback=callback_function)
+        >>> thread = api.list_limit_range(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -8694,7 +8231,7 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_limit_range" % key
+                    " to method list_limit_range" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -8726,7 +8263,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -8749,7 +8286,381 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def list_namespaced_limit_range_22(self, namespace, **kwargs):
+    def list_namespaced_component_status(self, **kwargs):
+        """
+        list objects of kind ComponentStatus
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_namespaced_component_status(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1ComponentStatusList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_namespaced_component_status" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/componentstatuses'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1ComponentStatusList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_namespaced_config_map(self, namespace, **kwargs):
+        """
+        list or watch objects of kind ConfigMap
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_namespaced_config_map(namespace, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1ConfigMapList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['namespace', 'pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_namespaced_config_map" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_config_map`")
+
+        resource_path = '/api/v1/namespaces/{namespace}/configmaps'.replace('{format}', 'json')
+        path_params = {}
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1ConfigMapList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_namespaced_endpoints(self, namespace, **kwargs):
+        """
+        list or watch objects of kind Endpoints
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_namespaced_endpoints(namespace, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1EndpointsList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['namespace', 'pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_namespaced_endpoints" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_endpoints`")
+
+        resource_path = '/api/v1/namespaces/{namespace}/endpoints'.replace('{format}', 'json')
+        path_params = {}
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1EndpointsList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_namespaced_event(self, namespace, **kwargs):
+        """
+        list or watch objects of kind Event
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_namespaced_event(namespace, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1EventList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['namespace', 'pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_namespaced_event" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_event`")
+
+        resource_path = '/api/v1/namespaces/{namespace}/events'.replace('{format}', 'json')
+        path_params = {}
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1EventList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_namespaced_limit_range(self, namespace, **kwargs):
         """
         list or watch objects of kind LimitRange
         
@@ -8760,7 +8671,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_limit_range_22(namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_limit_range(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -8784,14 +8695,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_limit_range_22" % key
+                    " to method list_namespaced_limit_range" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_limit_range_22`")
+            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_limit_range`")
 
         resource_path = '/api/v1/namespaces/{namespace}/limitranges'.replace('{format}', 'json')
         path_params = {}
@@ -8821,7 +8732,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -8840,6 +8751,273 @@ class ApivApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='V1LimitRangeList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_namespaced_namespace(self, **kwargs):
+        """
+        list or watch objects of kind Namespace
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_namespaced_namespace(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1NamespaceList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_namespaced_namespace" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/namespaces'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1NamespaceList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_namespaced_node(self, **kwargs):
+        """
+        list or watch objects of kind Node
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_namespaced_node(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1NodeList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_namespaced_node" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/nodes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1NodeList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_namespaced_persistent_volume(self, **kwargs):
+        """
+        list or watch objects of kind PersistentVolume
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_namespaced_persistent_volume(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1PersistentVolumeList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_namespaced_persistent_volume" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/persistentvolumes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1PersistentVolumeList',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -8916,96 +9094,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1PersistentVolumeClaimList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_namespaced_persistent_volume_claim_23(self, **kwargs):
-        """
-        list or watch objects of kind PersistentVolumeClaim
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_namespaced_persistent_volume_claim_23(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1PersistentVolumeClaimList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_persistent_volume_claim_23" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/persistentvolumeclaims'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -9100,96 +9189,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1PodList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_namespaced_pod_24(self, **kwargs):
-        """
-        list or watch objects of kind Pod
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_namespaced_pod_24(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1PodList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_pod_24" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/pods'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -9284,96 +9284,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1PodTemplateList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_namespaced_pod_template_25(self, **kwargs):
-        """
-        list or watch objects of kind PodTemplate
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_namespaced_pod_template_25(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1PodTemplateList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_pod_template_25" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/podtemplates'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -9468,96 +9379,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1ReplicationControllerList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_namespaced_replication_controller_26(self, **kwargs):
-        """
-        list or watch objects of kind ReplicationController
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_namespaced_replication_controller_26(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1ReplicationControllerList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_replication_controller_26" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/replicationcontrollers'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -9652,96 +9474,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1ResourceQuotaList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_namespaced_resource_quota_27(self, **kwargs):
-        """
-        list or watch objects of kind ResourceQuota
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_namespaced_resource_quota_27(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1ResourceQuotaList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_resource_quota_27" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/resourcequotas'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -9836,96 +9569,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1SecretList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_namespaced_secret_28(self, **kwargs):
-        """
-        list or watch objects of kind Secret
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_namespaced_secret_28(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1SecretList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_secret_28" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/secrets'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -10020,96 +9664,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1ServiceList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_namespaced_service_29(self, **kwargs):
-        """
-        list or watch objects of kind Service
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_namespaced_service_29(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1ServiceList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_service_29" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/services'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -10204,7 +9759,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -10227,7 +9782,630 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def list_namespaced_service_account_30(self, **kwargs):
+    def list_persistent_volume_claim(self, **kwargs):
+        """
+        list or watch objects of kind PersistentVolumeClaim
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_persistent_volume_claim(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1PersistentVolumeClaimList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_persistent_volume_claim" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/persistentvolumeclaims'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1PersistentVolumeClaimList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_pod(self, **kwargs):
+        """
+        list or watch objects of kind Pod
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_pod(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1PodList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_pod" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/pods'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1PodList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_pod_template(self, **kwargs):
+        """
+        list or watch objects of kind PodTemplate
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_pod_template(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1PodTemplateList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_pod_template" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/podtemplates'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1PodTemplateList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_replication_controller(self, **kwargs):
+        """
+        list or watch objects of kind ReplicationController
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_replication_controller(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1ReplicationControllerList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_replication_controller" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/replicationcontrollers'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1ReplicationControllerList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_resource_quota(self, **kwargs):
+        """
+        list or watch objects of kind ResourceQuota
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_resource_quota(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1ResourceQuotaList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_resource_quota" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/resourcequotas'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1ResourceQuotaList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_secret(self, **kwargs):
+        """
+        list or watch objects of kind Secret
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_secret(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1SecretList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_secret" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/secrets'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1SecretList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_service(self, **kwargs):
+        """
+        list or watch objects of kind Service
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_service(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: V1ServiceList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_service" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/services'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1ServiceList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def list_service_account(self, **kwargs):
         """
         list or watch objects of kind ServiceAccount
         
@@ -10238,7 +10416,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_service_account_30(callback=callback_function)
+        >>> thread = api.list_service_account(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -10261,7 +10439,7 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_namespaced_service_account_30" % key
+                    " to method list_service_account" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -10293,7 +10471,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -10312,270 +10490,6 @@ class ApivApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='V1ServiceAccountList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_node(self, **kwargs):
-        """
-        list or watch objects of kind Node
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_node(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1NodeList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_node" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/nodes'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1NodeList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def list_persistent_volume(self, **kwargs):
-        """
-        list or watch objects of kind PersistentVolume
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_persistent_volume(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: V1PersistentVolumeList
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_persistent_volume" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/persistentvolumes'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1PersistentVolumeList',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def patch_namespace(self, body, name, **kwargs):
-        """
-        partially update the specified Namespace
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.patch_namespace(body, name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param UnversionedPatch body:  (required)
-        :param str name: name of the Namespace (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: V1Namespace
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'name', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method patch_namespace" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `patch_namespace`")
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `patch_namespace`")
-
-        resource_path = '/api/v1/namespaces/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/merge-patch+json', 'application/strategic-merge-patch+json'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'PATCH',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1Namespace',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10649,7 +10563,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -10741,7 +10655,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -10833,7 +10747,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -10925,7 +10839,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -10944,6 +10858,264 @@ class ApivApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='V1LimitRange',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_namespaced_namespace(self, body, name, **kwargs):
+        """
+        partially update the specified Namespace
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_namespaced_namespace(body, name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param UnversionedPatch body:  (required)
+        :param str name: name of the Namespace (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1Namespace
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'name', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_namespaced_namespace" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_namespace`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_namespace`")
+
+        resource_path = '/api/v1/namespaces/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/merge-patch+json', 'application/strategic-merge-patch+json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1Namespace',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_namespaced_node(self, body, name, **kwargs):
+        """
+        partially update the specified Node
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_namespaced_node(body, name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param UnversionedPatch body:  (required)
+        :param str name: name of the Node (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1Node
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'name', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_namespaced_node" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_node`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_node`")
+
+        resource_path = '/api/v1/nodes/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/merge-patch+json', 'application/strategic-merge-patch+json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1Node',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_namespaced_persistent_volume(self, body, name, **kwargs):
+        """
+        partially update the specified PersistentVolume
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_namespaced_persistent_volume(body, name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param UnversionedPatch body:  (required)
+        :param str name: name of the PersistentVolume (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1PersistentVolume
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'name', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_namespaced_persistent_volume" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_persistent_volume`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_persistent_volume`")
+
+        resource_path = '/api/v1/persistentvolumes/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json-patch+json', 'application/merge-patch+json', 'application/strategic-merge-patch+json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1PersistentVolume',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -11017,7 +11189,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -11109,7 +11281,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -11201,7 +11373,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -11293,7 +11465,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -11385,7 +11557,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -11477,7 +11649,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -11569,7 +11741,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -11661,7 +11833,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -11753,7 +11925,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -11776,9 +11948,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_node(self, body, name, **kwargs):
+    def proxy_delete_namespaced_node(self, name, **kwargs):
         """
-        partially update the specified Node
+        proxy DELETE requests to Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -11787,19 +11959,17 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_node(body, name, callback=callback_function)
+        >>> thread = api.proxy_delete_namespaced_node(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch body:  (required)
         :param str name: name of the Node (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: V1Node
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'name', 'pretty']
+        all_params = ['name']
         all_params.append('callback')
 
         params = locals()
@@ -11807,26 +11977,21 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method patch_node" % key
+                    " to method proxy_delete_namespaced_node" % key
                 )
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `patch_node`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `patch_node`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_delete_namespaced_node`")
 
-        resource_path = '/api/v1/nodes/{name}'.replace('{format}', 'json')
+        resource_path = '/api/v1/proxy/nodes/{name}'.replace('{format}', 'json')
         path_params = {}
         if 'name' in params:
             path_params['name'] = params['name']
 
         query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -11834,37 +11999,35 @@ class ApivApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['*/*'])
         if not header_params['Accept']:
             del header_params['Accept']
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/merge-patch+json', 'application/strategic-merge-patch+json'])
+            select_header_content_type(['*/*'])
 
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'PATCH',
+        response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
                                             query_params,
                                             header_params,
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='V1Node',
+                                            response_type='str',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def patch_persistent_volume(self, body, name, **kwargs):
+    def proxy_delete_namespaced_node_19(self, name, path, **kwargs):
         """
-        partially update the specified PersistentVolume
+        proxy DELETE requests to Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -11873,19 +12036,18 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_persistent_volume(body, name, callback=callback_function)
+        >>> thread = api.proxy_delete_namespaced_node_19(name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch body:  (required)
-        :param str name: name of the PersistentVolume (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: V1PersistentVolume
+        :param str name: name of the Node (required)
+        :param str path: path to the resource (required)
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'name', 'pretty']
+        all_params = ['name', 'path']
         all_params.append('callback')
 
         params = locals()
@@ -11893,26 +12055,26 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method patch_persistent_volume" % key
+                    " to method proxy_delete_namespaced_node_19" % key
                 )
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `patch_persistent_volume`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `patch_persistent_volume`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_delete_namespaced_node_19`")
+        # verify the required parameter 'path' is set
+        if ('path' not in params) or (params['path'] is None):
+            raise ValueError("Missing the required parameter `path` when calling `proxy_delete_namespaced_node_19`")
 
-        resource_path = '/api/v1/persistentvolumes/{name}'.replace('{format}', 'json')
+        resource_path = '/api/v1/proxy/nodes/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
         if 'name' in params:
             path_params['name'] = params['name']
+        if 'path' in params:
+            path_params['path'] = params['path']
 
         query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -11920,30 +12082,28 @@ class ApivApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['*/*'])
         if not header_params['Accept']:
             del header_params['Accept']
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json-patch+json', 'application/merge-patch+json', 'application/strategic-merge-patch+json'])
+            select_header_content_type(['*/*'])
 
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'PATCH',
+        response = self.api_client.call_api(resource_path, 'DELETE',
                                             path_params,
                                             query_params,
                                             header_params,
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='V1PersistentVolume',
+                                            response_type='str',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -12031,7 +12191,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_delete_namespaced_pod_31(self, namespace, name, path, **kwargs):
+    def proxy_delete_namespaced_pod_20(self, namespace, name, path, **kwargs):
         """
         proxy DELETE requests to Pod
         
@@ -12042,7 +12202,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_delete_namespaced_pod_31(namespace, name, path, callback=callback_function)
+        >>> thread = api.proxy_delete_namespaced_pod_20(namespace, name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -12062,20 +12222,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_delete_namespaced_pod_31" % key
+                    " to method proxy_delete_namespaced_pod_20" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `proxy_delete_namespaced_pod_31`")
+            raise ValueError("Missing the required parameter `namespace` when calling `proxy_delete_namespaced_pod_20`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_delete_namespaced_pod_31`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_delete_namespaced_pod_20`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_delete_namespaced_pod_31`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_delete_namespaced_pod_20`")
 
         resource_path = '/api/v1/proxy/namespaces/{namespace}/pods/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -12203,7 +12363,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_delete_namespaced_service_32(self, namespace, name, path, **kwargs):
+    def proxy_delete_namespaced_service_21(self, namespace, name, path, **kwargs):
         """
         proxy DELETE requests to Service
         
@@ -12214,7 +12374,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_delete_namespaced_service_32(namespace, name, path, callback=callback_function)
+        >>> thread = api.proxy_delete_namespaced_service_21(namespace, name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -12234,20 +12394,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_delete_namespaced_service_32" % key
+                    " to method proxy_delete_namespaced_service_21" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `proxy_delete_namespaced_service_32`")
+            raise ValueError("Missing the required parameter `namespace` when calling `proxy_delete_namespaced_service_21`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_delete_namespaced_service_32`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_delete_namespaced_service_21`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_delete_namespaced_service_32`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_delete_namespaced_service_21`")
 
         resource_path = '/api/v1/proxy/namespaces/{namespace}/services/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -12292,9 +12452,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_delete_node(self, name, **kwargs):
+    def proxy_get_namespaced_node(self, name, **kwargs):
         """
-        proxy DELETE requests to Node
+        proxy GET requests to Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -12303,7 +12463,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_delete_node(name, callback=callback_function)
+        >>> thread = api.proxy_get_namespaced_node(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -12321,14 +12481,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_delete_node" % key
+                    " to method proxy_get_namespaced_node" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_delete_node`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_get_namespaced_node`")
 
         resource_path = '/api/v1/proxy/nodes/{name}'.replace('{format}', 'json')
         path_params = {}
@@ -12357,7 +12517,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'DELETE',
+        response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -12369,9 +12529,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_delete_node_33(self, name, path, **kwargs):
+    def proxy_get_namespaced_node_22(self, name, path, **kwargs):
         """
-        proxy DELETE requests to Node
+        proxy GET requests to Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -12380,7 +12540,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_delete_node_33(name, path, callback=callback_function)
+        >>> thread = api.proxy_get_namespaced_node_22(name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -12399,17 +12559,17 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_delete_node_33" % key
+                    " to method proxy_get_namespaced_node_22" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_delete_node_33`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_get_namespaced_node_22`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_delete_node_33`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_get_namespaced_node_22`")
 
         resource_path = '/api/v1/proxy/nodes/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -12440,7 +12600,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'DELETE',
+        response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -12535,7 +12695,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_get_namespaced_pod_34(self, namespace, name, path, **kwargs):
+    def proxy_get_namespaced_pod_23(self, namespace, name, path, **kwargs):
         """
         proxy GET requests to Pod
         
@@ -12546,7 +12706,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_get_namespaced_pod_34(namespace, name, path, callback=callback_function)
+        >>> thread = api.proxy_get_namespaced_pod_23(namespace, name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -12566,20 +12726,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_get_namespaced_pod_34" % key
+                    " to method proxy_get_namespaced_pod_23" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `proxy_get_namespaced_pod_34`")
+            raise ValueError("Missing the required parameter `namespace` when calling `proxy_get_namespaced_pod_23`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_get_namespaced_pod_34`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_get_namespaced_pod_23`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_get_namespaced_pod_34`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_get_namespaced_pod_23`")
 
         resource_path = '/api/v1/proxy/namespaces/{namespace}/pods/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -12707,7 +12867,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_get_namespaced_service_35(self, namespace, name, path, **kwargs):
+    def proxy_get_namespaced_service_24(self, namespace, name, path, **kwargs):
         """
         proxy GET requests to Service
         
@@ -12718,7 +12878,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_get_namespaced_service_35(namespace, name, path, callback=callback_function)
+        >>> thread = api.proxy_get_namespaced_service_24(namespace, name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -12738,20 +12898,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_get_namespaced_service_35" % key
+                    " to method proxy_get_namespaced_service_24" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `proxy_get_namespaced_service_35`")
+            raise ValueError("Missing the required parameter `namespace` when calling `proxy_get_namespaced_service_24`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_get_namespaced_service_35`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_get_namespaced_service_24`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_get_namespaced_service_35`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_get_namespaced_service_24`")
 
         resource_path = '/api/v1/proxy/namespaces/{namespace}/services/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -12796,9 +12956,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_get_node(self, name, **kwargs):
+    def proxy_head_namespaced_node(self, name, **kwargs):
         """
-        proxy GET requests to Node
+        proxy HEAD requests to Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -12807,7 +12967,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_get_node(name, callback=callback_function)
+        >>> thread = api.proxy_head_namespaced_node(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -12825,14 +12985,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_get_node" % key
+                    " to method proxy_head_namespaced_node" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_get_node`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_head_namespaced_node`")
 
         resource_path = '/api/v1/proxy/nodes/{name}'.replace('{format}', 'json')
         path_params = {}
@@ -12861,7 +13021,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'GET',
+        response = self.api_client.call_api(resource_path, 'HEAD',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -12873,9 +13033,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_get_node_36(self, name, path, **kwargs):
+    def proxy_head_namespaced_node_25(self, name, path, **kwargs):
         """
-        proxy GET requests to Node
+        proxy HEAD requests to Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -12884,7 +13044,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_get_node_36(name, path, callback=callback_function)
+        >>> thread = api.proxy_head_namespaced_node_25(name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -12903,17 +13063,17 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_get_node_36" % key
+                    " to method proxy_head_namespaced_node_25" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_get_node_36`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_head_namespaced_node_25`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_get_node_36`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_head_namespaced_node_25`")
 
         resource_path = '/api/v1/proxy/nodes/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -12944,7 +13104,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'GET',
+        response = self.api_client.call_api(resource_path, 'HEAD',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -13039,7 +13199,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_head_namespaced_pod_37(self, namespace, name, path, **kwargs):
+    def proxy_head_namespaced_pod_26(self, namespace, name, path, **kwargs):
         """
         proxy HEAD requests to Pod
         
@@ -13050,7 +13210,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_head_namespaced_pod_37(namespace, name, path, callback=callback_function)
+        >>> thread = api.proxy_head_namespaced_pod_26(namespace, name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -13070,20 +13230,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_head_namespaced_pod_37" % key
+                    " to method proxy_head_namespaced_pod_26" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `proxy_head_namespaced_pod_37`")
+            raise ValueError("Missing the required parameter `namespace` when calling `proxy_head_namespaced_pod_26`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_head_namespaced_pod_37`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_head_namespaced_pod_26`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_head_namespaced_pod_37`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_head_namespaced_pod_26`")
 
         resource_path = '/api/v1/proxy/namespaces/{namespace}/pods/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -13211,7 +13371,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_head_namespaced_service_38(self, namespace, name, path, **kwargs):
+    def proxy_head_namespaced_service_27(self, namespace, name, path, **kwargs):
         """
         proxy HEAD requests to Service
         
@@ -13222,7 +13382,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_head_namespaced_service_38(namespace, name, path, callback=callback_function)
+        >>> thread = api.proxy_head_namespaced_service_27(namespace, name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -13242,20 +13402,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_head_namespaced_service_38" % key
+                    " to method proxy_head_namespaced_service_27" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `proxy_head_namespaced_service_38`")
+            raise ValueError("Missing the required parameter `namespace` when calling `proxy_head_namespaced_service_27`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_head_namespaced_service_38`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_head_namespaced_service_27`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_head_namespaced_service_38`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_head_namespaced_service_27`")
 
         resource_path = '/api/v1/proxy/namespaces/{namespace}/services/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -13300,9 +13460,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_head_node(self, name, **kwargs):
+    def proxy_options_namespaced_node(self, name, **kwargs):
         """
-        proxy HEAD requests to Node
+        proxy OPTIONS requests to Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -13311,7 +13471,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_head_node(name, callback=callback_function)
+        >>> thread = api.proxy_options_namespaced_node(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -13329,14 +13489,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_head_node" % key
+                    " to method proxy_options_namespaced_node" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_head_node`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_options_namespaced_node`")
 
         resource_path = '/api/v1/proxy/nodes/{name}'.replace('{format}', 'json')
         path_params = {}
@@ -13365,7 +13525,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'HEAD',
+        response = self.api_client.call_api(resource_path, 'OPTIONS',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -13377,9 +13537,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_head_node_39(self, name, path, **kwargs):
+    def proxy_options_namespaced_node_28(self, name, path, **kwargs):
         """
-        proxy HEAD requests to Node
+        proxy OPTIONS requests to Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -13388,7 +13548,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_head_node_39(name, path, callback=callback_function)
+        >>> thread = api.proxy_options_namespaced_node_28(name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -13407,17 +13567,17 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_head_node_39" % key
+                    " to method proxy_options_namespaced_node_28" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_head_node_39`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_options_namespaced_node_28`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_head_node_39`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_options_namespaced_node_28`")
 
         resource_path = '/api/v1/proxy/nodes/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -13448,7 +13608,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'HEAD',
+        response = self.api_client.call_api(resource_path, 'OPTIONS',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -13543,7 +13703,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_options_namespaced_pod_40(self, namespace, name, path, **kwargs):
+    def proxy_options_namespaced_pod_29(self, namespace, name, path, **kwargs):
         """
         proxy OPTIONS requests to Pod
         
@@ -13554,7 +13714,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_options_namespaced_pod_40(namespace, name, path, callback=callback_function)
+        >>> thread = api.proxy_options_namespaced_pod_29(namespace, name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -13574,20 +13734,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_options_namespaced_pod_40" % key
+                    " to method proxy_options_namespaced_pod_29" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `proxy_options_namespaced_pod_40`")
+            raise ValueError("Missing the required parameter `namespace` when calling `proxy_options_namespaced_pod_29`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_options_namespaced_pod_40`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_options_namespaced_pod_29`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_options_namespaced_pod_40`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_options_namespaced_pod_29`")
 
         resource_path = '/api/v1/proxy/namespaces/{namespace}/pods/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -13715,7 +13875,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_options_namespaced_service_41(self, namespace, name, path, **kwargs):
+    def proxy_options_namespaced_service_30(self, namespace, name, path, **kwargs):
         """
         proxy OPTIONS requests to Service
         
@@ -13726,7 +13886,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_options_namespaced_service_41(namespace, name, path, callback=callback_function)
+        >>> thread = api.proxy_options_namespaced_service_30(namespace, name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -13746,20 +13906,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_options_namespaced_service_41" % key
+                    " to method proxy_options_namespaced_service_30" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `proxy_options_namespaced_service_41`")
+            raise ValueError("Missing the required parameter `namespace` when calling `proxy_options_namespaced_service_30`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_options_namespaced_service_41`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_options_namespaced_service_30`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_options_namespaced_service_41`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_options_namespaced_service_30`")
 
         resource_path = '/api/v1/proxy/namespaces/{namespace}/services/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -13804,9 +13964,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_options_node(self, name, **kwargs):
+    def proxy_post_namespaced_node(self, name, **kwargs):
         """
-        proxy OPTIONS requests to Node
+        proxy POST requests to Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -13815,7 +13975,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_options_node(name, callback=callback_function)
+        >>> thread = api.proxy_post_namespaced_node(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -13833,14 +13993,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_options_node" % key
+                    " to method proxy_post_namespaced_node" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_options_node`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_post_namespaced_node`")
 
         resource_path = '/api/v1/proxy/nodes/{name}'.replace('{format}', 'json')
         path_params = {}
@@ -13869,7 +14029,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'OPTIONS',
+        response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -13881,9 +14041,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_options_node_42(self, name, path, **kwargs):
+    def proxy_post_namespaced_node_31(self, name, path, **kwargs):
         """
-        proxy OPTIONS requests to Node
+        proxy POST requests to Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -13892,7 +14052,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_options_node_42(name, path, callback=callback_function)
+        >>> thread = api.proxy_post_namespaced_node_31(name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -13911,17 +14071,17 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_options_node_42" % key
+                    " to method proxy_post_namespaced_node_31" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_options_node_42`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_post_namespaced_node_31`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_options_node_42`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_post_namespaced_node_31`")
 
         resource_path = '/api/v1/proxy/nodes/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -13952,7 +14112,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'OPTIONS',
+        response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -14047,7 +14207,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_post_namespaced_pod_43(self, namespace, name, path, **kwargs):
+    def proxy_post_namespaced_pod_32(self, namespace, name, path, **kwargs):
         """
         proxy POST requests to Pod
         
@@ -14058,7 +14218,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_post_namespaced_pod_43(namespace, name, path, callback=callback_function)
+        >>> thread = api.proxy_post_namespaced_pod_32(namespace, name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -14078,20 +14238,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_post_namespaced_pod_43" % key
+                    " to method proxy_post_namespaced_pod_32" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `proxy_post_namespaced_pod_43`")
+            raise ValueError("Missing the required parameter `namespace` when calling `proxy_post_namespaced_pod_32`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_post_namespaced_pod_43`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_post_namespaced_pod_32`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_post_namespaced_pod_43`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_post_namespaced_pod_32`")
 
         resource_path = '/api/v1/proxy/namespaces/{namespace}/pods/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -14219,7 +14379,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_post_namespaced_service_44(self, namespace, name, path, **kwargs):
+    def proxy_post_namespaced_service_33(self, namespace, name, path, **kwargs):
         """
         proxy POST requests to Service
         
@@ -14230,7 +14390,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_post_namespaced_service_44(namespace, name, path, callback=callback_function)
+        >>> thread = api.proxy_post_namespaced_service_33(namespace, name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -14250,20 +14410,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_post_namespaced_service_44" % key
+                    " to method proxy_post_namespaced_service_33" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `proxy_post_namespaced_service_44`")
+            raise ValueError("Missing the required parameter `namespace` when calling `proxy_post_namespaced_service_33`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_post_namespaced_service_44`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_post_namespaced_service_33`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_post_namespaced_service_44`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_post_namespaced_service_33`")
 
         resource_path = '/api/v1/proxy/namespaces/{namespace}/services/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -14308,9 +14468,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_post_node(self, name, **kwargs):
+    def proxy_put_namespaced_node(self, name, **kwargs):
         """
-        proxy POST requests to Node
+        proxy PUT requests to Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -14319,7 +14479,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_post_node(name, callback=callback_function)
+        >>> thread = api.proxy_put_namespaced_node(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -14337,14 +14497,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_post_node" % key
+                    " to method proxy_put_namespaced_node" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_post_node`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_put_namespaced_node`")
 
         resource_path = '/api/v1/proxy/nodes/{name}'.replace('{format}', 'json')
         path_params = {}
@@ -14373,7 +14533,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'POST',
+        response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -14385,9 +14545,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_post_node_45(self, name, path, **kwargs):
+    def proxy_put_namespaced_node_34(self, name, path, **kwargs):
         """
-        proxy POST requests to Node
+        proxy PUT requests to Node
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -14396,7 +14556,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_post_node_45(name, path, callback=callback_function)
+        >>> thread = api.proxy_put_namespaced_node_34(name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -14415,17 +14575,17 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_post_node_45" % key
+                    " to method proxy_put_namespaced_node_34" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_post_node_45`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_put_namespaced_node_34`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_post_node_45`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_put_namespaced_node_34`")
 
         resource_path = '/api/v1/proxy/nodes/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -14456,7 +14616,7 @@ class ApivApi(object):
         # Authentication setting
         auth_settings = []
 
-        response = self.api_client.call_api(resource_path, 'POST',
+        response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
                                             query_params,
                                             header_params,
@@ -14551,7 +14711,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_put_namespaced_pod_46(self, namespace, name, path, **kwargs):
+    def proxy_put_namespaced_pod_35(self, namespace, name, path, **kwargs):
         """
         proxy PUT requests to Pod
         
@@ -14562,7 +14722,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_put_namespaced_pod_46(namespace, name, path, callback=callback_function)
+        >>> thread = api.proxy_put_namespaced_pod_35(namespace, name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -14582,20 +14742,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_put_namespaced_pod_46" % key
+                    " to method proxy_put_namespaced_pod_35" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `proxy_put_namespaced_pod_46`")
+            raise ValueError("Missing the required parameter `namespace` when calling `proxy_put_namespaced_pod_35`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_put_namespaced_pod_46`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_put_namespaced_pod_35`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_put_namespaced_pod_46`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_put_namespaced_pod_35`")
 
         resource_path = '/api/v1/proxy/namespaces/{namespace}/pods/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -14723,7 +14883,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_put_namespaced_service_47(self, namespace, name, path, **kwargs):
+    def proxy_put_namespaced_service_36(self, namespace, name, path, **kwargs):
         """
         proxy PUT requests to Service
         
@@ -14734,7 +14894,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.proxy_put_namespaced_service_47(namespace, name, path, callback=callback_function)
+        >>> thread = api.proxy_put_namespaced_service_36(namespace, name, path, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -14754,20 +14914,20 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method proxy_put_namespaced_service_47" % key
+                    " to method proxy_put_namespaced_service_36" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `proxy_put_namespaced_service_47`")
+            raise ValueError("Missing the required parameter `namespace` when calling `proxy_put_namespaced_service_36`")
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_put_namespaced_service_47`")
+            raise ValueError("Missing the required parameter `name` when calling `proxy_put_namespaced_service_36`")
         # verify the required parameter 'path' is set
         if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_put_namespaced_service_47`")
+            raise ValueError("Missing the required parameter `path` when calling `proxy_put_namespaced_service_36`")
 
         resource_path = '/api/v1/proxy/namespaces/{namespace}/services/{name}/{path}'.replace('{format}', 'json')
         path_params = {}
@@ -14812,167 +14972,7 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def proxy_put_node(self, name, **kwargs):
-        """
-        proxy PUT requests to Node
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.proxy_put_node(name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str name: name of the Node (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method proxy_put_node" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_put_node`")
-
-        resource_path = '/api/v1/proxy/nodes/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['*/*'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='str',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def proxy_put_node_48(self, name, path, **kwargs):
-        """
-        proxy PUT requests to Node
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.proxy_put_node_48(name, path, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'path']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method proxy_put_node_48" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `proxy_put_node_48`")
-        # verify the required parameter 'path' is set
-        if ('path' not in params) or (params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `proxy_put_node_48`")
-
-        resource_path = '/api/v1/proxy/nodes/{name}/{path}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-        if 'path' in params:
-            path_params['path'] = params['path']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['*/*'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='str',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def read_component_status(self, name, **kwargs):
+    def read_namespaced_component_status(self, name, **kwargs):
         """
         read the specified ComponentStatus
         
@@ -14983,7 +14983,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_component_status(name, callback=callback_function)
+        >>> thread = api.read_namespaced_component_status(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -15002,14 +15002,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method read_component_status" % key
+                    " to method read_namespaced_component_status" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'name' is set
         if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `read_component_status`")
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_component_status`")
 
         resource_path = '/api/v1/componentstatuses/{name}'.replace('{format}', 'json')
         path_params = {}
@@ -15029,7 +15029,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -15048,92 +15048,6 @@ class ApivApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='V1ComponentStatus',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def read_namespace(self, name, **kwargs):
-        """
-        read the specified Namespace
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.read_namespace(name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str name: name of the Namespace (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
-        :return: V1Namespace
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'pretty', 'export', 'exact']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method read_namespace" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `read_namespace`")
-
-        resource_path = '/api/v1/namespaces/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'export' in params:
-            query_params['export'] = params['export']
-        if 'exact' in params:
-            query_params['exact'] = params['exact']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1Namespace',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -15207,7 +15121,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -15299,7 +15213,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -15391,7 +15305,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -15483,7 +15397,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -15502,6 +15416,264 @@ class ApivApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='V1LimitRange',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def read_namespaced_namespace(self, name, **kwargs):
+        """
+        read the specified Namespace
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.read_namespaced_namespace(name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str name: name of the Namespace (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :return: V1Namespace
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'pretty', 'export', 'exact']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method read_namespaced_namespace" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_namespace`")
+
+        resource_path = '/api/v1/namespaces/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'export' in params:
+            query_params['export'] = params['export']
+        if 'exact' in params:
+            query_params['exact'] = params['exact']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1Namespace',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def read_namespaced_node(self, name, **kwargs):
+        """
+        read the specified Node
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.read_namespaced_node(name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str name: name of the Node (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :return: V1Node
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'pretty', 'export', 'exact']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method read_namespaced_node" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_node`")
+
+        resource_path = '/api/v1/nodes/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'export' in params:
+            query_params['export'] = params['export']
+        if 'exact' in params:
+            query_params['exact'] = params['exact']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1Node',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def read_namespaced_persistent_volume(self, name, **kwargs):
+        """
+        read the specified PersistentVolume
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.read_namespaced_persistent_volume(name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str name: name of the PersistentVolume (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :return: V1PersistentVolume
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'pretty', 'export', 'exact']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method read_namespaced_persistent_volume" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_persistent_volume`")
+
+        resource_path = '/api/v1/persistentvolumes/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'export' in params:
+            query_params['export'] = params['export']
+        if 'exact' in params:
+            query_params['exact'] = params['exact']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1PersistentVolume',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -15575,7 +15747,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -15667,7 +15839,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -15777,7 +15949,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -15869,7 +16041,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -15961,7 +16133,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -16053,7 +16225,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -16139,7 +16311,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -16231,7 +16403,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -16323,7 +16495,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -16415,7 +16587,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -16434,436 +16606,6 @@ class ApivApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='V1ServiceAccount',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def read_node(self, name, **kwargs):
-        """
-        read the specified Node
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.read_node(name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str name: name of the Node (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
-        :return: V1Node
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'pretty', 'export', 'exact']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method read_node" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `read_node`")
-
-        resource_path = '/api/v1/nodes/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'export' in params:
-            query_params['export'] = params['export']
-        if 'exact' in params:
-            query_params['exact'] = params['exact']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1Node',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def read_persistent_volume(self, name, **kwargs):
-        """
-        read the specified PersistentVolume
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.read_persistent_volume(name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str name: name of the PersistentVolume (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
-        :return: V1PersistentVolume
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'pretty', 'export', 'exact']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method read_persistent_volume" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `read_persistent_volume`")
-
-        resource_path = '/api/v1/persistentvolumes/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'export' in params:
-            query_params['export'] = params['export']
-        if 'exact' in params:
-            query_params['exact'] = params['exact']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1PersistentVolume',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def replace_namespace(self, body, name, **kwargs):
-        """
-        replace the specified Namespace
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.replace_namespace(body, name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param V1Namespace body:  (required)
-        :param str name: name of the Namespace (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: V1Namespace
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'name', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_namespace" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `replace_namespace`")
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `replace_namespace`")
-
-        resource_path = '/api/v1/namespaces/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1Namespace',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def replace_namespace_finalize(self, body, name, **kwargs):
-        """
-        replace finalize of the specified Namespace
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.replace_namespace_finalize(body, name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param V1Namespace body:  (required)
-        :param str name: name of the Namespace (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: V1Namespace
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'name', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_namespace_finalize" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `replace_namespace_finalize`")
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `replace_namespace_finalize`")
-
-        resource_path = '/api/v1/namespaces/{name}/finalize'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1Namespace',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def replace_namespace_status(self, body, name, **kwargs):
-        """
-        replace status of the specified Namespace
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.replace_namespace_status(body, name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param V1Namespace body:  (required)
-        :param str name: name of the Namespace (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: V1Namespace
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'name', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_namespace_status" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `replace_namespace_status`")
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `replace_namespace_status`")
-
-        resource_path = '/api/v1/namespaces/{name}/status'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1Namespace',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -16937,7 +16679,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -17029,7 +16771,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -17121,7 +16863,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -17213,7 +16955,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -17232,6 +16974,522 @@ class ApivApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='V1LimitRange',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def replace_namespaced_namespace(self, body, name, **kwargs):
+        """
+        replace the specified Namespace
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.replace_namespaced_namespace(body, name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1Namespace body:  (required)
+        :param str name: name of the Namespace (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1Namespace
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'name', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_namespaced_namespace" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_namespace`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_namespace`")
+
+        resource_path = '/api/v1/namespaces/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1Namespace',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def replace_namespaced_namespace_finalize(self, body, name, **kwargs):
+        """
+        replace finalize of the specified Namespace
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.replace_namespaced_namespace_finalize(body, name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1Namespace body:  (required)
+        :param str name: name of the Namespace (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1Namespace
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'name', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_namespaced_namespace_finalize" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_namespace_finalize`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_namespace_finalize`")
+
+        resource_path = '/api/v1/namespaces/{name}/finalize'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1Namespace',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def replace_namespaced_namespace_status(self, body, name, **kwargs):
+        """
+        replace status of the specified Namespace
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.replace_namespaced_namespace_status(body, name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1Namespace body:  (required)
+        :param str name: name of the Namespace (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1Namespace
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'name', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_namespaced_namespace_status" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_namespace_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_namespace_status`")
+
+        resource_path = '/api/v1/namespaces/{name}/status'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1Namespace',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def replace_namespaced_node(self, body, name, **kwargs):
+        """
+        replace the specified Node
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.replace_namespaced_node(body, name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1Node body:  (required)
+        :param str name: name of the Node (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1Node
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'name', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_namespaced_node" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_node`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_node`")
+
+        resource_path = '/api/v1/nodes/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1Node',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def replace_namespaced_node_status(self, body, name, **kwargs):
+        """
+        replace status of the specified Node
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.replace_namespaced_node_status(body, name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1Node body:  (required)
+        :param str name: name of the Node (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1Node
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'name', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_namespaced_node_status" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_node_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_node_status`")
+
+        resource_path = '/api/v1/nodes/{name}/status'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1Node',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def replace_namespaced_persistent_volume(self, body, name, **kwargs):
+        """
+        replace the specified PersistentVolume
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.replace_namespaced_persistent_volume(body, name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1PersistentVolume body:  (required)
+        :param str name: name of the PersistentVolume (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1PersistentVolume
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'name', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_namespaced_persistent_volume" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_persistent_volume`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_persistent_volume`")
+
+        resource_path = '/api/v1/persistentvolumes/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1PersistentVolume',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -17305,7 +17563,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -17397,7 +17655,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -17416,6 +17674,92 @@ class ApivApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='V1PersistentVolumeClaim',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def replace_namespaced_persistent_volume_status(self, body, name, **kwargs):
+        """
+        replace status of the specified PersistentVolume
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.replace_namespaced_persistent_volume_status(body, name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1PersistentVolume body:  (required)
+        :param str name: name of the PersistentVolume (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1PersistentVolume
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'name', 'pretty']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_namespaced_persistent_volume_status" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_persistent_volume_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_persistent_volume_status`")
+
+        resource_path = '/api/v1/persistentvolumes/{name}/status'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1PersistentVolume',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -17489,7 +17833,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -17581,7 +17925,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -17673,7 +18017,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -17765,7 +18109,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -17857,7 +18201,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -17949,7 +18293,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -18041,7 +18385,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -18133,7 +18477,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -18225,7 +18569,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -18317,7 +18661,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -18409,7 +18753,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -18501,7 +18845,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+            select_header_accept(['application/json', 'application/yaml'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -18524,9 +18868,9 @@ class ApivApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def replace_node(self, body, name, **kwargs):
+    def watch_config_map_list(self, **kwargs):
         """
-        replace the specified Node
+        watch individual changes to a list of ConfigMap
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -18535,446 +18879,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_node(body, name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param V1Node body:  (required)
-        :param str name: name of the Node (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: V1Node
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'name', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_node" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `replace_node`")
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `replace_node`")
-
-        resource_path = '/api/v1/nodes/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1Node',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def replace_node_status(self, body, name, **kwargs):
-        """
-        replace status of the specified Node
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.replace_node_status(body, name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param V1Node body:  (required)
-        :param str name: name of the Node (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: V1Node
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'name', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_node_status" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `replace_node_status`")
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `replace_node_status`")
-
-        resource_path = '/api/v1/nodes/{name}/status'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1Node',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def replace_persistent_volume(self, body, name, **kwargs):
-        """
-        replace the specified PersistentVolume
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.replace_persistent_volume(body, name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param V1PersistentVolume body:  (required)
-        :param str name: name of the PersistentVolume (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: V1PersistentVolume
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'name', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_persistent_volume" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `replace_persistent_volume`")
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `replace_persistent_volume`")
-
-        resource_path = '/api/v1/persistentvolumes/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1PersistentVolume',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def replace_persistent_volume_status(self, body, name, **kwargs):
-        """
-        replace status of the specified PersistentVolume
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.replace_persistent_volume_status(body, name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param V1PersistentVolume body:  (required)
-        :param str name: name of the PersistentVolume (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :return: V1PersistentVolume
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'name', 'pretty']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method replace_persistent_volume_status" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `replace_persistent_volume_status`")
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `replace_persistent_volume_status`")
-
-        resource_path = '/api/v1/persistentvolumes/{name}/status'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='V1PersistentVolume',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_namespace(self, name, **kwargs):
-        """
-        watch changes to an object of kind Namespace
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_namespace(name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str name: name of the Namespace (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespace" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `watch_namespace`")
-
-        resource_path = '/api/v1/watch/namespaces/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_namespace_list(self, **kwargs):
-        """
-        watch individual changes to a list of Namespace
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_namespace_list(callback=callback_function)
+        >>> thread = api.watch_config_map_list(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -18984,7 +18889,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -18997,13 +18902,13 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespace_list" % key
+                    " to method watch_config_map_list" % key
                 )
             params[key] = val
         del params['kwargs']
 
 
-        resource_path = '/api/v1/watch/namespaces'.replace('{format}', 'json')
+        resource_path = '/api/v1/watch/configmaps'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -19029,7 +18934,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -19047,7 +18952,274 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_endpoints_list(self, **kwargs):
+        """
+        watch individual changes to a list of Endpoints
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_endpoints_list(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_endpoints_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/watch/endpoints'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_event_list(self, **kwargs):
+        """
+        watch individual changes to a list of Event
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_event_list(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_event_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/watch/events'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_limit_range_list(self, **kwargs):
+        """
+        watch individual changes to a list of LimitRange
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_limit_range_list(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_limit_range_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/watch/limitranges'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -19075,7 +19247,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -19130,7 +19302,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -19148,12 +19320,12 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def watch_namespaced_config_map_list(self, **kwargs):
+    def watch_namespaced_config_map_list(self, namespace, **kwargs):
         """
         watch individual changes to a list of ConfigMap
         
@@ -19164,96 +19336,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_config_map_list(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_config_map_list" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/watch/configmaps'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_namespaced_config_map_list_49(self, namespace, **kwargs):
-        """
-        watch individual changes to a list of ConfigMap
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_namespaced_config_map_list_49(namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_config_map_list(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -19264,7 +19347,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -19277,14 +19360,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_config_map_list_49" % key
+                    " to method watch_namespaced_config_map_list" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_config_map_list_49`")
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_config_map_list`")
 
         resource_path = '/api/v1/watch/namespaces/{namespace}/configmaps'.replace('{format}', 'json')
         path_params = {}
@@ -19314,7 +19397,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -19332,7 +19415,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -19360,7 +19443,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -19415,7 +19498,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -19433,12 +19516,12 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def watch_namespaced_endpoints_list(self, **kwargs):
+    def watch_namespaced_endpoints_list(self, namespace, **kwargs):
         """
         watch individual changes to a list of Endpoints
         
@@ -19449,96 +19532,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_endpoints_list(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_endpoints_list" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/watch/endpoints'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_namespaced_endpoints_list_50(self, namespace, **kwargs):
-        """
-        watch individual changes to a list of Endpoints
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_namespaced_endpoints_list_50(namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_endpoints_list(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -19549,7 +19543,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -19562,14 +19556,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_endpoints_list_50" % key
+                    " to method watch_namespaced_endpoints_list" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_endpoints_list_50`")
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_endpoints_list`")
 
         resource_path = '/api/v1/watch/namespaces/{namespace}/endpoints'.replace('{format}', 'json')
         path_params = {}
@@ -19599,7 +19593,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -19617,7 +19611,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -19645,7 +19639,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -19700,7 +19694,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -19718,12 +19712,12 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def watch_namespaced_event_list(self, **kwargs):
+    def watch_namespaced_event_list(self, namespace, **kwargs):
         """
         watch individual changes to a list of Event
         
@@ -19734,96 +19728,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_event_list(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_event_list" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/watch/events'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_namespaced_event_list_51(self, namespace, **kwargs):
-        """
-        watch individual changes to a list of Event
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_namespaced_event_list_51(namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_event_list(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -19834,7 +19739,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -19847,14 +19752,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_event_list_51" % key
+                    " to method watch_namespaced_event_list" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_event_list_51`")
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_event_list`")
 
         resource_path = '/api/v1/watch/namespaces/{namespace}/events'.replace('{format}', 'json')
         path_params = {}
@@ -19884,7 +19789,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -19902,7 +19807,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -19930,7 +19835,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -19985,7 +19890,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -20003,12 +19908,12 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def watch_namespaced_limit_range_list(self, **kwargs):
+    def watch_namespaced_limit_range_list(self, namespace, **kwargs):
         """
         watch individual changes to a list of LimitRange
         
@@ -20019,96 +19924,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_limit_range_list(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_limit_range_list" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/watch/limitranges'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_namespaced_limit_range_list_52(self, namespace, **kwargs):
-        """
-        watch individual changes to a list of LimitRange
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_namespaced_limit_range_list_52(namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_limit_range_list(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -20119,7 +19935,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -20132,14 +19948,14 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_limit_range_list_52" % key
+                    " to method watch_namespaced_limit_range_list" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'namespace' is set
         if ('namespace' not in params) or (params['namespace'] is None):
-            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_limit_range_list_52`")
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_limit_range_list`")
 
         resource_path = '/api/v1/watch/namespaces/{namespace}/limitranges'.replace('{format}', 'json')
         path_params = {}
@@ -20169,7 +19985,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -20187,7 +20003,470 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_namespaced_namespace(self, name, **kwargs):
+        """
+        watch changes to an object of kind Namespace
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_namespaced_namespace(name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str name: name of the Namespace (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_namespaced_namespace" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `watch_namespaced_namespace`")
+
+        resource_path = '/api/v1/watch/namespaces/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_namespaced_namespace_list(self, **kwargs):
+        """
+        watch individual changes to a list of Namespace
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_namespaced_namespace_list(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_namespaced_namespace_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/watch/namespaces'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_namespaced_node(self, name, **kwargs):
+        """
+        watch changes to an object of kind Node
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_namespaced_node(name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str name: name of the Node (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_namespaced_node" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `watch_namespaced_node`")
+
+        resource_path = '/api/v1/watch/nodes/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_namespaced_node_list(self, **kwargs):
+        """
+        watch individual changes to a list of Node
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_namespaced_node_list(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_namespaced_node_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/watch/nodes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_namespaced_persistent_volume(self, name, **kwargs):
+        """
+        watch changes to an object of kind PersistentVolume
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_namespaced_persistent_volume(name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str name: name of the PersistentVolume (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_namespaced_persistent_volume" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `watch_namespaced_persistent_volume`")
+
+        resource_path = '/api/v1/watch/persistentvolumes/{name}'.replace('{format}', 'json')
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -20215,7 +20494,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -20270,7 +20549,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -20288,7 +20567,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -20315,7 +20594,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -20365,7 +20644,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -20383,14 +20662,14 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def watch_namespaced_persistent_volume_claim_list_53(self, **kwargs):
+    def watch_namespaced_persistent_volume_list(self, **kwargs):
         """
-        watch individual changes to a list of PersistentVolumeClaim
+        watch individual changes to a list of PersistentVolume
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -20399,7 +20678,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_persistent_volume_claim_list_53(callback=callback_function)
+        >>> thread = api.watch_namespaced_persistent_volume_list(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -20409,7 +20688,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -20422,13 +20701,13 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_persistent_volume_claim_list_53" % key
+                    " to method watch_namespaced_persistent_volume_list" % key
                 )
             params[key] = val
         del params['kwargs']
 
 
-        resource_path = '/api/v1/watch/persistentvolumeclaims'.replace('{format}', 'json')
+        resource_path = '/api/v1/watch/persistentvolumes'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -20454,7 +20733,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -20472,7 +20751,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -20500,7 +20779,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -20555,7 +20834,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -20573,7 +20852,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -20600,7 +20879,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -20650,7 +20929,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -20668,96 +20947,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_namespaced_pod_list_54(self, **kwargs):
-        """
-        watch individual changes to a list of Pod
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_namespaced_pod_list_54(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_pod_list_54" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/watch/pods'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -20785,7 +20975,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -20840,7 +21030,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -20858,7 +21048,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -20885,7 +21075,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -20935,7 +21125,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -20953,96 +21143,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_namespaced_pod_template_list_55(self, **kwargs):
-        """
-        watch individual changes to a list of PodTemplate
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_namespaced_pod_template_list_55(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_pod_template_list_55" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/watch/podtemplates'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -21070,7 +21171,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -21125,7 +21226,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -21143,7 +21244,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -21170,7 +21271,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -21220,7 +21321,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -21238,96 +21339,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_namespaced_replication_controller_list_56(self, **kwargs):
-        """
-        watch individual changes to a list of ReplicationController
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_namespaced_replication_controller_list_56(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_replication_controller_list_56" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/watch/replicationcontrollers'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -21355,7 +21367,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -21410,7 +21422,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -21428,7 +21440,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -21455,7 +21467,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -21505,7 +21517,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -21523,96 +21535,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_namespaced_resource_quota_list_57(self, **kwargs):
-        """
-        watch individual changes to a list of ResourceQuota
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_namespaced_resource_quota_list_57(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_resource_quota_list_57" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/watch/resourcequotas'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -21640,7 +21563,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -21695,7 +21618,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -21713,7 +21636,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -21740,7 +21663,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -21790,7 +21713,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -21808,96 +21731,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_namespaced_secret_list_58(self, **kwargs):
-        """
-        watch individual changes to a list of Secret
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_namespaced_secret_list_58(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_secret_list_58" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/watch/secrets'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -21925,7 +21759,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -21980,7 +21814,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -21998,7 +21832,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -22026,7 +21860,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -22081,7 +21915,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -22099,7 +21933,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -22126,7 +21960,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -22176,7 +22010,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -22194,96 +22028,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_namespaced_service_account_list_59(self, **kwargs):
-        """
-        watch individual changes to a list of ServiceAccount
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_namespaced_service_account_list_59(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_service_account_list_59" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/watch/serviceaccounts'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -22310,7 +22055,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -22360,7 +22105,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -22378,14 +22123,14 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def watch_namespaced_service_list_60(self, **kwargs):
+    def watch_persistent_volume_claim_list(self, **kwargs):
         """
-        watch individual changes to a list of Service
+        watch individual changes to a list of PersistentVolumeClaim
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -22394,7 +22139,7 @@ class ApivApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_service_list_60(callback=callback_function)
+        >>> thread = api.watch_persistent_volume_claim_list(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -22404,7 +22149,7 @@ class ApivApi(object):
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
         :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
+        :return: JsonWatchEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -22417,7 +22162,630 @@ class ApivApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method watch_namespaced_service_list_60" % key
+                    " to method watch_persistent_volume_claim_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/watch/persistentvolumeclaims'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_pod_list(self, **kwargs):
+        """
+        watch individual changes to a list of Pod
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_pod_list(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_pod_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/watch/pods'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_pod_template_list(self, **kwargs):
+        """
+        watch individual changes to a list of PodTemplate
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_pod_template_list(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_pod_template_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/watch/podtemplates'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_replication_controller_list(self, **kwargs):
+        """
+        watch individual changes to a list of ReplicationController
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_replication_controller_list(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_replication_controller_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/watch/replicationcontrollers'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_resource_quota_list(self, **kwargs):
+        """
+        watch individual changes to a list of ResourceQuota
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_resource_quota_list(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_resource_quota_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/watch/resourcequotas'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_secret_list(self, **kwargs):
+        """
+        watch individual changes to a list of Secret
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_secret_list(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_secret_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/watch/secrets'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_service_account_list(self, **kwargs):
+        """
+        watch individual changes to a list of ServiceAccount
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_service_account_list(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_service_account_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/api/v1/watch/serviceaccounts'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'label_selector' in params:
+            query_params['labelSelector'] = params['label_selector']
+        if 'field_selector' in params:
+            query_params['fieldSelector'] = params['field_selector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resource_version' in params:
+            query_params['resourceVersion'] = params['resource_version']
+        if 'timeout_seconds' in params:
+            query_params['timeoutSeconds'] = params['timeout_seconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonWatchEvent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def watch_service_list(self, **kwargs):
+        """
+        watch individual changes to a list of Service
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.watch_service_list(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeout_seconds: Timeout for the list/watch call.
+        :return: JsonWatchEvent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method watch_service_list" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -22449,7 +22817,7 @@ class ApivApi(object):
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
+            select_header_accept(['application/json'])
         if not header_params['Accept']:
             del header_params['Accept']
 
@@ -22467,375 +22835,7 @@ class ApivApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_node(self, name, **kwargs):
-        """
-        watch changes to an object of kind Node
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_node(name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str name: name of the Node (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_node" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `watch_node`")
-
-        resource_path = '/api/v1/watch/nodes/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_node_list(self, **kwargs):
-        """
-        watch individual changes to a list of Node
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_node_list(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_node_list" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/watch/nodes'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_persistent_volume(self, name, **kwargs):
-        """
-        watch changes to an object of kind PersistentVolume
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_persistent_volume(name, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str name: name of the PersistentVolume (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_persistent_volume" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `watch_persistent_volume`")
-
-        resource_path = '/api/v1/watch/persistentvolumes/{name}'.replace('{format}', 'json')
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def watch_persistent_volume_list(self, **kwargs):
-        """
-        watch individual changes to a list of PersistentVolume
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.watch_persistent_volume_list(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int timeout_seconds: Timeout for the list/watch call.
-        :return: VersionedEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pretty', 'label_selector', 'field_selector', 'watch', 'resource_version', 'timeout_seconds']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method watch_persistent_volume_list" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/api/v1/watch/persistentvolumes'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'pretty' in params:
-            query_params['pretty'] = params['pretty']
-        if 'label_selector' in params:
-            query_params['labelSelector'] = params['label_selector']
-        if 'field_selector' in params:
-            query_params['fieldSelector'] = params['field_selector']
-        if 'watch' in params:
-            query_params['watch'] = params['watch']
-        if 'resource_version' in params:
-            query_params['resourceVersion'] = params['resource_version']
-        if 'timeout_seconds' in params:
-            query_params['timeoutSeconds'] = params['timeout_seconds']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf', 'application/vnd.kubernetes.protobuf;stream=watch'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['*/*'])
-
-        # Authentication setting
-        auth_settings = []
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='VersionedEvent',
+                                            response_type='JsonWatchEvent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

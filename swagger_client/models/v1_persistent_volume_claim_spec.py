@@ -56,7 +56,7 @@ class V1PersistentVolumeClaimSpec(object):
     def access_modes(self):
         """
         Gets the access_modes of this V1PersistentVolumeClaimSpec.
-        AccessModes contains the desired access modes the volume should have. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#access-modes-1
+        AccessModes contains the desired access modes the volume should have. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#access-modes-1
 
         :return: The access_modes of this V1PersistentVolumeClaimSpec.
         :rtype: list[V1PersistentVolumeAccessMode]
@@ -67,7 +67,7 @@ class V1PersistentVolumeClaimSpec(object):
     def access_modes(self, access_modes):
         """
         Sets the access_modes of this V1PersistentVolumeClaimSpec.
-        AccessModes contains the desired access modes the volume should have. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#access-modes-1
+        AccessModes contains the desired access modes the volume should have. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#access-modes-1
 
         :param access_modes: The access_modes of this V1PersistentVolumeClaimSpec.
         :type: list[V1PersistentVolumeAccessMode]
@@ -78,7 +78,7 @@ class V1PersistentVolumeClaimSpec(object):
     def resources(self):
         """
         Gets the resources of this V1PersistentVolumeClaimSpec.
-        Resources represents the minimum resources the volume should have. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#resources
+        Resources represents the minimum resources the volume should have. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#resources
 
         :return: The resources of this V1PersistentVolumeClaimSpec.
         :rtype: V1ResourceRequirements
@@ -89,7 +89,7 @@ class V1PersistentVolumeClaimSpec(object):
     def resources(self, resources):
         """
         Sets the resources of this V1PersistentVolumeClaimSpec.
-        Resources represents the minimum resources the volume should have. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#resources
+        Resources represents the minimum resources the volume should have. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#resources
 
         :param resources: The resources of this V1PersistentVolumeClaimSpec.
         :type: V1ResourceRequirements

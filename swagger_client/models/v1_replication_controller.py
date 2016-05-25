@@ -62,7 +62,7 @@ class V1ReplicationController(object):
     def kind(self):
         """
         Gets the kind of this V1ReplicationController.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :return: The kind of this V1ReplicationController.
         :rtype: str
@@ -73,7 +73,7 @@ class V1ReplicationController(object):
     def kind(self, kind):
         """
         Sets the kind of this V1ReplicationController.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :param kind: The kind of this V1ReplicationController.
         :type: str
@@ -84,7 +84,7 @@ class V1ReplicationController(object):
     def api_version(self):
         """
         Gets the api_version of this V1ReplicationController.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :return: The api_version of this V1ReplicationController.
         :rtype: str
@@ -95,7 +95,7 @@ class V1ReplicationController(object):
     def api_version(self, api_version):
         """
         Sets the api_version of this V1ReplicationController.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :param api_version: The api_version of this V1ReplicationController.
         :type: str
@@ -106,7 +106,7 @@ class V1ReplicationController(object):
     def metadata(self):
         """
         Gets the metadata of this V1ReplicationController.
-        If the Labels of a ReplicationController are empty, they are defaulted to be the same as the Pod(s) that the replication controller manages. Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+        If the Labels of a ReplicationController are empty, they are defaulted to be the same as the Pod(s) that the replication controller manages. Standard object's metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata
 
         :return: The metadata of this V1ReplicationController.
         :rtype: V1ObjectMeta
@@ -117,7 +117,7 @@ class V1ReplicationController(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this V1ReplicationController.
-        If the Labels of a ReplicationController are empty, they are defaulted to be the same as the Pod(s) that the replication controller manages. Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+        If the Labels of a ReplicationController are empty, they are defaulted to be the same as the Pod(s) that the replication controller manages. Standard object's metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata
 
         :param metadata: The metadata of this V1ReplicationController.
         :type: V1ObjectMeta
@@ -128,7 +128,7 @@ class V1ReplicationController(object):
     def spec(self):
         """
         Gets the spec of this V1ReplicationController.
-        Spec defines the specification of the desired behavior of the replication controller. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+        Spec defines the specification of the desired behavior of the replication controller. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status
 
         :return: The spec of this V1ReplicationController.
         :rtype: V1ReplicationControllerSpec
@@ -139,7 +139,7 @@ class V1ReplicationController(object):
     def spec(self, spec):
         """
         Sets the spec of this V1ReplicationController.
-        Spec defines the specification of the desired behavior of the replication controller. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+        Spec defines the specification of the desired behavior of the replication controller. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status
 
         :param spec: The spec of this V1ReplicationController.
         :type: V1ReplicationControllerSpec
@@ -150,7 +150,7 @@ class V1ReplicationController(object):
     def status(self):
         """
         Gets the status of this V1ReplicationController.
-        Status is the most recently observed status of the replication controller. This data may be out of date by some window of time. Populated by the system. Read-only. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+        Status is the most recently observed status of the replication controller. This data may be out of date by some window of time. Populated by the system. Read-only. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status
 
         :return: The status of this V1ReplicationController.
         :rtype: V1ReplicationControllerStatus
@@ -161,7 +161,7 @@ class V1ReplicationController(object):
     def status(self, status):
         """
         Sets the status of this V1ReplicationController.
-        Status is the most recently observed status of the replication controller. This data may be out of date by some window of time. Populated by the system. Read-only. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+        Status is the most recently observed status of the replication controller. This data may be out of date by some window of time. Populated by the system. Read-only. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status
 
         :param status: The status of this V1ReplicationController.
         :type: V1ReplicationControllerStatus

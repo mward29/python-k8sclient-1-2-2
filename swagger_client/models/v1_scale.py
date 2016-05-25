@@ -62,7 +62,7 @@ class V1Scale(object):
     def kind(self):
         """
         Gets the kind of this V1Scale.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :return: The kind of this V1Scale.
         :rtype: str
@@ -73,7 +73,7 @@ class V1Scale(object):
     def kind(self, kind):
         """
         Sets the kind of this V1Scale.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :param kind: The kind of this V1Scale.
         :type: str
@@ -84,7 +84,7 @@ class V1Scale(object):
     def api_version(self):
         """
         Gets the api_version of this V1Scale.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :return: The api_version of this V1Scale.
         :rtype: str
@@ -95,7 +95,7 @@ class V1Scale(object):
     def api_version(self, api_version):
         """
         Sets the api_version of this V1Scale.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :param api_version: The api_version of this V1Scale.
         :type: str
@@ -106,7 +106,7 @@ class V1Scale(object):
     def metadata(self):
         """
         Gets the metadata of this V1Scale.
-        Standard object metadata; More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata.
+        Standard object metadata; More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata.
 
         :return: The metadata of this V1Scale.
         :rtype: V1ObjectMeta
@@ -117,7 +117,7 @@ class V1Scale(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this V1Scale.
-        Standard object metadata; More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata.
+        Standard object metadata; More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata.
 
         :param metadata: The metadata of this V1Scale.
         :type: V1ObjectMeta
@@ -128,7 +128,7 @@ class V1Scale(object):
     def spec(self):
         """
         Gets the spec of this V1Scale.
-        defines the behavior of the scale. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status.
+        defines the behavior of the scale. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status.
 
         :return: The spec of this V1Scale.
         :rtype: V1ScaleSpec
@@ -139,7 +139,7 @@ class V1Scale(object):
     def spec(self, spec):
         """
         Sets the spec of this V1Scale.
-        defines the behavior of the scale. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status.
+        defines the behavior of the scale. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status.
 
         :param spec: The spec of this V1Scale.
         :type: V1ScaleSpec
@@ -150,7 +150,7 @@ class V1Scale(object):
     def status(self):
         """
         Gets the status of this V1Scale.
-        current status of the scale. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status. Read-only.
+        current status of the scale. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status. Read-only.
 
         :return: The status of this V1Scale.
         :rtype: V1ScaleStatus
@@ -161,7 +161,7 @@ class V1Scale(object):
     def status(self, status):
         """
         Sets the status of this V1Scale.
-        current status of the scale. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status. Read-only.
+        current status of the scale. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status. Read-only.
 
         :param status: The status of this V1Scale.
         :type: V1ScaleStatus

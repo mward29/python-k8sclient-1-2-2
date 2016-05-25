@@ -71,7 +71,7 @@ class V1PodStatus(object):
     def phase(self):
         """
         Gets the phase of this V1PodStatus.
-        Current condition of the pod. More info: http://releases.k8s.io/HEAD/docs/user-guide/pod-states.md#pod-phase
+        Current condition of the pod. More info: http://releases.k8s.io/release-1.2/docs/user-guide/pod-states.md#pod-phase
 
         :return: The phase of this V1PodStatus.
         :rtype: str
@@ -82,7 +82,7 @@ class V1PodStatus(object):
     def phase(self, phase):
         """
         Sets the phase of this V1PodStatus.
-        Current condition of the pod. More info: http://releases.k8s.io/HEAD/docs/user-guide/pod-states.md#pod-phase
+        Current condition of the pod. More info: http://releases.k8s.io/release-1.2/docs/user-guide/pod-states.md#pod-phase
 
         :param phase: The phase of this V1PodStatus.
         :type: str
@@ -93,7 +93,7 @@ class V1PodStatus(object):
     def conditions(self):
         """
         Gets the conditions of this V1PodStatus.
-        Current service state of pod. More info: http://releases.k8s.io/HEAD/docs/user-guide/pod-states.md#pod-conditions
+        Current service state of pod. More info: http://releases.k8s.io/release-1.2/docs/user-guide/pod-states.md#pod-conditions
 
         :return: The conditions of this V1PodStatus.
         :rtype: list[V1PodCondition]
@@ -104,7 +104,7 @@ class V1PodStatus(object):
     def conditions(self, conditions):
         """
         Sets the conditions of this V1PodStatus.
-        Current service state of pod. More info: http://releases.k8s.io/HEAD/docs/user-guide/pod-states.md#pod-conditions
+        Current service state of pod. More info: http://releases.k8s.io/release-1.2/docs/user-guide/pod-states.md#pod-conditions
 
         :param conditions: The conditions of this V1PodStatus.
         :type: list[V1PodCondition]
@@ -225,7 +225,7 @@ class V1PodStatus(object):
     def container_statuses(self):
         """
         Gets the container_statuses of this V1PodStatus.
-        The list has one entry per container in the manifest. Each entry is currently the output of `docker inspect`. More info: http://releases.k8s.io/HEAD/docs/user-guide/pod-states.md#container-statuses
+        The list has one entry per container in the manifest. Each entry is currently the output of `docker inspect`. More info: http://releases.k8s.io/release-1.2/docs/user-guide/pod-states.md#container-statuses
 
         :return: The container_statuses of this V1PodStatus.
         :rtype: list[V1ContainerStatus]
@@ -236,7 +236,7 @@ class V1PodStatus(object):
     def container_statuses(self, container_statuses):
         """
         Sets the container_statuses of this V1PodStatus.
-        The list has one entry per container in the manifest. Each entry is currently the output of `docker inspect`. More info: http://releases.k8s.io/HEAD/docs/user-guide/pod-states.md#container-statuses
+        The list has one entry per container in the manifest. Each entry is currently the output of `docker inspect`. More info: http://releases.k8s.io/release-1.2/docs/user-guide/pod-states.md#container-statuses
 
         :param container_statuses: The container_statuses of this V1PodStatus.
         :type: list[V1ContainerStatus]

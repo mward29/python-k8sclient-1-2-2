@@ -1,9 +1,8 @@
 from __future__ import absolute_import
 
 # import models into model package
-from .types_uid import TypesUID
-from .unversioned_api_resource import UnversionedAPIResource
-from .unversioned_api_resource_list import UnversionedAPIResourceList
+from .integer import Integer
+from .json_watch_event import JsonWatchEvent
 from .unversioned_list_meta import UnversionedListMeta
 from .unversioned_patch import UnversionedPatch
 from .unversioned_status import UnversionedStatus
@@ -84,7 +83,6 @@ from .v1_node_system_info import V1NodeSystemInfo
 from .v1_object_field_selector import V1ObjectFieldSelector
 from .v1_object_meta import V1ObjectMeta
 from .v1_object_reference import V1ObjectReference
-from .v1_owner_reference import V1OwnerReference
 from .v1_persistent_volume import V1PersistentVolume
 from .v1_persistent_volume_access_mode import V1PersistentVolumeAccessMode
 from .v1_persistent_volume_claim import V1PersistentVolumeClaim
@@ -104,7 +102,6 @@ from .v1_pod_status import V1PodStatus
 from .v1_pod_template import V1PodTemplate
 from .v1_pod_template_list import V1PodTemplateList
 from .v1_pod_template_spec import V1PodTemplateSpec
-from .v1_preconditions import V1Preconditions
 from .v1_probe import V1Probe
 from .v1_rbd_volume_source import V1RBDVolumeSource
 from .v1_replication_controller import V1ReplicationController
@@ -136,5 +133,3 @@ from .v1_service_status import V1ServiceStatus
 from .v1_tcp_socket_action import V1TCPSocketAction
 from .v1_volume import V1Volume
 from .v1_volume_mount import V1VolumeMount
-from .v1_vsphere_virtual_disk_volume_source import V1VsphereVirtualDiskVolumeSource
-from .versioned_event import VersionedEvent

@@ -37,8 +37,8 @@ class V1ResourceRequirements(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'limits': 'object',
-            'requests': 'object'
+            'limits': 'Any',
+            'requests': 'Any'
         }
 
         self.attribute_map = {
@@ -53,10 +53,10 @@ class V1ResourceRequirements(object):
     def limits(self):
         """
         Gets the limits of this V1ResourceRequirements.
-        Limits describes the maximum amount of compute resources allowed. More info: http://releases.k8s.io/HEAD/docs/design/resources.md#resource-specifications
+        Limits describes the maximum amount of compute resources allowed. More info: http://releases.k8s.io/release-1.2/docs/design/resources.md#resource-specifications
 
         :return: The limits of this V1ResourceRequirements.
-        :rtype: object
+        :rtype: Any
         """
         return self._limits
 
@@ -64,10 +64,10 @@ class V1ResourceRequirements(object):
     def limits(self, limits):
         """
         Sets the limits of this V1ResourceRequirements.
-        Limits describes the maximum amount of compute resources allowed. More info: http://releases.k8s.io/HEAD/docs/design/resources.md#resource-specifications
+        Limits describes the maximum amount of compute resources allowed. More info: http://releases.k8s.io/release-1.2/docs/design/resources.md#resource-specifications
 
         :param limits: The limits of this V1ResourceRequirements.
-        :type: object
+        :type: Any
         """
         self._limits = limits
 
@@ -75,10 +75,10 @@ class V1ResourceRequirements(object):
     def requests(self):
         """
         Gets the requests of this V1ResourceRequirements.
-        Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: http://releases.k8s.io/HEAD/docs/design/resources.md#resource-specifications
+        Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: http://releases.k8s.io/release-1.2/docs/design/resources.md#resource-specifications
 
         :return: The requests of this V1ResourceRequirements.
-        :rtype: object
+        :rtype: Any
         """
         return self._requests
 
@@ -86,10 +86,10 @@ class V1ResourceRequirements(object):
     def requests(self, requests):
         """
         Sets the requests of this V1ResourceRequirements.
-        Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: http://releases.k8s.io/HEAD/docs/design/resources.md#resource-specifications
+        Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: http://releases.k8s.io/release-1.2/docs/design/resources.md#resource-specifications
 
         :param requests: The requests of this V1ResourceRequirements.
-        :type: object
+        :type: Any
         """
         self._requests = requests
 

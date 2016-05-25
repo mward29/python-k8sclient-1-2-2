@@ -38,11 +38,11 @@ class V1LimitRangeItem(object):
         """
         self.swagger_types = {
             'type': 'str',
-            'max': 'object',
-            'min': 'object',
-            'default': 'object',
-            'default_request': 'object',
-            'max_limit_request_ratio': 'object'
+            'max': 'Any',
+            'min': 'Any',
+            'default': 'Any',
+            'default_request': 'Any',
+            'max_limit_request_ratio': 'Any'
         }
 
         self.attribute_map = {
@@ -90,7 +90,7 @@ class V1LimitRangeItem(object):
         Max usage constraints on this kind by resource name.
 
         :return: The max of this V1LimitRangeItem.
-        :rtype: object
+        :rtype: Any
         """
         return self._max
 
@@ -101,7 +101,7 @@ class V1LimitRangeItem(object):
         Max usage constraints on this kind by resource name.
 
         :param max: The max of this V1LimitRangeItem.
-        :type: object
+        :type: Any
         """
         self._max = max
 
@@ -112,7 +112,7 @@ class V1LimitRangeItem(object):
         Min usage constraints on this kind by resource name.
 
         :return: The min of this V1LimitRangeItem.
-        :rtype: object
+        :rtype: Any
         """
         return self._min
 
@@ -123,7 +123,7 @@ class V1LimitRangeItem(object):
         Min usage constraints on this kind by resource name.
 
         :param min: The min of this V1LimitRangeItem.
-        :type: object
+        :type: Any
         """
         self._min = min
 
@@ -134,7 +134,7 @@ class V1LimitRangeItem(object):
         Default resource requirement limit value by resource name if resource limit is omitted.
 
         :return: The default of this V1LimitRangeItem.
-        :rtype: object
+        :rtype: Any
         """
         return self._default
 
@@ -145,7 +145,7 @@ class V1LimitRangeItem(object):
         Default resource requirement limit value by resource name if resource limit is omitted.
 
         :param default: The default of this V1LimitRangeItem.
-        :type: object
+        :type: Any
         """
         self._default = default
 
@@ -156,7 +156,7 @@ class V1LimitRangeItem(object):
         DefaultRequest is the default resource requirement request value by resource name if resource request is omitted.
 
         :return: The default_request of this V1LimitRangeItem.
-        :rtype: object
+        :rtype: Any
         """
         return self._default_request
 
@@ -167,7 +167,7 @@ class V1LimitRangeItem(object):
         DefaultRequest is the default resource requirement request value by resource name if resource request is omitted.
 
         :param default_request: The default_request of this V1LimitRangeItem.
-        :type: object
+        :type: Any
         """
         self._default_request = default_request
 
@@ -178,7 +178,7 @@ class V1LimitRangeItem(object):
         MaxLimitRequestRatio if specified, the named resource must have a request and limit that are both non-zero where limit divided by request is less than or equal to the enumerated value; this represents the max burst for the named resource.
 
         :return: The max_limit_request_ratio of this V1LimitRangeItem.
-        :rtype: object
+        :rtype: Any
         """
         return self._max_limit_request_ratio
 
@@ -189,7 +189,7 @@ class V1LimitRangeItem(object):
         MaxLimitRequestRatio if specified, the named resource must have a request and limit that are both non-zero where limit divided by request is less than or equal to the enumerated value; this represents the max burst for the named resource.
 
         :param max_limit_request_ratio: The max_limit_request_ratio of this V1LimitRangeItem.
-        :type: object
+        :type: Any
         """
         self._max_limit_request_ratio = max_limit_request_ratio
 

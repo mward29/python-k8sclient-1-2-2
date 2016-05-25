@@ -56,8 +56,7 @@ class V1Volume(object):
             'downward_api': 'V1DownwardAPIVolumeSource',
             'fc': 'V1FCVolumeSource',
             'azure_file': 'V1AzureFileVolumeSource',
-            'config_map': 'V1ConfigMapVolumeSource',
-            'vsphere_volume': 'V1VsphereVirtualDiskVolumeSource'
+            'config_map': 'V1ConfigMapVolumeSource'
         }
 
         self.attribute_map = {
@@ -80,8 +79,7 @@ class V1Volume(object):
             'downward_api': 'downwardAPI',
             'fc': 'fc',
             'azure_file': 'azureFile',
-            'config_map': 'configMap',
-            'vsphere_volume': 'vsphereVolume'
+            'config_map': 'configMap'
         }
 
         self._name = None
@@ -104,13 +102,12 @@ class V1Volume(object):
         self._fc = None
         self._azure_file = None
         self._config_map = None
-        self._vsphere_volume = None
 
     @property
     def name(self):
         """
         Gets the name of this V1Volume.
-        Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://releases.k8s.io/HEAD/docs/user-guide/identifiers.md#names
+        Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://releases.k8s.io/release-1.2/docs/user-guide/identifiers.md#names
 
         :return: The name of this V1Volume.
         :rtype: str
@@ -121,7 +118,7 @@ class V1Volume(object):
     def name(self, name):
         """
         Sets the name of this V1Volume.
-        Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://releases.k8s.io/HEAD/docs/user-guide/identifiers.md#names
+        Volume's name. Must be a DNS_LABEL and unique within the pod. More info: http://releases.k8s.io/release-1.2/docs/user-guide/identifiers.md#names
 
         :param name: The name of this V1Volume.
         :type: str
@@ -132,7 +129,7 @@ class V1Volume(object):
     def host_path(self):
         """
         Gets the host_path of this V1Volume.
-        HostPath represents a pre-existing file or directory on the host machine that is directly exposed to the container. This is generally used for system agents or other privileged things that are allowed to see the host machine. Most containers will NOT need this. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#hostpath
+        HostPath represents a pre-existing file or directory on the host machine that is directly exposed to the container. This is generally used for system agents or other privileged things that are allowed to see the host machine. Most containers will NOT need this. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#hostpath
 
         :return: The host_path of this V1Volume.
         :rtype: V1HostPathVolumeSource
@@ -143,7 +140,7 @@ class V1Volume(object):
     def host_path(self, host_path):
         """
         Sets the host_path of this V1Volume.
-        HostPath represents a pre-existing file or directory on the host machine that is directly exposed to the container. This is generally used for system agents or other privileged things that are allowed to see the host machine. Most containers will NOT need this. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#hostpath
+        HostPath represents a pre-existing file or directory on the host machine that is directly exposed to the container. This is generally used for system agents or other privileged things that are allowed to see the host machine. Most containers will NOT need this. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#hostpath
 
         :param host_path: The host_path of this V1Volume.
         :type: V1HostPathVolumeSource
@@ -154,7 +151,7 @@ class V1Volume(object):
     def empty_dir(self):
         """
         Gets the empty_dir of this V1Volume.
-        EmptyDir represents a temporary directory that shares a pod's lifetime. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#emptydir
+        EmptyDir represents a temporary directory that shares a pod's lifetime. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#emptydir
 
         :return: The empty_dir of this V1Volume.
         :rtype: V1EmptyDirVolumeSource
@@ -165,7 +162,7 @@ class V1Volume(object):
     def empty_dir(self, empty_dir):
         """
         Sets the empty_dir of this V1Volume.
-        EmptyDir represents a temporary directory that shares a pod's lifetime. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#emptydir
+        EmptyDir represents a temporary directory that shares a pod's lifetime. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#emptydir
 
         :param empty_dir: The empty_dir of this V1Volume.
         :type: V1EmptyDirVolumeSource
@@ -176,7 +173,7 @@ class V1Volume(object):
     def gce_persistent_disk(self):
         """
         Gets the gce_persistent_disk of this V1Volume.
-        GCEPersistentDisk represents a GCE Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#gcepersistentdisk
+        GCEPersistentDisk represents a GCE Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#gcepersistentdisk
 
         :return: The gce_persistent_disk of this V1Volume.
         :rtype: V1GCEPersistentDiskVolumeSource
@@ -187,7 +184,7 @@ class V1Volume(object):
     def gce_persistent_disk(self, gce_persistent_disk):
         """
         Sets the gce_persistent_disk of this V1Volume.
-        GCEPersistentDisk represents a GCE Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#gcepersistentdisk
+        GCEPersistentDisk represents a GCE Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#gcepersistentdisk
 
         :param gce_persistent_disk: The gce_persistent_disk of this V1Volume.
         :type: V1GCEPersistentDiskVolumeSource
@@ -198,7 +195,7 @@ class V1Volume(object):
     def aws_elastic_block_store(self):
         """
         Gets the aws_elastic_block_store of this V1Volume.
-        AWSElasticBlockStore represents an AWS Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#awselasticblockstore
+        AWSElasticBlockStore represents an AWS Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#awselasticblockstore
 
         :return: The aws_elastic_block_store of this V1Volume.
         :rtype: V1AWSElasticBlockStoreVolumeSource
@@ -209,7 +206,7 @@ class V1Volume(object):
     def aws_elastic_block_store(self, aws_elastic_block_store):
         """
         Sets the aws_elastic_block_store of this V1Volume.
-        AWSElasticBlockStore represents an AWS Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#awselasticblockstore
+        AWSElasticBlockStore represents an AWS Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#awselasticblockstore
 
         :param aws_elastic_block_store: The aws_elastic_block_store of this V1Volume.
         :type: V1AWSElasticBlockStoreVolumeSource
@@ -242,7 +239,7 @@ class V1Volume(object):
     def secret(self):
         """
         Gets the secret of this V1Volume.
-        Secret represents a secret that should populate this volume. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#secrets
+        Secret represents a secret that should populate this volume. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#secrets
 
         :return: The secret of this V1Volume.
         :rtype: V1SecretVolumeSource
@@ -253,7 +250,7 @@ class V1Volume(object):
     def secret(self, secret):
         """
         Sets the secret of this V1Volume.
-        Secret represents a secret that should populate this volume. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#secrets
+        Secret represents a secret that should populate this volume. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#secrets
 
         :param secret: The secret of this V1Volume.
         :type: V1SecretVolumeSource
@@ -264,7 +261,7 @@ class V1Volume(object):
     def nfs(self):
         """
         Gets the nfs of this V1Volume.
-        NFS represents an NFS mount on the host that shares a pod's lifetime More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#nfs
+        NFS represents an NFS mount on the host that shares a pod's lifetime More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#nfs
 
         :return: The nfs of this V1Volume.
         :rtype: V1NFSVolumeSource
@@ -275,7 +272,7 @@ class V1Volume(object):
     def nfs(self, nfs):
         """
         Sets the nfs of this V1Volume.
-        NFS represents an NFS mount on the host that shares a pod's lifetime More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#nfs
+        NFS represents an NFS mount on the host that shares a pod's lifetime More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#nfs
 
         :param nfs: The nfs of this V1Volume.
         :type: V1NFSVolumeSource
@@ -286,7 +283,7 @@ class V1Volume(object):
     def iscsi(self):
         """
         Gets the iscsi of this V1Volume.
-        ISCSI represents an ISCSI Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: http://releases.k8s.io/HEAD/examples/iscsi/README.md
+        ISCSI represents an ISCSI Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: http://releases.k8s.io/release-1.2/examples/iscsi/README.md
 
         :return: The iscsi of this V1Volume.
         :rtype: V1ISCSIVolumeSource
@@ -297,7 +294,7 @@ class V1Volume(object):
     def iscsi(self, iscsi):
         """
         Sets the iscsi of this V1Volume.
-        ISCSI represents an ISCSI Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: http://releases.k8s.io/HEAD/examples/iscsi/README.md
+        ISCSI represents an ISCSI Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: http://releases.k8s.io/release-1.2/examples/iscsi/README.md
 
         :param iscsi: The iscsi of this V1Volume.
         :type: V1ISCSIVolumeSource
@@ -308,7 +305,7 @@ class V1Volume(object):
     def glusterfs(self):
         """
         Gets the glusterfs of this V1Volume.
-        Glusterfs represents a Glusterfs mount on the host that shares a pod's lifetime. More info: http://releases.k8s.io/HEAD/examples/glusterfs/README.md
+        Glusterfs represents a Glusterfs mount on the host that shares a pod's lifetime. More info: http://releases.k8s.io/release-1.2/examples/glusterfs/README.md
 
         :return: The glusterfs of this V1Volume.
         :rtype: V1GlusterfsVolumeSource
@@ -319,7 +316,7 @@ class V1Volume(object):
     def glusterfs(self, glusterfs):
         """
         Sets the glusterfs of this V1Volume.
-        Glusterfs represents a Glusterfs mount on the host that shares a pod's lifetime. More info: http://releases.k8s.io/HEAD/examples/glusterfs/README.md
+        Glusterfs represents a Glusterfs mount on the host that shares a pod's lifetime. More info: http://releases.k8s.io/release-1.2/examples/glusterfs/README.md
 
         :param glusterfs: The glusterfs of this V1Volume.
         :type: V1GlusterfsVolumeSource
@@ -330,7 +327,7 @@ class V1Volume(object):
     def persistent_volume_claim(self):
         """
         Gets the persistent_volume_claim of this V1Volume.
-        PersistentVolumeClaimVolumeSource represents a reference to a PersistentVolumeClaim in the same namespace. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#persistentvolumeclaims
+        PersistentVolumeClaimVolumeSource represents a reference to a PersistentVolumeClaim in the same namespace. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#persistentvolumeclaims
 
         :return: The persistent_volume_claim of this V1Volume.
         :rtype: V1PersistentVolumeClaimVolumeSource
@@ -341,7 +338,7 @@ class V1Volume(object):
     def persistent_volume_claim(self, persistent_volume_claim):
         """
         Sets the persistent_volume_claim of this V1Volume.
-        PersistentVolumeClaimVolumeSource represents a reference to a PersistentVolumeClaim in the same namespace. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#persistentvolumeclaims
+        PersistentVolumeClaimVolumeSource represents a reference to a PersistentVolumeClaim in the same namespace. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#persistentvolumeclaims
 
         :param persistent_volume_claim: The persistent_volume_claim of this V1Volume.
         :type: V1PersistentVolumeClaimVolumeSource
@@ -352,7 +349,7 @@ class V1Volume(object):
     def rbd(self):
         """
         Gets the rbd of this V1Volume.
-        RBD represents a Rados Block Device mount on the host that shares a pod's lifetime. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md
+        RBD represents a Rados Block Device mount on the host that shares a pod's lifetime. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md
 
         :return: The rbd of this V1Volume.
         :rtype: V1RBDVolumeSource
@@ -363,7 +360,7 @@ class V1Volume(object):
     def rbd(self, rbd):
         """
         Sets the rbd of this V1Volume.
-        RBD represents a Rados Block Device mount on the host that shares a pod's lifetime. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md
+        RBD represents a Rados Block Device mount on the host that shares a pod's lifetime. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md
 
         :param rbd: The rbd of this V1Volume.
         :type: V1RBDVolumeSource
@@ -396,7 +393,7 @@ class V1Volume(object):
     def cinder(self):
         """
         Gets the cinder of this V1Volume.
-        Cinder represents a cinder volume attached and mounted on kubelets host machine More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
+        Cinder represents a cinder volume attached and mounted on kubelets host machine More info: http://releases.k8s.io/release-1.2/examples/mysql-cinder-pd/README.md
 
         :return: The cinder of this V1Volume.
         :rtype: V1CinderVolumeSource
@@ -407,7 +404,7 @@ class V1Volume(object):
     def cinder(self, cinder):
         """
         Sets the cinder of this V1Volume.
-        Cinder represents a cinder volume attached and mounted on kubelets host machine More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
+        Cinder represents a cinder volume attached and mounted on kubelets host machine More info: http://releases.k8s.io/release-1.2/examples/mysql-cinder-pd/README.md
 
         :param cinder: The cinder of this V1Volume.
         :type: V1CinderVolumeSource
@@ -545,28 +542,6 @@ class V1Volume(object):
         :type: V1ConfigMapVolumeSource
         """
         self._config_map = config_map
-
-    @property
-    def vsphere_volume(self):
-        """
-        Gets the vsphere_volume of this V1Volume.
-        VsphereVolume represents a vSphere volume attached and mounted on kubelets host machine
-
-        :return: The vsphere_volume of this V1Volume.
-        :rtype: V1VsphereVirtualDiskVolumeSource
-        """
-        return self._vsphere_volume
-
-    @vsphere_volume.setter
-    def vsphere_volume(self, vsphere_volume):
-        """
-        Sets the vsphere_volume of this V1Volume.
-        VsphereVolume represents a vSphere volume attached and mounted on kubelets host machine
-
-        :param vsphere_volume: The vsphere_volume of this V1Volume.
-        :type: V1VsphereVirtualDiskVolumeSource
-        """
-        self._vsphere_volume = vsphere_volume
 
     def to_dict(self):
         """

@@ -50,7 +50,7 @@ class V1NamespaceSpec(object):
     def finalizers(self):
         """
         Gets the finalizers of this V1NamespaceSpec.
-        Finalizers is an opaque list of values that must be empty to permanently remove object from storage. More info: http://releases.k8s.io/HEAD/docs/design/namespaces.md#finalizers
+        Finalizers is an opaque list of values that must be empty to permanently remove object from storage. More info: http://releases.k8s.io/release-1.2/docs/design/namespaces.md#finalizers
 
         :return: The finalizers of this V1NamespaceSpec.
         :rtype: list[V1FinalizerName]
@@ -61,7 +61,7 @@ class V1NamespaceSpec(object):
     def finalizers(self, finalizers):
         """
         Sets the finalizers of this V1NamespaceSpec.
-        Finalizers is an opaque list of values that must be empty to permanently remove object from storage. More info: http://releases.k8s.io/HEAD/docs/design/namespaces.md#finalizers
+        Finalizers is an opaque list of values that must be empty to permanently remove object from storage. More info: http://releases.k8s.io/release-1.2/docs/design/namespaces.md#finalizers
 
         :param finalizers: The finalizers of this V1NamespaceSpec.
         :type: list[V1FinalizerName]

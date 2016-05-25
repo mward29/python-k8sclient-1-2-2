@@ -40,7 +40,7 @@ class V1ConfigMap(object):
             'kind': 'str',
             'api_version': 'str',
             'metadata': 'V1ObjectMeta',
-            'data': 'object'
+            'data': 'Any'
         }
 
         self.attribute_map = {
@@ -59,7 +59,7 @@ class V1ConfigMap(object):
     def kind(self):
         """
         Gets the kind of this V1ConfigMap.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :return: The kind of this V1ConfigMap.
         :rtype: str
@@ -70,7 +70,7 @@ class V1ConfigMap(object):
     def kind(self, kind):
         """
         Sets the kind of this V1ConfigMap.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :param kind: The kind of this V1ConfigMap.
         :type: str
@@ -81,7 +81,7 @@ class V1ConfigMap(object):
     def api_version(self):
         """
         Gets the api_version of this V1ConfigMap.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :return: The api_version of this V1ConfigMap.
         :rtype: str
@@ -92,7 +92,7 @@ class V1ConfigMap(object):
     def api_version(self, api_version):
         """
         Sets the api_version of this V1ConfigMap.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :param api_version: The api_version of this V1ConfigMap.
         :type: str
@@ -103,7 +103,7 @@ class V1ConfigMap(object):
     def metadata(self):
         """
         Gets the metadata of this V1ConfigMap.
-        Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+        Standard object's metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata
 
         :return: The metadata of this V1ConfigMap.
         :rtype: V1ObjectMeta
@@ -114,7 +114,7 @@ class V1ConfigMap(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this V1ConfigMap.
-        Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+        Standard object's metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata
 
         :param metadata: The metadata of this V1ConfigMap.
         :type: V1ObjectMeta
@@ -128,7 +128,7 @@ class V1ConfigMap(object):
         Data contains the configuration data. Each key must be a valid DNS_SUBDOMAIN with an optional leading dot.
 
         :return: The data of this V1ConfigMap.
-        :rtype: object
+        :rtype: Any
         """
         return self._data
 
@@ -139,7 +139,7 @@ class V1ConfigMap(object):
         Data contains the configuration data. Each key must be a valid DNS_SUBDOMAIN with an optional leading dot.
 
         :param data: The data of this V1ConfigMap.
-        :type: object
+        :type: Any
         """
         self._data = data
 

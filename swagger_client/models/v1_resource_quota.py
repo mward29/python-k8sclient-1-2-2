@@ -62,7 +62,7 @@ class V1ResourceQuota(object):
     def kind(self):
         """
         Gets the kind of this V1ResourceQuota.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :return: The kind of this V1ResourceQuota.
         :rtype: str
@@ -73,7 +73,7 @@ class V1ResourceQuota(object):
     def kind(self, kind):
         """
         Sets the kind of this V1ResourceQuota.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :param kind: The kind of this V1ResourceQuota.
         :type: str
@@ -84,7 +84,7 @@ class V1ResourceQuota(object):
     def api_version(self):
         """
         Gets the api_version of this V1ResourceQuota.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :return: The api_version of this V1ResourceQuota.
         :rtype: str
@@ -95,7 +95,7 @@ class V1ResourceQuota(object):
     def api_version(self, api_version):
         """
         Sets the api_version of this V1ResourceQuota.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :param api_version: The api_version of this V1ResourceQuota.
         :type: str
@@ -106,7 +106,7 @@ class V1ResourceQuota(object):
     def metadata(self):
         """
         Gets the metadata of this V1ResourceQuota.
-        Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+        Standard object's metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata
 
         :return: The metadata of this V1ResourceQuota.
         :rtype: V1ObjectMeta
@@ -117,7 +117,7 @@ class V1ResourceQuota(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this V1ResourceQuota.
-        Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+        Standard object's metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata
 
         :param metadata: The metadata of this V1ResourceQuota.
         :type: V1ObjectMeta
@@ -128,7 +128,7 @@ class V1ResourceQuota(object):
     def spec(self):
         """
         Gets the spec of this V1ResourceQuota.
-        Spec defines the desired quota. http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+        Spec defines the desired quota. http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status
 
         :return: The spec of this V1ResourceQuota.
         :rtype: V1ResourceQuotaSpec
@@ -139,7 +139,7 @@ class V1ResourceQuota(object):
     def spec(self, spec):
         """
         Sets the spec of this V1ResourceQuota.
-        Spec defines the desired quota. http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+        Spec defines the desired quota. http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status
 
         :param spec: The spec of this V1ResourceQuota.
         :type: V1ResourceQuotaSpec
@@ -150,7 +150,7 @@ class V1ResourceQuota(object):
     def status(self):
         """
         Gets the status of this V1ResourceQuota.
-        Status defines the actual enforced quota and its current usage. http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+        Status defines the actual enforced quota and its current usage. http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status
 
         :return: The status of this V1ResourceQuota.
         :rtype: V1ResourceQuotaStatus
@@ -161,7 +161,7 @@ class V1ResourceQuota(object):
     def status(self, status):
         """
         Sets the status of this V1ResourceQuota.
-        Status defines the actual enforced quota and its current usage. http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+        Status defines the actual enforced quota and its current usage. http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status
 
         :param status: The status of this V1ResourceQuota.
         :type: V1ResourceQuotaStatus

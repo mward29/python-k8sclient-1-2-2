@@ -62,7 +62,7 @@ class V1ServiceAccount(object):
     def kind(self):
         """
         Gets the kind of this V1ServiceAccount.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :return: The kind of this V1ServiceAccount.
         :rtype: str
@@ -73,7 +73,7 @@ class V1ServiceAccount(object):
     def kind(self, kind):
         """
         Sets the kind of this V1ServiceAccount.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :param kind: The kind of this V1ServiceAccount.
         :type: str
@@ -84,7 +84,7 @@ class V1ServiceAccount(object):
     def api_version(self):
         """
         Gets the api_version of this V1ServiceAccount.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :return: The api_version of this V1ServiceAccount.
         :rtype: str
@@ -95,7 +95,7 @@ class V1ServiceAccount(object):
     def api_version(self, api_version):
         """
         Sets the api_version of this V1ServiceAccount.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :param api_version: The api_version of this V1ServiceAccount.
         :type: str
@@ -106,7 +106,7 @@ class V1ServiceAccount(object):
     def metadata(self):
         """
         Gets the metadata of this V1ServiceAccount.
-        Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+        Standard object's metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata
 
         :return: The metadata of this V1ServiceAccount.
         :rtype: V1ObjectMeta
@@ -117,7 +117,7 @@ class V1ServiceAccount(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this V1ServiceAccount.
-        Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+        Standard object's metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata
 
         :param metadata: The metadata of this V1ServiceAccount.
         :type: V1ObjectMeta
@@ -128,7 +128,7 @@ class V1ServiceAccount(object):
     def secrets(self):
         """
         Gets the secrets of this V1ServiceAccount.
-        Secrets is the list of secrets allowed to be used by pods running using this ServiceAccount. More info: http://releases.k8s.io/HEAD/docs/user-guide/secrets.md
+        Secrets is the list of secrets allowed to be used by pods running using this ServiceAccount. More info: http://releases.k8s.io/release-1.2/docs/user-guide/secrets.md
 
         :return: The secrets of this V1ServiceAccount.
         :rtype: list[V1ObjectReference]
@@ -139,7 +139,7 @@ class V1ServiceAccount(object):
     def secrets(self, secrets):
         """
         Sets the secrets of this V1ServiceAccount.
-        Secrets is the list of secrets allowed to be used by pods running using this ServiceAccount. More info: http://releases.k8s.io/HEAD/docs/user-guide/secrets.md
+        Secrets is the list of secrets allowed to be used by pods running using this ServiceAccount. More info: http://releases.k8s.io/release-1.2/docs/user-guide/secrets.md
 
         :param secrets: The secrets of this V1ServiceAccount.
         :type: list[V1ObjectReference]
@@ -150,7 +150,7 @@ class V1ServiceAccount(object):
     def image_pull_secrets(self):
         """
         Gets the image_pull_secrets of this V1ServiceAccount.
-        ImagePullSecrets is a list of references to secrets in the same namespace to use for pulling any images in pods that reference this ServiceAccount. ImagePullSecrets are distinct from Secrets because Secrets can be mounted in the pod, but ImagePullSecrets are only accessed by the kubelet. More info: http://releases.k8s.io/HEAD/docs/user-guide/secrets.md#manually-specifying-an-imagepullsecret
+        ImagePullSecrets is a list of references to secrets in the same namespace to use for pulling any images in pods that reference this ServiceAccount. ImagePullSecrets are distinct from Secrets because Secrets can be mounted in the pod, but ImagePullSecrets are only accessed by the kubelet. More info: http://releases.k8s.io/release-1.2/docs/user-guide/secrets.md#manually-specifying-an-imagepullsecret
 
         :return: The image_pull_secrets of this V1ServiceAccount.
         :rtype: list[V1LocalObjectReference]
@@ -161,7 +161,7 @@ class V1ServiceAccount(object):
     def image_pull_secrets(self, image_pull_secrets):
         """
         Sets the image_pull_secrets of this V1ServiceAccount.
-        ImagePullSecrets is a list of references to secrets in the same namespace to use for pulling any images in pods that reference this ServiceAccount. ImagePullSecrets are distinct from Secrets because Secrets can be mounted in the pod, but ImagePullSecrets are only accessed by the kubelet. More info: http://releases.k8s.io/HEAD/docs/user-guide/secrets.md#manually-specifying-an-imagepullsecret
+        ImagePullSecrets is a list of references to secrets in the same namespace to use for pulling any images in pods that reference this ServiceAccount. ImagePullSecrets are distinct from Secrets because Secrets can be mounted in the pod, but ImagePullSecrets are only accessed by the kubelet. More info: http://releases.k8s.io/release-1.2/docs/user-guide/secrets.md#manually-specifying-an-imagepullsecret
 
         :param image_pull_secrets: The image_pull_secrets of this V1ServiceAccount.
         :type: list[V1LocalObjectReference]

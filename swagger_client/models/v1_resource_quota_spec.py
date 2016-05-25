@@ -37,7 +37,7 @@ class V1ResourceQuotaSpec(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'hard': 'object',
+            'hard': 'Any',
             'scopes': 'list[V1ResourceQuotaScope]'
         }
 
@@ -53,10 +53,10 @@ class V1ResourceQuotaSpec(object):
     def hard(self):
         """
         Gets the hard of this V1ResourceQuotaSpec.
-        Hard is the set of desired hard limits for each named resource. More info: http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota
+        Hard is the set of desired hard limits for each named resource. More info: http://releases.k8s.io/release-1.2/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota
 
         :return: The hard of this V1ResourceQuotaSpec.
-        :rtype: object
+        :rtype: Any
         """
         return self._hard
 
@@ -64,10 +64,10 @@ class V1ResourceQuotaSpec(object):
     def hard(self, hard):
         """
         Sets the hard of this V1ResourceQuotaSpec.
-        Hard is the set of desired hard limits for each named resource. More info: http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota
+        Hard is the set of desired hard limits for each named resource. More info: http://releases.k8s.io/release-1.2/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota
 
         :param hard: The hard of this V1ResourceQuotaSpec.
-        :type: object
+        :type: Any
         """
         self._hard = hard
 

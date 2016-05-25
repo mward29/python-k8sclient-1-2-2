@@ -37,8 +37,8 @@ class V1NodeStatus(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'capacity': 'object',
-            'allocatable': 'object',
+            'capacity': 'Any',
+            'allocatable': 'Any',
             'phase': 'str',
             'conditions': 'list[V1NodeCondition]',
             'addresses': 'list[V1NodeAddress]',
@@ -71,10 +71,10 @@ class V1NodeStatus(object):
     def capacity(self):
         """
         Gets the capacity of this V1NodeStatus.
-        Capacity represents the total resources of a node. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#capacity for more details.
+        Capacity represents the total resources of a node. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#capacity for more details.
 
         :return: The capacity of this V1NodeStatus.
-        :rtype: object
+        :rtype: Any
         """
         return self._capacity
 
@@ -82,10 +82,10 @@ class V1NodeStatus(object):
     def capacity(self, capacity):
         """
         Sets the capacity of this V1NodeStatus.
-        Capacity represents the total resources of a node. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#capacity for more details.
+        Capacity represents the total resources of a node. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#capacity for more details.
 
         :param capacity: The capacity of this V1NodeStatus.
-        :type: object
+        :type: Any
         """
         self._capacity = capacity
 
@@ -96,7 +96,7 @@ class V1NodeStatus(object):
         Allocatable represents the resources of a node that are available for scheduling. Defaults to Capacity.
 
         :return: The allocatable of this V1NodeStatus.
-        :rtype: object
+        :rtype: Any
         """
         return self._allocatable
 
@@ -107,7 +107,7 @@ class V1NodeStatus(object):
         Allocatable represents the resources of a node that are available for scheduling. Defaults to Capacity.
 
         :param allocatable: The allocatable of this V1NodeStatus.
-        :type: object
+        :type: Any
         """
         self._allocatable = allocatable
 
@@ -115,7 +115,7 @@ class V1NodeStatus(object):
     def phase(self):
         """
         Gets the phase of this V1NodeStatus.
-        NodePhase is the recently observed lifecycle phase of the node. More info: http://releases.k8s.io/HEAD/docs/admin/node.md#node-phase
+        NodePhase is the recently observed lifecycle phase of the node. More info: http://releases.k8s.io/release-1.2/docs/admin/node.md#node-phase
 
         :return: The phase of this V1NodeStatus.
         :rtype: str
@@ -126,7 +126,7 @@ class V1NodeStatus(object):
     def phase(self, phase):
         """
         Sets the phase of this V1NodeStatus.
-        NodePhase is the recently observed lifecycle phase of the node. More info: http://releases.k8s.io/HEAD/docs/admin/node.md#node-phase
+        NodePhase is the recently observed lifecycle phase of the node. More info: http://releases.k8s.io/release-1.2/docs/admin/node.md#node-phase
 
         :param phase: The phase of this V1NodeStatus.
         :type: str
@@ -137,7 +137,7 @@ class V1NodeStatus(object):
     def conditions(self):
         """
         Gets the conditions of this V1NodeStatus.
-        Conditions is an array of current observed node conditions. More info: http://releases.k8s.io/HEAD/docs/admin/node.md#node-condition
+        Conditions is an array of current observed node conditions. More info: http://releases.k8s.io/release-1.2/docs/admin/node.md#node-condition
 
         :return: The conditions of this V1NodeStatus.
         :rtype: list[V1NodeCondition]
@@ -148,7 +148,7 @@ class V1NodeStatus(object):
     def conditions(self, conditions):
         """
         Sets the conditions of this V1NodeStatus.
-        Conditions is an array of current observed node conditions. More info: http://releases.k8s.io/HEAD/docs/admin/node.md#node-condition
+        Conditions is an array of current observed node conditions. More info: http://releases.k8s.io/release-1.2/docs/admin/node.md#node-condition
 
         :param conditions: The conditions of this V1NodeStatus.
         :type: list[V1NodeCondition]
@@ -159,7 +159,7 @@ class V1NodeStatus(object):
     def addresses(self):
         """
         Gets the addresses of this V1NodeStatus.
-        List of addresses reachable to the node. Queried from cloud provider, if available. More info: http://releases.k8s.io/HEAD/docs/admin/node.md#node-addresses
+        List of addresses reachable to the node. Queried from cloud provider, if available. More info: http://releases.k8s.io/release-1.2/docs/admin/node.md#node-addresses
 
         :return: The addresses of this V1NodeStatus.
         :rtype: list[V1NodeAddress]
@@ -170,7 +170,7 @@ class V1NodeStatus(object):
     def addresses(self, addresses):
         """
         Sets the addresses of this V1NodeStatus.
-        List of addresses reachable to the node. Queried from cloud provider, if available. More info: http://releases.k8s.io/HEAD/docs/admin/node.md#node-addresses
+        List of addresses reachable to the node. Queried from cloud provider, if available. More info: http://releases.k8s.io/release-1.2/docs/admin/node.md#node-addresses
 
         :param addresses: The addresses of this V1NodeStatus.
         :type: list[V1NodeAddress]
@@ -203,7 +203,7 @@ class V1NodeStatus(object):
     def node_info(self):
         """
         Gets the node_info of this V1NodeStatus.
-        Set of ids/uuids to uniquely identify the node. More info: http://releases.k8s.io/HEAD/docs/admin/node.md#node-info
+        Set of ids/uuids to uniquely identify the node. More info: http://releases.k8s.io/release-1.2/docs/admin/node.md#node-info
 
         :return: The node_info of this V1NodeStatus.
         :rtype: V1NodeSystemInfo
@@ -214,7 +214,7 @@ class V1NodeStatus(object):
     def node_info(self, node_info):
         """
         Sets the node_info of this V1NodeStatus.
-        Set of ids/uuids to uniquely identify the node. More info: http://releases.k8s.io/HEAD/docs/admin/node.md#node-info
+        Set of ids/uuids to uniquely identify the node. More info: http://releases.k8s.io/release-1.2/docs/admin/node.md#node-info
 
         :param node_info: The node_info of this V1NodeStatus.
         :type: V1NodeSystemInfo

@@ -59,7 +59,7 @@ class V1PersistentVolumeList(object):
     def kind(self):
         """
         Gets the kind of this V1PersistentVolumeList.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :return: The kind of this V1PersistentVolumeList.
         :rtype: str
@@ -70,7 +70,7 @@ class V1PersistentVolumeList(object):
     def kind(self, kind):
         """
         Sets the kind of this V1PersistentVolumeList.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :param kind: The kind of this V1PersistentVolumeList.
         :type: str
@@ -81,7 +81,7 @@ class V1PersistentVolumeList(object):
     def api_version(self):
         """
         Gets the api_version of this V1PersistentVolumeList.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :return: The api_version of this V1PersistentVolumeList.
         :rtype: str
@@ -92,7 +92,7 @@ class V1PersistentVolumeList(object):
     def api_version(self, api_version):
         """
         Sets the api_version of this V1PersistentVolumeList.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :param api_version: The api_version of this V1PersistentVolumeList.
         :type: str
@@ -103,7 +103,7 @@ class V1PersistentVolumeList(object):
     def metadata(self):
         """
         Gets the metadata of this V1PersistentVolumeList.
-        Standard list metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Standard list metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :return: The metadata of this V1PersistentVolumeList.
         :rtype: UnversionedListMeta
@@ -114,7 +114,7 @@ class V1PersistentVolumeList(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this V1PersistentVolumeList.
-        Standard list metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Standard list metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :param metadata: The metadata of this V1PersistentVolumeList.
         :type: UnversionedListMeta
@@ -125,7 +125,7 @@ class V1PersistentVolumeList(object):
     def items(self):
         """
         Gets the items of this V1PersistentVolumeList.
-        List of persistent volumes. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md
+        List of persistent volumes. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md
 
         :return: The items of this V1PersistentVolumeList.
         :rtype: list[V1PersistentVolume]
@@ -136,7 +136,7 @@ class V1PersistentVolumeList(object):
     def items(self, items):
         """
         Sets the items of this V1PersistentVolumeList.
-        List of persistent volumes. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md
+        List of persistent volumes. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md
 
         :param items: The items of this V1PersistentVolumeList.
         :type: list[V1PersistentVolume]

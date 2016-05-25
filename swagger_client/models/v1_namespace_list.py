@@ -59,7 +59,7 @@ class V1NamespaceList(object):
     def kind(self):
         """
         Gets the kind of this V1NamespaceList.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :return: The kind of this V1NamespaceList.
         :rtype: str
@@ -70,7 +70,7 @@ class V1NamespaceList(object):
     def kind(self, kind):
         """
         Sets the kind of this V1NamespaceList.
-        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :param kind: The kind of this V1NamespaceList.
         :type: str
@@ -81,7 +81,7 @@ class V1NamespaceList(object):
     def api_version(self):
         """
         Gets the api_version of this V1NamespaceList.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :return: The api_version of this V1NamespaceList.
         :rtype: str
@@ -92,7 +92,7 @@ class V1NamespaceList(object):
     def api_version(self, api_version):
         """
         Sets the api_version of this V1NamespaceList.
-        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#resources
 
         :param api_version: The api_version of this V1NamespaceList.
         :type: str
@@ -103,7 +103,7 @@ class V1NamespaceList(object):
     def metadata(self):
         """
         Gets the metadata of this V1NamespaceList.
-        Standard list metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Standard list metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :return: The metadata of this V1NamespaceList.
         :rtype: UnversionedListMeta
@@ -114,7 +114,7 @@ class V1NamespaceList(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this V1NamespaceList.
-        Standard list metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+        Standard list metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#types-kinds
 
         :param metadata: The metadata of this V1NamespaceList.
         :type: UnversionedListMeta
@@ -125,7 +125,7 @@ class V1NamespaceList(object):
     def items(self):
         """
         Gets the items of this V1NamespaceList.
-        Items is the list of Namespace objects in the list. More info: http://releases.k8s.io/HEAD/docs/user-guide/namespaces.md
+        Items is the list of Namespace objects in the list. More info: http://releases.k8s.io/release-1.2/docs/user-guide/namespaces.md
 
         :return: The items of this V1NamespaceList.
         :rtype: list[V1Namespace]
@@ -136,7 +136,7 @@ class V1NamespaceList(object):
     def items(self, items):
         """
         Sets the items of this V1NamespaceList.
-        Items is the list of Namespace objects in the list. More info: http://releases.k8s.io/HEAD/docs/user-guide/namespaces.md
+        Items is the list of Namespace objects in the list. More info: http://releases.k8s.io/release-1.2/docs/user-guide/namespaces.md
 
         :param items: The items of this V1NamespaceList.
         :type: list[V1Namespace]

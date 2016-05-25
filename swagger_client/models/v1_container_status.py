@@ -181,7 +181,7 @@ class V1ContainerStatus(object):
     def image(self):
         """
         Gets the image of this V1ContainerStatus.
-        The image the container is running. More info: http://releases.k8s.io/HEAD/docs/user-guide/images.md
+        The image the container is running. More info: http://releases.k8s.io/release-1.2/docs/user-guide/images.md
 
         :return: The image of this V1ContainerStatus.
         :rtype: str
@@ -192,7 +192,7 @@ class V1ContainerStatus(object):
     def image(self, image):
         """
         Sets the image of this V1ContainerStatus.
-        The image the container is running. More info: http://releases.k8s.io/HEAD/docs/user-guide/images.md
+        The image the container is running. More info: http://releases.k8s.io/release-1.2/docs/user-guide/images.md
 
         :param image: The image of this V1ContainerStatus.
         :type: str
@@ -225,7 +225,7 @@ class V1ContainerStatus(object):
     def container_id(self):
         """
         Gets the container_id of this V1ContainerStatus.
-        Container's ID in the format 'docker://<container_id>'. More info: http://releases.k8s.io/HEAD/docs/user-guide/container-environment.md#container-information
+        Container's ID in the format 'docker://<container_id>'. More info: http://releases.k8s.io/release-1.2/docs/user-guide/container-environment.md#container-information
 
         :return: The container_id of this V1ContainerStatus.
         :rtype: str
@@ -236,7 +236,7 @@ class V1ContainerStatus(object):
     def container_id(self, container_id):
         """
         Sets the container_id of this V1ContainerStatus.
-        Container's ID in the format 'docker://<container_id>'. More info: http://releases.k8s.io/HEAD/docs/user-guide/container-environment.md#container-information
+        Container's ID in the format 'docker://<container_id>'. More info: http://releases.k8s.io/release-1.2/docs/user-guide/container-environment.md#container-information
 
         :param container_id: The container_id of this V1ContainerStatus.
         :type: str

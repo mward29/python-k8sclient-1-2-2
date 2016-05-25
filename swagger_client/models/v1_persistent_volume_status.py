@@ -56,7 +56,7 @@ class V1PersistentVolumeStatus(object):
     def phase(self):
         """
         Gets the phase of this V1PersistentVolumeStatus.
-        Phase indicates if a volume is available, bound to a claim, or released by a claim. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#phase
+        Phase indicates if a volume is available, bound to a claim, or released by a claim. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#phase
 
         :return: The phase of this V1PersistentVolumeStatus.
         :rtype: str
@@ -67,7 +67,7 @@ class V1PersistentVolumeStatus(object):
     def phase(self, phase):
         """
         Sets the phase of this V1PersistentVolumeStatus.
-        Phase indicates if a volume is available, bound to a claim, or released by a claim. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#phase
+        Phase indicates if a volume is available, bound to a claim, or released by a claim. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#phase
 
         :param phase: The phase of this V1PersistentVolumeStatus.
         :type: str

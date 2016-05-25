@@ -39,7 +39,7 @@ class V1PersistentVolumeClaimStatus(object):
         self.swagger_types = {
             'phase': 'str',
             'access_modes': 'list[V1PersistentVolumeAccessMode]',
-            'capacity': 'object'
+            'capacity': 'Any'
         }
 
         self.attribute_map = {
@@ -78,7 +78,7 @@ class V1PersistentVolumeClaimStatus(object):
     def access_modes(self):
         """
         Gets the access_modes of this V1PersistentVolumeClaimStatus.
-        AccessModes contains the actual access modes the volume backing the PVC has. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#access-modes-1
+        AccessModes contains the actual access modes the volume backing the PVC has. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#access-modes-1
 
         :return: The access_modes of this V1PersistentVolumeClaimStatus.
         :rtype: list[V1PersistentVolumeAccessMode]
@@ -89,7 +89,7 @@ class V1PersistentVolumeClaimStatus(object):
     def access_modes(self, access_modes):
         """
         Sets the access_modes of this V1PersistentVolumeClaimStatus.
-        AccessModes contains the actual access modes the volume backing the PVC has. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#access-modes-1
+        AccessModes contains the actual access modes the volume backing the PVC has. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#access-modes-1
 
         :param access_modes: The access_modes of this V1PersistentVolumeClaimStatus.
         :type: list[V1PersistentVolumeAccessMode]
@@ -103,7 +103,7 @@ class V1PersistentVolumeClaimStatus(object):
         Represents the actual resources of the underlying volume.
 
         :return: The capacity of this V1PersistentVolumeClaimStatus.
-        :rtype: object
+        :rtype: Any
         """
         return self._capacity
 
@@ -114,7 +114,7 @@ class V1PersistentVolumeClaimStatus(object):
         Represents the actual resources of the underlying volume.
 
         :param capacity: The capacity of this V1PersistentVolumeClaimStatus.
-        :type: object
+        :type: Any
         """
         self._capacity = capacity
 

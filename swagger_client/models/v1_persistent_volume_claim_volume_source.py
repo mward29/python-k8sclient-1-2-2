@@ -53,7 +53,7 @@ class V1PersistentVolumeClaimVolumeSource(object):
     def claim_name(self):
         """
         Gets the claim_name of this V1PersistentVolumeClaimVolumeSource.
-        ClaimName is the name of a PersistentVolumeClaim in the same namespace as the pod using this volume. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#persistentvolumeclaims
+        ClaimName is the name of a PersistentVolumeClaim in the same namespace as the pod using this volume. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#persistentvolumeclaims
 
         :return: The claim_name of this V1PersistentVolumeClaimVolumeSource.
         :rtype: str
@@ -64,7 +64,7 @@ class V1PersistentVolumeClaimVolumeSource(object):
     def claim_name(self, claim_name):
         """
         Sets the claim_name of this V1PersistentVolumeClaimVolumeSource.
-        ClaimName is the name of a PersistentVolumeClaim in the same namespace as the pod using this volume. More info: http://releases.k8s.io/HEAD/docs/user-guide/persistent-volumes.md#persistentvolumeclaims
+        ClaimName is the name of a PersistentVolumeClaim in the same namespace as the pod using this volume. More info: http://releases.k8s.io/release-1.2/docs/user-guide/persistent-volumes.md#persistentvolumeclaims
 
         :param claim_name: The claim_name of this V1PersistentVolumeClaimVolumeSource.
         :type: str

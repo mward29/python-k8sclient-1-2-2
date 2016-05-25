@@ -53,7 +53,7 @@ class V1PodTemplateSpec(object):
     def metadata(self):
         """
         Gets the metadata of this V1PodTemplateSpec.
-        Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+        Standard object's metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata
 
         :return: The metadata of this V1PodTemplateSpec.
         :rtype: V1ObjectMeta
@@ -64,7 +64,7 @@ class V1PodTemplateSpec(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this V1PodTemplateSpec.
-        Standard object's metadata. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+        Standard object's metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata
 
         :param metadata: The metadata of this V1PodTemplateSpec.
         :type: V1ObjectMeta
@@ -75,7 +75,7 @@ class V1PodTemplateSpec(object):
     def spec(self):
         """
         Gets the spec of this V1PodTemplateSpec.
-        Specification of the desired behavior of the pod. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+        Specification of the desired behavior of the pod. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status
 
         :return: The spec of this V1PodTemplateSpec.
         :rtype: V1PodSpec
@@ -86,7 +86,7 @@ class V1PodTemplateSpec(object):
     def spec(self, spec):
         """
         Sets the spec of this V1PodTemplateSpec.
-        Specification of the desired behavior of the pod. More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+        Specification of the desired behavior of the pod. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status
 
         :param spec: The spec of this V1PodTemplateSpec.
         :type: V1PodSpec

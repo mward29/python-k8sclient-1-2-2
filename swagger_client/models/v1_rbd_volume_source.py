@@ -71,7 +71,7 @@ class V1RBDVolumeSource(object):
     def monitors(self):
         """
         Gets the monitors of this V1RBDVolumeSource.
-        A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it
+        A collection of Ceph monitors. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it
 
         :return: The monitors of this V1RBDVolumeSource.
         :rtype: list[str]
@@ -82,7 +82,7 @@ class V1RBDVolumeSource(object):
     def monitors(self, monitors):
         """
         Sets the monitors of this V1RBDVolumeSource.
-        A collection of Ceph monitors. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it
+        A collection of Ceph monitors. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it
 
         :param monitors: The monitors of this V1RBDVolumeSource.
         :type: list[str]
@@ -93,7 +93,7 @@ class V1RBDVolumeSource(object):
     def image(self):
         """
         Gets the image of this V1RBDVolumeSource.
-        The rados image name. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it
+        The rados image name. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it
 
         :return: The image of this V1RBDVolumeSource.
         :rtype: str
@@ -104,7 +104,7 @@ class V1RBDVolumeSource(object):
     def image(self, image):
         """
         Sets the image of this V1RBDVolumeSource.
-        The rados image name. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it
+        The rados image name. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it
 
         :param image: The image of this V1RBDVolumeSource.
         :type: str
@@ -115,7 +115,7 @@ class V1RBDVolumeSource(object):
     def fs_type(self):
         """
         Gets the fs_type of this V1RBDVolumeSource.
-        Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#rbd
+        Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#rbd
 
         :return: The fs_type of this V1RBDVolumeSource.
         :rtype: str
@@ -126,7 +126,7 @@ class V1RBDVolumeSource(object):
     def fs_type(self, fs_type):
         """
         Sets the fs_type of this V1RBDVolumeSource.
-        Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified. More info: http://releases.k8s.io/HEAD/docs/user-guide/volumes.md#rbd
+        Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified. More info: http://releases.k8s.io/release-1.2/docs/user-guide/volumes.md#rbd
 
         :param fs_type: The fs_type of this V1RBDVolumeSource.
         :type: str
@@ -137,7 +137,7 @@ class V1RBDVolumeSource(object):
     def pool(self):
         """
         Gets the pool of this V1RBDVolumeSource.
-        The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it.
+        The rados pool name. Default is rbd. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it.
 
         :return: The pool of this V1RBDVolumeSource.
         :rtype: str
@@ -148,7 +148,7 @@ class V1RBDVolumeSource(object):
     def pool(self, pool):
         """
         Sets the pool of this V1RBDVolumeSource.
-        The rados pool name. Default is rbd. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it.
+        The rados pool name. Default is rbd. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it.
 
         :param pool: The pool of this V1RBDVolumeSource.
         :type: str
@@ -159,7 +159,7 @@ class V1RBDVolumeSource(object):
     def user(self):
         """
         Gets the user of this V1RBDVolumeSource.
-        The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it
+        The rados user name. Default is admin. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it
 
         :return: The user of this V1RBDVolumeSource.
         :rtype: str
@@ -170,7 +170,7 @@ class V1RBDVolumeSource(object):
     def user(self, user):
         """
         Sets the user of this V1RBDVolumeSource.
-        The rados user name. Default is admin. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it
+        The rados user name. Default is admin. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it
 
         :param user: The user of this V1RBDVolumeSource.
         :type: str
@@ -181,7 +181,7 @@ class V1RBDVolumeSource(object):
     def keyring(self):
         """
         Gets the keyring of this V1RBDVolumeSource.
-        Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it
+        Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it
 
         :return: The keyring of this V1RBDVolumeSource.
         :rtype: str
@@ -192,7 +192,7 @@ class V1RBDVolumeSource(object):
     def keyring(self, keyring):
         """
         Sets the keyring of this V1RBDVolumeSource.
-        Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it
+        Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it
 
         :param keyring: The keyring of this V1RBDVolumeSource.
         :type: str
@@ -203,7 +203,7 @@ class V1RBDVolumeSource(object):
     def secret_ref(self):
         """
         Gets the secret_ref of this V1RBDVolumeSource.
-        SecretRef is name of the authentication secret for RBDUser. If provided overrides keyring. Default is empty. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it
+        SecretRef is name of the authentication secret for RBDUser. If provided overrides keyring. Default is empty. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it
 
         :return: The secret_ref of this V1RBDVolumeSource.
         :rtype: V1LocalObjectReference
@@ -214,7 +214,7 @@ class V1RBDVolumeSource(object):
     def secret_ref(self, secret_ref):
         """
         Sets the secret_ref of this V1RBDVolumeSource.
-        SecretRef is name of the authentication secret for RBDUser. If provided overrides keyring. Default is empty. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it
+        SecretRef is name of the authentication secret for RBDUser. If provided overrides keyring. Default is empty. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it
 
         :param secret_ref: The secret_ref of this V1RBDVolumeSource.
         :type: V1LocalObjectReference
@@ -225,7 +225,7 @@ class V1RBDVolumeSource(object):
     def read_only(self):
         """
         Gets the read_only of this V1RBDVolumeSource.
-        ReadOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it
+        ReadOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it
 
         :return: The read_only of this V1RBDVolumeSource.
         :rtype: bool
@@ -236,7 +236,7 @@ class V1RBDVolumeSource(object):
     def read_only(self, read_only):
         """
         Sets the read_only of this V1RBDVolumeSource.
-        ReadOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/HEAD/examples/rbd/README.md#how-to-use-it
+        ReadOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false. More info: http://releases.k8s.io/release-1.2/examples/rbd/README.md#how-to-use-it
 
         :param read_only: The read_only of this V1RBDVolumeSource.
         :type: bool
