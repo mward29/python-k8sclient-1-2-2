@@ -4,7 +4,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "swagger_client"
-VERSION = "1.0.0"
+VERSION = "1.2"
 
 
 
@@ -28,8 +28,6 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    
+
     """
 )
-
-
